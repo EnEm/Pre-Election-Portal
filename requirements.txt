@@ -1,0 +1,4 @@
+pillow
+django
+django_summernote
+django-imagekit
