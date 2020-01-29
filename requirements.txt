@@ -1,4 +1,6 @@
+python3
 pillow
-django
+Django
 django_summernote
 django-imagekit
+psycopg2
