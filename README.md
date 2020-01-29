@@ -1,5 +1,10 @@
-<<<<<<< HEAD
-# PreElectionPortal
-=======
 # Pre-Election-Portal
->>>>>>> bdb7ebf40dea69517d30d03b013dffd6b7ab1486
+
+### Major Tasks
+* Front-End
+* Display all Agendas
+* Make Ask Me Anything Portal
+* Display Election related stats
+
+#### Install All Requirements
+1. python3 -m pip install -r requirements.txt

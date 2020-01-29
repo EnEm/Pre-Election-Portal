@@ -6,7 +6,7 @@ from . import choices
 
 class Junta(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    profile_pic = models.ImageField()
+    profile_pic = models.ImageField(blank=True)
     role = models.CharField(max_length=32, choices=choices.ROLES_CHOICES, default=choices.VOTER)
 
     def image_tag(self):
@@ -22,11 +22,11 @@ class Junta(models.Model):
 
 class Candidate(models.Model):
     user = models.ForeignKey(Junta, on_delete=models.CASCADE, related_name='candidate')
-    bio = models.TextField()
+    bio = models.TextField(blank=True)
     position = models.CharField(max_length=64, choices=choices.POSITION_CHOICES, default=choices.VP)
-    videos = models.FileField()
-    agenda = models.FileField()
-    key_points = models.TextField()
+    videos = models.FileField(blank=True)
+    agenda = models.FileField(blank=True)
+    key_points = models.TextField(blank=True)
 
     def __str__(self):
         return '{} {}'.format(self.user.user.first_name, self.user.user.last_name)
@@ -37,7 +37,7 @@ class Question(models.Model):
     asked_to = models.ForeignKey(Candidate, on_delete=models.CASCADE, related_name='question_asked')
     question = models.CharField(max_length=1024)
     approved = models.BooleanField(default=False)
-    answer = models.TextField()
+    answer = models.TextField(blank=True)
     answered = models.BooleanField(default=False)
     upvotes = models.IntegerField(default=0)
     downvotes = models.IntegerField(default=0)
@@ -45,7 +45,8 @@ class Question(models.Model):
     class Meta:
         ordering = ['upvotes']
 
-    def approve_questions(self, request, queryset):
+    @staticmethod
+    def approve_questions(request, queryset):
         queryset.update(approved=True)
 
     def __str__(self):
