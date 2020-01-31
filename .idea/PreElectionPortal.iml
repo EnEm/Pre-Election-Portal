@@ -23,6 +23,10 @@
     <orderEntry type="library" name="all" level="application" />
     <orderEntry type="library" name="jquery-1.11.1" level="application" />
     <orderEntry type="library" name="font-awesome" level="application" />
+    <orderEntry type="library" name="b6b1691ae7" level="application" />
+    <orderEntry type="library" name="3fb32c2b41" level="application" />
+    <orderEntry type="library" name="jquery-3.4.1" level="application" />
+    <orderEntry type="library" name="summernote-lite" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />

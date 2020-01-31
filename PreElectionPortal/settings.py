@@ -27,7 +27,7 @@ SECRET_KEY = 'xe9)*!p%s%*y@h$fy&c@m(#jd4_he9#gu@zd2!4$=$ob%-oqdy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'portal.apps.PortalConfig',
     'django_summernote',
     'imagekit',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -86,7 +87,7 @@ DATABASES = {
         'USER': 'admin',
         'PASSWORD': 'admin',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 
@@ -136,3 +137,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = MEDIA_DIR
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+SUMMERNOTE_THEME = 'bs4'
