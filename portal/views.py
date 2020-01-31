@@ -2,7 +2,6 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, get_object_or_404, reverse
-from django.views.generic import RedirectView
 from rest_framework import authentication, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -15,52 +14,70 @@ class UpvoteAPIToggle(APIView):
     authentication_classes = [authentication.SessionAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 
-    def get(self, request, format=None):
-        obj = get_object_or_404(Question, id=self.kwargs.get("pk"))
+    def get(self, request, pk=None, format=None):
+        obj = get_object_or_404(Question, pk=pk)
         user = self.request.user
-
+        updated = False
+        upvote = 0
+        downvote = 0
+        upvoteColor = "black"
+        downvoteColor = "black"
         if user.is_authenticated:
+            updated = True
             if user.junta in obj.upvotes.all():
                 obj.upvotes.remove(user.junta)
+                upvote = -1
             else:
                 if user.junta in obj.downvotes.all():
                     obj.downvotes.remove(user.junta)
+                    downvote = -1
                 obj.upvotes.add(user.junta)
+                upvoteColor = "blue"
+                upvote = 1
 
         data = {
-
+            'updated': updated,
+            'upvote': upvote,
+            'downvote': downvote,
+            'upvoteColor': upvoteColor,
+            'downvoteColor': downvoteColor
         }
-        return Response(user)
+        return Response(data)
 
 
-class UpvoteToggleView(RedirectView):
-    def get_redirect_url(self, *args, **kwargs):
-        obj = get_object_or_404(Question, id=self.kwargs.get("pk"))
+class DownvoteAPIToggle(APIView):
+    authentication_classes = [authentication.SessionAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, pk=None, format=None):
+        obj = get_object_or_404(Question, pk=pk)
         user = self.request.user
-
+        updated = False
+        upvote = 0
+        downvote = 0
+        upvoteColor = "black"
+        downvoteColor = "black"
         if user.is_authenticated:
-            if user.junta in obj.upvotes.all():
-                obj.upvotes.remove(user.junta)
-            else:
-                if user.junta in obj.downvotes.all():
-                    obj.downvotes.remove(user.junta)
-                obj.upvotes.add(user.junta)
-        return reverse('portal:index')
-
-
-class DownvoteToggleView(RedirectView):
-    def get_redirect_url(self, *args, **kwargs):
-        obj = get_object_or_404(Question, id=self.kwargs.get("pk"))
-        user = self.request.user
-
-        if user.is_authenticated:
+            updated = True
             if user.junta in obj.downvotes.all():
                 obj.downvotes.remove(user.junta)
+                downvote = -1
             else:
                 if user.junta in obj.upvotes.all():
                     obj.upvotes.remove(user.junta)
+                    upvote = -1
                 obj.downvotes.add(user.junta)
-        return reverse('portal:index')
+                downvoteColor = "red"
+                downvote = 1
+
+        data = {
+            'updated': updated,
+            'upvote': upvote,
+            'downvote': downvote,
+            'upvoteColor': upvoteColor,
+            'downvoteColor': downvoteColor
+        }
+        return Response(data)
 
 
 def index(request):
@@ -70,6 +87,7 @@ def index(request):
 
     if request.user.is_authenticated:
         d['is_authenticated'] = True
+        d['user'] = request.user.junta
 
     if request.method == 'POST':
         if d['is_authenticated']:
