@@ -1,18 +1,42 @@
 <!Doctype html>
 {% extends 'base.html' %}
+{% load custom_tags %}
 
 {% block titleBlock %}
     <title>Pre Election Portal</title>
     <link href="//netdna.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3fb32c2b41.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
 {% endblock %}
 
 {% block bodyBlock %}
-    <form class="form-group" action="#" method="post">
-        {% csrf_token %}
-        {{ question_form.as_p }}
-        <input type="submit" name="Ask" value="Ask">
-    </form>
+
+    {% if questions %}
+
+        {% for question in questions %}
+            <p><strong>{{ question.question }}</strong></p>
+            {% if question.answered %}
+                <p>{{ question.answer|safe }}</p>
+            {% endif %}
+            <span id="upvote{{ question.id }}"><a href="{{ question.get_upvote_url }}"><i class="far fa-thumbs-up"></i></a></span>
+            {{ question.upvotes.count|subtract:question.downvotes.count }}
+            <span id="downvote{{ question.id }}"><a href="{{ question.get_downvote_url }}"><i class="far fa-thumbs-down"></i></a></span>
+            <hr>
+        {% endfor %}
+
+    {% endif %}
+
+    {% if question_form %}
+        <form class="form-group" action="{% url 'portal:index' %}" method="post">
+            {% csrf_token %}
+{#            {% crispy %}#}
+            {{ question_form.as_p }}
+            <input type="submit" name="Ask" value="Ask">
+        </form>
+    {% endif %}
 {% endblock %}
