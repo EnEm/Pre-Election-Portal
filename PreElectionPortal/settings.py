@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'imagekit',
     'crispy_forms',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

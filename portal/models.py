@@ -68,6 +68,12 @@ class Question(models.Model):
     def get_downvote_url(self):
         return reverse("portal:downvote", kwargs={'pk': self.pk})
 
+    def get_upvote_api_url(self):
+        return reverse("portal:api-upvote", kwargs={'pk': self.pk})
+
+    def get_downvote_api_url(self):
+        return reverse("portal:api-downvote", kwargs={'pk': self.pk})
+
     def save(self, *args, **kwargs):
         if not self.id:
             self.asked_on = timezone.now()
