@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block titleBlock %}
+    <title>Answer</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+{% endblock %}
+
+{% block bodyBlock %}
+    {% if question %}
+        <p><strong>{{ question }}</strong></p>
+    {% endif %}
+
+    {% if answer_form %}
+        <form method="post">
+            {% csrf_token %}
+            {{ answer_form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    {% endif %}
+{% endblock %}

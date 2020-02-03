@@ -72,15 +72,73 @@
                     }
                 });
             });
+
+            $("#id_position").change(function (e) {
+                const url = $("#question-form").attr("data-href");
+                const position = $(this).val();
+
+                $.ajax({
+                    url: url,
+                    data: {
+                        'position': position
+                    },
+                    success: function (data) {
+                        $("#id_asked_to").html(data);
+                        console.log(data);
+                    }
+                });
+            });
         {% endblock %}
     </script>
 {% endblock %}
 
 {% block bodyBlock %}
 
-    {% if questions %}
+    {% if unapproved_questions %}
+        <span id="unapproved-sort-tray" class="sort-tray"><button class=button type="button">Recent</button> <button class="button" type="button">Upvotes</button></span>
+        {% for question in unapproved_questions %}
+            <p><strong>{{ question.question }}</strong></p>
+            <button>Approve</button>
+            <hr>
+        {% endfor %}
+    {% endif %}
 
-        {% for question in questions %}
+    {% if my_questions %}
+        <span id="approved-sort-tray" class="sort-tray"><button class=button type="button">Recent</button> <button class="button" type="button">Upvotes</button></span>
+        {% for question in my_questions  %}
+            <p><strong>{{ question.question }}</strong></p>
+
+            {% if question.answered %}
+                <p>{{ question.answer|safe }}</p>
+            {% endif %}
+
+            {% if question.answered %}
+                <a class="btn btn-primary" href="{% url 'portal:answer' question.pk %}">Update</a>
+            {% else %}
+                <a class="btn btn-primary" href="{% url 'portal:answer' question.pk %}">Answer</a>
+            {% endif %}
+
+            <span class="vote-tray">
+                {% if user in question.upvotes.all %}
+                    <span><a class="btn-upvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_upvote_api_url }}" ><i style="color: blue" class="far fa-thumbs-up"></i></a></span>
+                {% else %}
+                    <span><a class="btn-upvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_upvote_api_url }}" ><i class="far fa-thumbs-up"></i></a></span>
+                {% endif %}
+                <span class="text-vote">{{ question.upvotes.count|subtract:question.downvotes.count }}</span>
+                {% if user in question.downvotes.all %}
+                    <span><a class="btn-downvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_downvote_api_url }}"><i style="color: red" class="far fa-thumbs-down"></i></a></span>
+                {% else %}
+                    <span><a class="btn-downvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_downvote_api_url }}"><i class="far fa-thumbs-down"></i></a></span>
+                {% endif %}
+            </span>
+            <hr>
+        {% endfor %}
+
+    {% endif %}
+
+    {% if approved_questions %}
+        <span id="approved-sort-tray" class="sort-tray"><button class=button type="button">Recent</button> <button class="button" type="button">Upvotes</button></span>
+        {% for question in approved_questions %}
             <p><strong>{{ question.question }}</strong></p>
             {% if question.answered %}
                 <p>{{ question.answer|safe }}</p>
@@ -104,7 +162,7 @@
     {% endif %}
 
     {% if question_form %}
-        <form class="form-group" action="{% url 'portal:index' %}" method="post">
+        <form id="question-form" class="form-group" action="{% url 'portal:index' %}" method="post" data-href="{% url 'portal:ajax-load-candidates' %}">
             {% csrf_token %}
             {{ question_form.as_p }}
             <input type="submit" name="Ask" value="Ask">
