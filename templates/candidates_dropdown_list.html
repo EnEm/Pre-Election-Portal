@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<option value="">---------</option>
+{% if candidates %}
+    {% for candidate in candidates %}
+        <option value="{{ candidate.pk }}">{{ candidate }}</option>
+    {% endfor %}
+{% endif %}
