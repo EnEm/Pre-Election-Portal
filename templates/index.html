@@ -1,0 +1,113 @@
+<!Doctype html>
+{% extends 'base.html' %}
+{% load custom_tags %}
+
+{% block titleBlock %}
+    <title>Pre Election Portal</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3fb32c2b41.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
+
+    <script>
+        {% block jqueryBlock %}
+            function updateVoteCount(span, upvotes, downvotes, upvoteColor, downvoteColor) {
+                console.log(span.children());
+                span.children().children().attr("data-upvote", upvotes);
+                span.children().children().attr("data-downvote", downvotes);
+                span.children(".text-vote").text(upvotes-downvotes);
+                span.children("span:nth-child(1)").children().children().css("color", upvoteColor);
+                span.children("span:nth-child(3)").children().children().css("color", downvoteColor);
+                console.log(upvoteColor, downvoteColor)
+            }
+
+            $(".btn-upvote").click(function (e) {
+                e.preventDefault();
+                const this_ = $(this);
+                const upvoteUrl = this_.attr("data-href");
+                const upvoteCount = parseInt(this_.attr("data-upvote"));
+                const downvoteCount = parseInt(this_.attr("data-downvote"));
+                $.ajax({
+                    url: upvoteUrl,
+                    method: "GET",
+                    data: {},
+                    success: function (data) {
+                        console.log(data);
+                        const newUpvotes = upvoteCount + data.upvote;
+                        const newDownvotes = downvoteCount + data.downvote;
+                        console.log(newUpvotes-newDownvotes);
+                        updateVoteCount(this_.parent().parent(), newUpvotes, newDownvotes, data.upvoteColor, data.downvoteColor);
+                    },
+                    error: function (error) {
+                        console.log("error");
+                        console.log(error);
+                    }
+                });
+            });
+
+            $(".btn-downvote").click(function (e) {
+                {#e.preventDefault();#}
+                const this_ = $(this);
+                const downvoteUrl = this_.attr("data-href");
+                const upvoteCount = parseInt(this_.attr("data-upvote"));
+                const downvoteCount = parseInt(this_.attr("data-downvote"));
+                $.ajax({
+                    url: downvoteUrl,
+                    method: "GET",
+                    data: {},
+                    success: function (data) {
+                        console.log(data);
+                        const newUpvotes = upvoteCount + data.upvote;
+                        const newDownvotes = downvoteCount + data.downvote;
+                        console.log(newUpvotes-newDownvotes);
+                        updateVoteCount(this_.parent().parent(), newUpvotes, newDownvotes, data.upvoteColor, data.downvoteColor);
+                    },
+                    error: function (error) {
+                        console.log("error");
+                        console.log(error);
+                    }
+                });
+            });
+        {% endblock %}
+    </script>
+{% endblock %}
+
+{% block bodyBlock %}
+
+    {% if questions %}
+
+        {% for question in questions %}
+            <p><strong>{{ question.question }}</strong></p>
+            {% if question.answered %}
+                <p>{{ question.answer|safe }}</p>
+            {% endif %}
+            <span class="vote-tray">
+                {% if user in question.upvotes.all %}
+                    <span><a class="btn-upvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_upvote_api_url }}" ><i style="color: blue" class="far fa-thumbs-up"></i></a></span>
+                {% else %}
+                    <span><a class="btn-upvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_upvote_api_url }}" ><i class="far fa-thumbs-up"></i></a></span>
+                {% endif %}
+                <span class="text-vote">{{ question.upvotes.count|subtract:question.downvotes.count }}</span>
+                {% if user in question.downvotes.all %}
+                    <span><a class="btn-downvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_downvote_api_url }}"><i style="color: red" class="far fa-thumbs-down"></i></a></span>
+                {% else %}
+                    <span><a class="btn-downvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_downvote_api_url }}"><i class="far fa-thumbs-down"></i></a></span>
+                {% endif %}
+            </span>
+            <hr>
+        {% endfor %}
+
+    {% endif %}
+
+    {% if question_form %}
+        <form class="form-group" action="{% url 'portal:index' %}" method="post">
+            {% csrf_token %}
+            {{ question_form.as_p }}
+            <input type="submit" name="Ask" value="Ask">
+        </form>
+    {% endif %}
+{% endblock %}
