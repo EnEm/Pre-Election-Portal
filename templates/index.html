@@ -95,9 +95,17 @@
 {% block bodyBlock %}
 
     {% if unapproved_questions %}
-        <span id="unapproved-sort-tray" class="sort-tray"><button class=button type="button">Recent</button> <button class="button" type="button">Upvotes</button></span>
         {% for question in unapproved_questions %}
             <p><strong>{{ question.question }}</strong></p>
+            <button>Approve</button>
+            <hr>
+        {% endfor %}
+    {% endif %}
+
+    {% if unapproved_comments %}
+        {% for comment in unapproved_comments %}
+            <p><strong>{{ comment.question.question }}</strong></p>
+            <p><i>{{ comment.comment }}</i></p>
             <button>Approve</button>
             <hr>
         {% endfor %}
@@ -131,6 +139,32 @@
                     <span><a class="btn-downvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_downvote_api_url }}"><i class="far fa-thumbs-down"></i></a></span>
                 {% endif %}
             </span>
+
+            {% if question.comments.count != 0%}
+                <br>
+                <span id="comments-sort-tray" class="sort-tray"><button class=button type="button">Recent</button> <button class="button" type="button">Upvotes</button></span>
+                {% for comment in question.comments.all  %}
+                    {% if comment.approved %}
+                        <p><i>{{ comment.comment }}</i></p>
+
+                        <span class="vote-tray">
+                            {% if user in comment.upvotes.all %}
+                                <span><a class="btn-upvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_upvote_api_url }}" ><i style="color: blue" class="far fa-thumbs-up"></i></a></span>
+                            {% else %}
+                                <span><a class="btn-upvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_upvote_api_url }}" ><i class="far fa-thumbs-up"></i></a></span>
+                            {% endif %}
+                            <span class="text-vote">{{ comment.upvotes.count|subtract:comment.downvotes.count }}</span>
+                            {% if user in comment.downvotes.all %}
+                                <span><a class="btn-downvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_downvote_api_url }}"><i style="color: red" class="far fa-thumbs-down"></i></a></span>
+                            {% else %}
+                                <span><a class="btn-downvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_downvote_api_url }}"><i class="far fa-thumbs-down"></i></a></span>
+                            {% endif %}
+                        </span>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            <br><a class="btn btn-primary" href="{% url 'portal:comment' question.pk %}">Add Comment</a>
+
             <hr>
         {% endfor %}
 
