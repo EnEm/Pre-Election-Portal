@@ -152,6 +152,44 @@ class DownvoteAPIToggleComment(APIView):
         return Response(data)
 
 
+class ApproveAPIToggle(APIView):
+    authentication_classes = [authentication.SessionAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, pk=None, format=None):
+        obj = get_object_or_404(Question, pk=pk)
+        user = self.request.user
+        updated = False
+        if user.is_authenticated:
+            if user.junta.role == choices.ELECTION_COMMISSION:
+                if not obj.approved:
+                    updated = True
+                    obj.approved = True
+        data = {
+            'updated': updated,
+        }
+        return Response(data)
+
+
+class ApproveAPIToggleComment(APIView):
+    authentication_classes = [authentication.SessionAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, pk=None, format=None):
+        obj = get_object_or_404(Comment, pk=pk)
+        user = self.request.user
+        updated = False
+        # if user.is_authenticated:
+            # if user.junta.role == choices.ELECTION_COMMISSION:
+                # if not obj.approved:
+        updated = True
+        obj.approved = True
+        data = {
+            'updated': updated,
+        }
+        return Response(data)
+
+
 def index(request):
     question_form = AskForm()
     d = {'question_form': question_form}
@@ -272,6 +310,7 @@ def comment_view(request, pk):
             comment.commented_on = timezone.now()
             comment.save()
             form.save_m2m()
+            pass
         else:
             print("CommentForm POST Error: ", form.errors)
         return HttpResponseRedirect(reverse('portal:index'))
