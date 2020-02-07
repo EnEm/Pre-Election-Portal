@@ -12,6 +12,8 @@ from .views import (
     load_candidates,
     UpvoteAPIToggleComment,
     DownvoteAPIToggleComment,
+    ApproveAPIToggle,
+    ApproveAPIToggleComment,
     # SortQuestionsAPI,
 )
 
@@ -26,6 +28,8 @@ urlpatterns = [
     re_path('^api/(?P<pk>[0-9]+)/downvote-comment/$', DownvoteAPIToggleComment.as_view(), name='api-downvote-comment'),
     re_path('^(?P<pk>[0-9]+)/answer/$', answer_view, name='answer'),
     re_path('^(?P<pk>[0-9]+)/comment/$', comment_view, name='comment'),
+    re_path('^api/(?P<pk>[0-9]+)/approve/$', ApproveAPIToggle.as_view(), name='api-approve'),
+    re_path('^api/(?P<pk>[0-9]+)/approve-comment/$', ApproveAPIToggleComment.as_view(), name='api-approve-comment'),
     re_path('^ajax/load-candidates/$', load_candidates, name='ajax-load-candidates'),
     # re_path('^api/(?P<ordering>[\w]+)/$', SortQuestionsAPI.as_view(), name='api-sort'),
     path('login/', user_login, name='login'),
