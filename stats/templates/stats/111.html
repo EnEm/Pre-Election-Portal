@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+    {% block titleBlock %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <script  src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js">  </script>
+
+     <link href="//netdna.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3fb32c2b41.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
+    {% endblock %}
+
+
+        {% block bodyBlock %}
+
+             <div class="container my-4">
+
+
+                <hr class="my-4">
+
+                <div>
+                <canvas id="pieChart" style="max-width: 1000px;"></canvas>
+                </div>
+
+            </div>
+
+
+
+            <script>
+                var l=[];
+                var lab=[];
+                {% for hh in hostels %}
+                l.push({{hh.no_of_votes}});
+                lab.push('{{hh.name}}');
+             
+                {% endfor %}
+               
+                var ctxP = document.getElementById("pieChart").getContext('2d');
+                var myPieChart = new Chart(ctxP, {
+                type: 'pie',
+                data: {
+                    labels: lab,
+                    datasets: [{
+                    data: l,
+                    backgroundColor: ["#2a13ec","#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
+                    hoverBackgroundColor: ["#4735e3","#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+                    }]
+                },
+                options: {
+                    responsive: true
+                }
+                });
+            </script>
+        {% endblock %}
