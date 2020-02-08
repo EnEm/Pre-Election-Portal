@@ -84,7 +84,7 @@ class Comment(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='comments')
     comment = models.CharField(max_length=1024, blank=True)
     approved = models.BooleanField(default=False)
-    approved_by = models.ForeignKey(Junta, on_delete=models.CASCADE, related_name='comments_approved', null=True)
+    approved_by = models.ForeignKey(Junta, on_delete=models.CASCADE, related_name='comments_approved', blank=True, null=True)
     commented_on = models.DateTimeField(blank=True)
     upvotes = models.ManyToManyField(Junta, related_name='comments_upvoted')
     downvotes = models.ManyToManyField(Junta, related_name='comments_downvoted')
