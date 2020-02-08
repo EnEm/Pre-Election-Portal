@@ -27,7 +27,13 @@ class HostelAdmin(admin.ModelAdmin):
     list_display = ('name', 'no_of_votes', 'total_residents')
 
 
+class CommentAdmin(SummernoteModelAdmin):
+    list_display = ('comment', 'question', 'comment_by')
+    actions = ('approve_comments',)
+
+
 admin.site.register(models.Junta, JuntaAdmin)
 admin.site.register(models.Candidate, CandidateAdmin)
 admin.site.register(models.Question, QuestionAdmin)
 admin.site.register(models.Hostel, HostelAdmin)
+admin.site.register(models.Comment, CommentAdmin)
