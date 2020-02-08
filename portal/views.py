@@ -6,8 +6,8 @@ from rest_framework import authentication, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.utils import timezone
-from .forms import AskForm, AnswerForm
-from .models import Question, Candidate
+from .forms import AskForm, AnswerForm, CommentForm
+from .models import Question, Candidate, Comment
 from django.db.models import Q
 from . import choices
 
@@ -82,17 +82,131 @@ class DownvoteAPIToggle(APIView):
         return Response(data)
 
 
+class UpvoteAPIToggleComment(APIView):
+    authentication_classes = [authentication.SessionAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, pk=None, format=None):
+        obj = get_object_or_404(Comment, pk=pk)
+        user = self.request.user
+        updated = False
+        upvote = 0
+        downvote = 0
+        upvoteColor = "black"
+        downvoteColor = "black"
+        if user.is_authenticated:
+            updated = True
+            if user.junta in obj.upvotes.all():
+                obj.upvotes.remove(user.junta)
+                upvote = -1
+            else:
+                if user.junta in obj.downvotes.all():
+                    obj.downvotes.remove(user.junta)
+                    downvote = -1
+                obj.upvotes.add(user.junta)
+                upvoteColor = "blue"
+                upvote = 1
+
+        data = {
+            'updated': updated,
+            'upvote': upvote,
+            'downvote': downvote,
+            'upvoteColor': upvoteColor,
+            'downvoteColor': downvoteColor
+        }
+        return Response(data)
+
+
+class DownvoteAPIToggleComment(APIView):
+    authentication_classes = [authentication.SessionAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, pk=None, format=None):
+        obj = get_object_or_404(Comment, pk=pk)
+        user = self.request.user
+        updated = False
+        upvote = 0
+        downvote = 0
+        upvoteColor = "black"
+        downvoteColor = "black"
+        if user.is_authenticated:
+            updated = True
+            if user.junta in obj.downvotes.all():
+                obj.downvotes.remove(user.junta)
+                downvote = -1
+            else:
+                if user.junta in obj.upvotes.all():
+                    obj.upvotes.remove(user.junta)
+                    upvote = -1
+                obj.downvotes.add(user.junta)
+                downvoteColor = "red"
+                downvote = 1
+
+        data = {
+            'updated': updated,
+            'upvote': upvote,
+            'downvote': downvote,
+            'upvoteColor': upvoteColor,
+            'downvoteColor': downvoteColor
+        }
+        return Response(data)
+
+
+class ApproveAPIToggle(APIView):
+    authentication_classes = [authentication.SessionAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, pk=None, format=None):
+        obj = get_object_or_404(Question, pk=pk)
+        user = self.request.user
+        updated = False
+        if user.is_authenticated:
+            if user.junta.role == choices.ELECTION_COMMISSION:
+                if not obj.approved:
+                    updated = True
+                    obj.approved = True
+                    obj.approved_by = user.junta
+                    obj.save()
+        data = {
+            'updated': updated,
+        }
+        return Response(data)
+
+
+class ApproveAPIToggleComment(APIView):
+    authentication_classes = [authentication.SessionAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, pk=None, format=None):
+        obj = get_object_or_404(Comment, pk=pk)
+        user = self.request.user
+        updated = False
+        if user.is_authenticated:
+            if user.junta.role == choices.ELECTION_COMMISSION:
+                if not obj.approved:
+                    updated = True
+                    obj.approved = True
+                    obj.approved_by = user.junta
+                    obj.save()
+        data = {
+            'updated': updated,
+        }
+        return Response(data)
+
 def index(request):
     question_form = AskForm()
-    d = {'question_form': question_form}
+    comment_form = CommentForm()
+    d = {'question_form': question_form, 'comment_form': comment_form}
     if request.user.is_authenticated:
         d['is_authenticated'] = True
         user = request.user.junta
         d['user'] = user
         if user.role == choices.ELECTION_COMMISSION:
             unapproved_questions = Question.objects.filter(approved=False).order_by('-asked_on')
+            unapproved_comments = Comment.objects.filter(approved=False).order_by('-commented_on')
             approved_questions = Question.objects.filter(approved=True).order_by('-asked_on')
             d['unapproved_questions'] = unapproved_questions
+            d['unapproved_comments'] = unapproved_comments
             d['role'] = 'admin'
         elif user.role == choices.CANDIDATE:
             approved_questions = Question.objects.filter(approved=True)\
@@ -179,6 +293,33 @@ def answer_view(request, pk):
         return HttpResponseRedirect(reverse('portal:index'))
 
     return render(request, 'answer.html', d)
+
+
+def comment_view(request, pk):
+    question = Question.objects.get(pk=pk)
+    comment_form = CommentForm()
+
+    d = {'question': question, 'comment_form': comment_form}
+
+    if request.user.is_authenticated:
+        d['is_authenticated'] = True
+
+    if request.POST:
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.comment_by = request.user.junta
+            comment.question = question
+            comment.comment = form.cleaned_data['comment']
+            comment.commented_on = timezone.now()
+            comment.save()
+            form.save_m2m()
+            pass
+        else:
+            print("CommentForm POST Error: ", form.errors)
+        return HttpResponseRedirect(reverse('portal:index'))
+
+    return render(request, 'comment.html', d)
 
 
 def user_login(request):

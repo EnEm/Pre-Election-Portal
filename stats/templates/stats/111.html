@@ -34,7 +34,7 @@
                 <hr class="my-4">
 
                 <div>
-                <canvas id="pieChart" style="max-width: 1000px;"></canvas>
+                <canvas id="myChart" style="max-width: 1000px;"></canvas>
                 </div>
 
             </div>
@@ -50,20 +50,59 @@
              
                 {% endfor %}
                
-                var ctxP = document.getElementById("pieChart").getContext('2d');
+                var ctxP = document.getElementById("myChart").getContext('2d');
                 var myPieChart = new Chart(ctxP, {
-                type: 'pie',
+                type: 'bar',
                 data: {
                     labels: lab,
                     datasets: [{
+                    label:"Votes in %",
                     data: l,
-                    backgroundColor: ["#ff009d","#d633c0","#78009c","#8e44ad","#6447ff","#492de3","#57b3ff","#78e8ff","#00ffa2","#32d959","#ddff45","#f6fa1e","#f07e26","#f53f07"],
-                    hoverBackgroundColor: ["#f53bad","#d642c2","#9b22bf","#a458c4","#6f55fa","#583ee6","#63b9ff","#8cebff","#31f7af","#45d968","#e0ff57","#f6fa3e","#e68a43","#f75e2f"]
-                    }]
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(46, 240, 58, 0.2)',
+                        'rgba(15, 0, 115, 0.2)',
+                        'rgba(0, 255, 200, 0.2)',
+                        'rgba(235, 73, 143, 0.2)',
+                        'rgba(232, 120, 255, 0.2)',
+                        'rgba(126, 96, 191, 0.2)',
+                        'rgba(87, 247, 113, 0.2)',
+                        'rgba(142, 245, 69, 0.2)',
+                        'rgba(245, 125, 69, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(46, 240, 58, 1)',
+                        'rgba(15, 0, 115, 1)',
+                        'rgba(0, 255, 200, 1)',
+                        'rgba(235, 73, 143, 1)',
+                        'rgba(232, 120, 255, 1)',
+                        'rgba(126, 96, 191, 1)',
+                        'rgba(87, 247, 113, 1)',
+                        'rgba(142, 245, 69, 1)',
+                        'rgba(245, 125, 69, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    
+                   }]
                 },
-                options: {
-                    responsive: true
-                }
-                });
+                 options: {
+				scales: {
+				yAxes: [{
+				ticks: {
+				beginAtZero: true
+				}
+				}]
+				}
+				}
+				});
             </script>
         {% endblock %}

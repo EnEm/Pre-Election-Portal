@@ -1,6 +1,6 @@
 from django import forms
 from django_summernote.widgets import SummernoteWidget
-from .models import Question, Candidate
+from .models import Question, Candidate, Comment
 from . import choices
 
 
@@ -24,6 +24,16 @@ class AskForm(forms.ModelForm):
                 print(TypeError)
                 print("---------")
                 print(ValueError)
+
+
+class CommentForm(forms.ModelForm):
+
+    class Meta:
+        model = Comment
+        fields = ('comment', )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
 
 class AnswerForm(forms.Form):
