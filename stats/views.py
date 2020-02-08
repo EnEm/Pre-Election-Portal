@@ -2,7 +2,7 @@ from django.shortcuts import render
 from portal.models import Hostel
 
 
-def piechart(request):
+def bchart(request):
     context={
         'hostels' : Hostel.objects.all()
     }
