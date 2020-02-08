@@ -93,16 +93,19 @@
                 e.preventDefault();
                 const this_ = $(this);
                 const approveUrl = this_.attr("data-href");
-                $.ajax({
+                $.get({
                     url: approveUrl,
                     method: "GET",
                     data: {},
                     success: function (data) {
                         console.log(data);
+                        if(data.updated) alert("Approved");
+                        else alert("Already Approved");
                     },
                     error: function (error) {
                         console.log("error");
                         console.log(error);
+                        alert("error");
                     }
                 });
             });
@@ -115,7 +118,7 @@
     {% if unapproved_questions %}
         {% for question in unapproved_questions %}
             <p><strong>{{ question.question }}</strong></p>
-            <span><button class="btn-approve" data-href="{% url 'portal:api-approve' question.pk  %}" ></button></span>
+            <span><button class="btn-approve" data-href="{% url 'portal:api-approve' question.pk  %}" >Approve</button></span>
             <hr>
         {% endfor %}
     {% endif %}
@@ -124,7 +127,7 @@
         {% for comment in unapproved_comments %}
             <p><strong>{{ comment.question.question }}</strong></p>
             <p><i>{{ comment.comment|safe }}</i></p>
-            <span><button class="btn-approve" data-href="{% url 'portal:api-approve-comment' comment.pk  %}" ></button></span>
+            <span><button class="btn-approve" data-href="{% url 'portal:api-approve-comment' comment.pk  %}" >Approve</button></span>
             <hr>
         {% endfor %}
     {% endif %}
