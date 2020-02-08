@@ -93,21 +93,26 @@
                 e.preventDefault();
                 const this_ = $(this);
                 const approveUrl = this_.attr("data-href");
-                $.get({
+                $.ajax({
                     url: approveUrl,
                     method: "GET",
                     data: {},
                     success: function (data) {
-                        console.log(data);
-                        if(data.updated) alert("Approved");
-                        else alert("Already Approved");
+                        console.log(data)
+                        this_.text("Approved");
                     },
                     error: function (error) {
                         console.log("error");
                         console.log(error);
-                        alert("error");
+                        alert("Error in approving");
                     }
                 });
+            });
+
+            $(".btn-sort-recent").click(function (e) {
+                e.preventDefault();
+                const this_ = $(this);
+                $()
             });
         {% endblock %}
     </script>
@@ -133,7 +138,7 @@
     {% endif %}
 
     {% if my_questions %}
-        <span id="approved-sort-tray" class="sort-tray"><button class=button type="button">Recent</button> <button class="button" type="button">Upvotes</button></span>
+        <span id="approved-sort-tray" class="sort-tray"><button class="btn-sort-recent" type="button">Recent</button> <button class="btn-sort-upvotes" type="button">Upvotes</button></span>
         {% for question in my_questions  %}
             <p><strong>{{ question.question|safe }}</strong></p>
 
@@ -163,7 +168,6 @@
 
             {% if question.comments.count != 0%}
                 <br>
-                <span id="comments-sort-tray" class="sort-tray"><button class=button type="button">Recent</button> <button class="button" type="button">Upvotes</button></span>
                 {% for comment in question.comments.all  %}
                     {% if comment.approved %}
                         <p><i>{{ comment.comment|safe }}</i></p>
@@ -192,7 +196,7 @@
     {% endif %}
 
     {% if approved_questions %}
-        <span id="approved-sort-tray" class="sort-tray"><button class=button type="button">Recent</button> <button class="button" type="button">Upvotes</button></span>
+        <span id="approved-sort-tray" class="sort-tray"><button class="btn-sort-recent" type="button">Recent</button> <button class="btn-sort-upvotes" type="button">Upvotes</button></span>
         {% for question in approved_questions %}
             <p><strong>{{ question.question }}</strong></p>
             {% if question.answered %}
@@ -214,7 +218,6 @@
 
             {% if question.comments.count != 0%}
                 <br>
-                <span id="comments-sort-tray" class="sort-tray"><button class=button type="button">Recent</button> <button class="button" type="button">Upvotes</button></span>
                 {% for comment in question.comments.all  %}
                     {% if comment.approved %}
                         <p><i>{{ comment.comment|safe }}</i></p>

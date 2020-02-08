@@ -16,8 +16,8 @@
 ##### Make Ask Me Anything Portal
 * ~~Allow authenticated users to ask questions to the candidates.~~
 * ~~Allow authenticated users to upvote/downvote questions asked by others.~~
-* Allow authenticated users to comment on the answer given by the candidates.
-* Questions and comments should be posted only after moderation by election commission.
+* ~~Allow authenticated users to comment on the answer given by the candidates.~~
+* ~~Questions and comments should be posted only after moderation by election commission.~~
 * ~~Candidates must be able to see all the questions approved by Election Commission and answer them.~~
 
 ##### Display Election Related Stats
