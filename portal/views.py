@@ -165,6 +165,8 @@ class ApproveAPIToggle(APIView):
                 if not obj.approved:
                     updated = True
                     obj.approved = True
+                    obj.approved_by = user.junta
+                    obj.save()
         data = {
             'updated': updated,
         }
@@ -179,16 +181,17 @@ class ApproveAPIToggleComment(APIView):
         obj = get_object_or_404(Comment, pk=pk)
         user = self.request.user
         updated = False
-        # if user.is_authenticated:
-            # if user.junta.role == choices.ELECTION_COMMISSION:
-                # if not obj.approved:
-        updated = True
-        obj.approved = True
+        if user.is_authenticated:
+            if user.junta.role == choices.ELECTION_COMMISSION:
+                if not obj.approved:
+                    updated = True
+                    obj.approved = True
+                    obj.approved_by = user.junta
+                    obj.save()
         data = {
             'updated': updated,
         }
         return Response(data)
-
 
 def index(request):
     question_form = AskForm()
