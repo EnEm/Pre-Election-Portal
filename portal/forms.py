@@ -27,18 +27,10 @@ class AskForm(forms.ModelForm):
 
 
 class CommentForm(forms.ModelForm):
-<<<<<<< HEAD
 
     class Meta:
         model = Comment
-        fields = ('comment',)
-=======
-    comment = forms.CharField(widget=SummernoteWidget)
-
-    class Meta:
-        model = Comment
-        fields = ()
->>>>>>> a9bf10e204622c5f50aa330f93551a164db72cb6
+        fields = ('comment', )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

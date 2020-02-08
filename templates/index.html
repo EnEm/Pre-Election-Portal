@@ -238,16 +238,13 @@
                     {% endif %}
                 {% endfor %}
             {% endif %}
-<<<<<<< HEAD
             <br>
             <form id="comment-form" class="form-group" action="{% url 'portal:comment' question.pk %}" method="post">
                 {% csrf_token %}
                 {{ comment_form.as_p }}
                 <input type="submit" name="Comment" value="Comment">
             </form>
-=======
             <br><a class="btn btn-primary" href="{% url 'portal:comment' question.pk %}">Add Comment</a>
->>>>>>> a9bf10e204622c5f50aa330f93551a164db72cb6
 
             <hr>
         {% endfor %}
