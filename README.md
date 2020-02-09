@@ -21,7 +21,7 @@
 * ~~Candidates must be able to see all the questions approved by Election Commission and answer them.~~
 
 ##### Display Election Related Stats
-* Show ratio of votes casted to the no. of residents for each hostel during election
+* ~~Show ratio of votes casted to the no. of residents for each hostel during election~~
 ___
 
 #### Install All Requirements
