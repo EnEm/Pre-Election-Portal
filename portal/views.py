@@ -193,6 +193,7 @@ class ApproveAPIToggleComment(APIView):
         }
         return Response(data)
 
+
 class DeleteQuestionAPIToggle(APIView):
     authentication_classes = [authentication.SessionAuthentication]
     permission_classes = [permissions.IsAuthenticated]
@@ -204,13 +205,14 @@ class DeleteQuestionAPIToggle(APIView):
         if user.is_authenticated:
             if user.junta.role == choices.ELECTION_COMMISSION:
                 updated = True
-                for comment in obj.comments:
+                for comment in obj.comments.all():
                     comment.delete()
                 obj.delete()
         data = {
             'updated': updated,
         }
         return Response(data)
+
 
 class DeleteCommentAPIToggle(APIView):
     authentication_classes = [authentication.SessionAuthentication]
@@ -228,6 +230,7 @@ class DeleteCommentAPIToggle(APIView):
             'updated': updated,
         }
         return Response(data)
+
 
 def index(request):
     question_form = AskForm()
