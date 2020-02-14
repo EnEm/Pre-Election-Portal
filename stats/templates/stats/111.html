@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
     {% block titleBlock %}
-
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -27,8 +27,46 @@
 
 
         {% block bodyBlock %}
-
-             <div class="container my-4">
+        <br>
+        <br>
+        <br><br>
+        <br>
+        <br>
+        <div id="chartContainer" style= "height: 350px; width: 100%;align-self:center" ></div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+           
+        <script>
+        window.onload = function () {
+        
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "dark2", // "light1", "light2", "dark1", "dark2"
+            title:{
+                text: "Voting statistics Gymkhana Elections 2020"
+            },
+            axisY: {
+                title: "VOTES(in %)"
+            },
+            axisX: {
+                title: "HOSTELS"
+            },
+            data: [{        
+                type: "column",  
+                showInLegend: true, 
+		        legendMarkerColor: "grey",
+                legendText: "Votes(%)",
+                dataPoints:{{ output|safe }}
+            }]
+        });
+        chart.render();
+        
+        }
+        </script>
+        
+        
+             <!-- <div class="container my-4">
 
 
                 <hr class="my-4">
@@ -104,5 +142,5 @@
 				}
 				}
 				});
-            </script>
+            </script> -->
         {% endblock %}
