@@ -260,6 +260,13 @@
                     </span>
 
                     <div class="comments" style="display: none">
+                        {% if comment_form %}
+                            <form method="post" action="{% url 'portal:comment' question.pk %}">
+                                {% csrf_token %}
+                                {{ comment_form.as_p }}
+{#                                <button type="submit">Submit</button>#}
+                            </form>
+                        {% endif %}
                         {% if question.comments.count != 0%}
                             <div class="ml-5">
                                 <br>
@@ -288,7 +295,6 @@
                     </div>
                     <br>
                     <a class="btn btn-primary toggle-comment" href="">Show Comments</a>
-                    <a class="btn btn-primary add-comment" href="{% url 'portal:comment' question.pk %}">Add Comment</a>
                 </div>
             </div>
         {% endfor %}
