@@ -184,7 +184,7 @@
                     <p><strong>{{ question.question }}</strong></p>
                 </div>
                 <div class="card-body">
-                    <span><button class="btn-approve" data-href="{% url 'portal:api-approve' question.pk  %}" >Approve</button><button class="btn-delete" data-href="{% url 'portal:api-delete-question' question.pk  %}" >Delete</button></span>
+                    <span><a class="btn-approve" data-href="{% url 'portal:api-approve' question.pk  %}" ><i class="fas fa-check"></i></a><a class="btn-delete" data-href="{% url 'portal:api-delete-question' question.pk  %}" ><i class="fas fa-trash-alt"></i></a></span>
                 </div>
             </div>
         {% endfor %}
@@ -323,6 +323,10 @@
                             </span>
                             <span class="toggle-comment"><i class="fas fa-comment"></i></span>
 
+                            {% ifequal user.role "Election Commission" %}
+                                <a class="btn-delete" data-href="{% url 'portal:api-delete-question' question.pk  %}" ><i class="fas fa-trash-alt"></i></a>
+                            {% endifequal %}
+
                             <div class="comments" style="display: none">
                                 {% if comment_form %}
                                     <form method="post" action="{% url 'portal:comment' question.pk %}">
@@ -352,6 +356,9 @@
                                                         <span><a class="btn-downvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_downvote_api_url }}"><i class="far fa-thumbs-down"></i></a></span>
                                                     {% endif %}
                                                 </span>
+                                                {% ifequal user.role "Election Commission" %}
+                                                    <a class="btn-delete" data-href="{% url 'portal:api-delete-comment' comment.pk  %}" ><i class="fas fa-trash-alt"></i></a>
+                                                {% endifequal %}
                                             {% endif %}
                                         {% endfor %}
                                     </div>
