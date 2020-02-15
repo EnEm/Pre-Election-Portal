@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2655630b-a89a-4674-8a34-bd3e77ad2391" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin_f/upvote" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Bhasker Goel &lt;bhasker2000goel@gmail.com&gt;" />
+        <option value="Bhasker Goel" />
+      </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="ultra_temp" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Wnu0H5HBPieVY5KcCNjreVnDIr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../UmiamHostel" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="PreElectionPortal" type="Python.DjangoServer" factoryName="Django server">
+      <module name="PreElectionPortal" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="PreElectionPortal.settings" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2655630b-a89a-4674-8a34-bd3e77ad2391" name="Default Changelist" comment="" />
+      <created>1579797455343</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579797455343</updated>
+      <workItem from="1579797464259" duration="4624000" />
+      <workItem from="1579966605719" duration="3124000" />
+      <workItem from="1579984742447" duration="12000" />
+      <workItem from="1580030664496" duration="3308000" />
+      <workItem from="1580041502684" duration="58000" />
+      <workItem from="1580041587131" duration="149000" />
+      <workItem from="1580049147187" duration="765000" />
+      <workItem from="1580294673728" duration="14666000" />
+      <workItem from="1580458001573" duration="564000" />
+      <workItem from="1580461110776" duration="15466000" />
+      <workItem from="1580492722628" duration="15101000" />
+      <workItem from="1580546114604" duration="6809000" />
+      <workItem from="1580621930441" duration="5519000" />
+      <workItem from="1580630093071" duration="3803000" />
+      <workItem from="1580640264661" duration="2495000" />
+      <workItem from="1580731342217" duration="611000" />
+      <workItem from="1580734621482" duration="7034000" />
+      <workItem from="1580838779421" duration="1220000" />
+      <workItem from="1581148256462" duration="345000" />
+      <workItem from="1581156888712" duration="4626000" />
+      <workItem from="1581161530889" duration="2838000" />
+      <workItem from="1581196114149" duration="1643000" />
+      <workItem from="1581197866979" duration="27000" />
+      <workItem from="1581197921372" duration="374000" />
+      <workItem from="1581237369736" duration="663000" />
+      <workItem from="1581246960340" duration="1755000" />
+      <workItem from="1581268812396" duration="2003000" />
+      <workItem from="1581349543034" duration="1559000" />
+      <workItem from="1581757327160" duration="5159000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial Commit and added models">
+      <created>1579801551673</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1579801551673</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Updated Django Admin Interface">
+      <created>1580049194027</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1580049194027</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Changed Upvote/Downvote Mechanism to use AJAX">
+      <created>1580501601893</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1580501601893</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Merge branch 'upvote' of https://github.com/mnk343/Pre-Election-Portal into upvote&#10;&#10;# Conflicts:&#10;#&#9;PreElectionPortal/__pycache__/settings.cpython-36.pyc&#10;#&#9;PreElectionPortal/__pycache__/urls.cpython-36.pyc&#10;#&#9;portal/__pycache__/admin.cpython-36.pyc&#10;#&#9;portal/__pycache__/choices.cpython-36.pyc&#10;#&#9;portal/__pycache__/forms.cpython-36.pyc&#10;#&#9;portal/__pycache__/models.cpython-36.pyc&#10;#&#9;portal/__pycache__/urls.cpython-36.pyc&#10;#&#9;portal/__pycache__/views.cpython-36.pyc&#10;#&#9;portal/migrations/__pycache__/0001_initial.cpython-36.pyc&#10;#&#9;portal/migrations/__pycache__/__init__.cpython-36.pyc&#10;#&#9;portal/templatetags/__pycache__/__init__.cpython-36.pyc&#10;#&#9;portal/templatetags/__pycache__/custom_tags.cpython-36.pyc">
+      <created>1581160619113</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1581160619113</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Initial Commit and added models" />
+    <MESSAGE value="Updated Django Admin Interface" />
+    <MESSAGE value="Changed Upvote/Downvote Mechanism to use AJAX" />
+    <MESSAGE value="Merge branch 'upvote' of https://github.com/mnk343/Pre-Election-Portal into upvote&#10;&#10;# Conflicts:&#10;#&#9;PreElectionPortal/__pycache__/settings.cpython-36.pyc&#10;#&#9;PreElectionPortal/__pycache__/urls.cpython-36.pyc&#10;#&#9;portal/__pycache__/admin.cpython-36.pyc&#10;#&#9;portal/__pycache__/choices.cpython-36.pyc&#10;#&#9;portal/__pycache__/forms.cpython-36.pyc&#10;#&#9;portal/__pycache__/models.cpython-36.pyc&#10;#&#9;portal/__pycache__/urls.cpython-36.pyc&#10;#&#9;portal/__pycache__/views.cpython-36.pyc&#10;#&#9;portal/migrations/__pycache__/0001_initial.cpython-36.pyc&#10;#&#9;portal/migrations/__pycache__/__init__.cpython-36.pyc&#10;#&#9;portal/templatetags/__pycache__/__init__.cpython-36.pyc&#10;#&#9;portal/templatetags/__pycache__/custom_tags.cpython-36.pyc" />
+    <MESSAGE value="added inline comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="added inline comments" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="550" y="180" width="800" height="683" key="#Deployment" timestamp="1579801401191">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="550" y="180" width="800" height="683" key="#Deployment/0.0.1920.1032@0.0.1920.1032" timestamp="1579801401191" />
+    <state x="555" y="177" width="800" height="687" key="#Inspections" timestamp="1580507590774">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="555" y="177" width="800" height="687" key="#Inspections/0.0.1920.1032@0.0.1920.1032" timestamp="1580507590774" />
+    <state x="555" y="177" width="800" height="687" key="#Intentions" timestamp="1580507602959">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="555" y="177" width="800" height="687" key="#Intentions/0.0.1920.1032@0.0.1920.1032" timestamp="1580507602959" />
+    <state x="629" y="114" width="652" height="813" key="#PreElectionPortal" timestamp="1581197257299">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="629" y="114" width="652" height="813" key="#PreElectionPortal/0.0.1920.1032@0.0.1920.1032" timestamp="1581197257299" />
+    <state x="418" y="174" width="873" height="687" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581197985509">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="418" y="174" width="873" height="687" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1581197985509" />
+    <state x="693" y="265" width="524" height="512" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581159732022">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="693" y="265" width="524" height="512" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1581159732022" />
+    <state x="525" y="114" width="860" height="809" key="CommitChangelistDialog2" timestamp="1581198317730">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="525" y="114" width="860" height="809" key="CommitChangelistDialog2/0.0.1920.1032@0.0.1920.1032" timestamp="1581198317730" />
+    <state x="743" y="274" width="424" height="490" key="FileChooserDialogImpl" timestamp="1581352166762">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="743" y="274" width="424" height="490" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1581352166762" />
+    <state width="1874" height="267" key="GridCell.Tab.0.bottom" timestamp="1581763483792">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1874" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1581763483792" />
+    <state width="1874" height="267" key="GridCell.Tab.0.center" timestamp="1581763483791">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1874" height="267" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1581763483791" />
+    <state width="1874" height="267" key="GridCell.Tab.0.left" timestamp="1581763483790">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1874" height="267" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1581763483790" />
+    <state width="1874" height="267" key="GridCell.Tab.0.right" timestamp="1581763483792">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1874" height="267" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1581763483792" />
+    <state x="449" y="151" width="1022" height="740" key="SettingsEditor" timestamp="1581761250141">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="449" y="151" width="1022" height="740" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1581761250141" />
+    <state x="100" y="100" width="1720" height="832" key="ShowDiffWithBranchDialog" timestamp="1581197655882">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="100" y="100" width="1720" height="832" key="ShowDiffWithBranchDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1581197655882" />
+    <state x="555" y="252" width="800" height="534" key="Vcs.Push.Dialog.v2" timestamp="1581198235227">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="555" y="252" width="800" height="534" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1581198235227" />
+    <state x="616" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1581238791521">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="616" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1581238791521" />
+    <state x="608" y="82" width="704" height="867" key="find.popup" timestamp="1581196502327">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="608" y="82" width="704" height="867" key="find.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1581196502327" />
+    <state x="652" y="179" width="605" height="684" key="git4idea.branch.GitSmartOperationDialog" timestamp="1581197997263">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="652" y="179" width="605" height="684" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1581197997263" />
+    <state x="617" y="309" width="702" height="429" key="git4idea.merge.GitPullDialog" timestamp="1581160668339">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="617" y="309" width="702" height="429" key="git4idea.merge.GitPullDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1581160668339" />
+    <state x="707" y="383" width="506" height="271" key="git4idea.rebase.GitRebaseDialog" timestamp="1579801805034">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="707" y="383" width="506" height="271" key="git4idea.rebase.GitRebaseDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1579801805034" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1581762904238">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1581762904238" />
+    <state x="685" y="403" width="540" height="235" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1581197035258">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="685" y="403" width="540" height="235" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1581197035258" />
+  </component>
+</project>

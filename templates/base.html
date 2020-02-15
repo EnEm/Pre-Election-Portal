@@ -1,7 +1,9 @@
 <!Doctype html>
+{% load static %}
 <html lang="en">
     <head>
         {% block titleBlock %}
+            <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
         {% endblock %}
     </head>
     <body>

@@ -14,7 +14,9 @@ from .views import (
     DownvoteAPIToggleComment,
     ApproveAPIToggle,
     ApproveAPIToggleComment,
-    # SortQuestionsAPI,
+    DeleteQuestionAPIToggle,
+    DeleteCommentAPIToggle,
+    SortQuestionsAPI,
 )
 
 app_name = 'portal'
@@ -30,8 +32,10 @@ urlpatterns = [
     re_path('^(?P<pk>[0-9]+)/comment/$', comment_view, name='comment'),
     re_path('^api/(?P<pk>[0-9]+)/approve/$', ApproveAPIToggle.as_view(), name='api-approve'),
     re_path('^api/(?P<pk>[0-9]+)/approve-comment/$', ApproveAPIToggleComment.as_view(), name='api-approve-comment'),
+    re_path('^api/(?P<pk>[0-9]+)/delete-question/$', DeleteQuestionAPIToggle.as_view(), name='api-delete-question'),
+    re_path('^api/(?P<pk>[0-9]+)/delete-comment/$', DeleteCommentAPIToggle.as_view(), name='api-delete-comment'),
     re_path('^ajax/load-candidates/$', load_candidates, name='ajax-load-candidates'),
-    # re_path('^api/(?P<ordering>[\w]+)/$', SortQuestionsAPI.as_view(), name='api-sort'),
+    re_path('^api/sort/$', SortQuestionsAPI.as_view(), name='api-sort'),
     path('login/', user_login, name='login'),
     path('logout/', user_logout, name='logout'),
 ]

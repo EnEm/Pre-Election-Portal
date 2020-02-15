@@ -2,13 +2,14 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, get_object_or_404, reverse
+from django.template.loader import render_to_string
+from django.utils import timezone
+from django.db.models import Q
 from rest_framework import authentication, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from django.utils import timezone
 from .forms import AskForm, AnswerForm, CommentForm
 from .models import Question, Candidate, Comment
-from django.db.models import Q
 from . import choices
 
 
@@ -192,6 +193,77 @@ class ApproveAPIToggleComment(APIView):
             'updated': updated,
         }
         return Response(data)
+
+
+class DeleteQuestionAPIToggle(APIView):
+    authentication_classes = [authentication.SessionAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, pk=None, format=None):
+        obj = get_object_or_404(Question, pk=pk)
+        user = self.request.user
+        updated = False
+        if user.is_authenticated:
+            if user.junta.role == choices.ELECTION_COMMISSION:
+                updated = True
+                for comment in obj.comments.all():
+                    comment.delete()
+                obj.delete()
+        data = {
+            'updated': updated,
+        }
+        return Response(data)
+
+
+class DeleteCommentAPIToggle(APIView):
+    authentication_classes = [authentication.SessionAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, pk=None, format=None):
+        obj = get_object_or_404(Comment, pk=pk)
+        user = self.request.user
+        updated = False
+        if user.is_authenticated:
+            if user.junta.role == choices.ELECTION_COMMISSION:
+                updated = True
+                obj.delete()
+        data = {
+            'updated': updated,
+        }
+        return Response(data)
+
+
+class SortQuestionsAPI(APIView):
+
+    def get(self, request, *args, **kwargs):
+        data = {}
+        # qs = self.get_queryset()
+        sort_by = request.GET.get('sort_by')
+        sort_on = request.GET.get('sort_on')
+        data[sort_by] = sort_by
+        data[sort_on] = sort_on
+        if sort_on == "my-questions":
+            user = request.user.junta.candidate.all()[0]
+            print("candidate =", user)
+            questions = Question.objects.filter(asked_to=user).order_by(sort_by)
+        else:
+            user = request.user.junta
+            if user.role == "Candidate":
+                questions = Question.objects.filter(~Q(asked_to=request.user.junta.candidate.all()[0])).filter(approved=True).order_by(sort_by)
+            else:
+                questions = Question.objects.filter(approved=True).order_by(sort_by)
+
+        data['html_questions'] = render_to_string(
+            template_name='questions.html',
+            context={'questions': questions,
+                     'user': request.user.junta,
+                     'question_type': sort_on,
+                     'comment_form': CommentForm()},
+            request=request
+        )
+
+        return Response(data)
+
 
 def index(request):
     question_form = AskForm()
