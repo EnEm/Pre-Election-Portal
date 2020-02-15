@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <script  src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js">  </script>
+    <title>Update Statistics</title>
+     <link href="//netdna.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3fb32c2b41.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
+
+    
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-static-top navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="{% url 'portal:index' %}">Pre Election Portal</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav ml-auto">
+              {% if is_authenticated %}
+                  <li class="nav-item"><a class="nav-link" href="{% url 'portal:logout' %}">Logout</a></li>
+              {% else %}
+                  <li class="nav-item"><a class="nav-link" href="{% url 'portal:login' %}">Login</a></li>
+              {% endif %}
+          </ul>
+      </div>
+  </nav>
+
+  {% block bodyBlock %}
+  {% endblock %}
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>
+      $(document).ready(function () {
+          {% block jqueryBlock %}
+          {% endblock %}
+      })
+  </script>
+    <div class="container" style="background-color:lightblue;margin: 50px auto;width:60%;" display: block;>
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <h2 class="mt-1">Update Voting Statistics</h2>
+          <hr class="mt-0 mb-2">
+          {% block content %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

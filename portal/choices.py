@@ -1,0 +1,44 @@
+SELECT = "---------"
+
+VOTER = "Voter"
+CANDIDATE = "Candidate"
+ELECTION_COMMISSION = "Election Commission"
+
+ROLES_CHOICES = (
+    (VOTER, VOTER),
+    (CANDIDATE, CANDIDATE),
+    (ELECTION_COMMISSION, ELECTION_COMMISSION),
+)
+
+PG_SENATOR = "PG Senator"
+UG_SENATOR = "UG Senator"
+GENERAL_SECRETARY_TECHNICAL = "General Secretary Technical"
+GENERAL_SECRETARY_WELFARE = "General Secretary Welfare"
+GENERAL_SECRETARY_SPORTS = "General Secretary Sports"
+GENERAL_SECRETARY_CULTURAL = "General Secretary Cultural"
+GENERAL_SECRETARY_HAB = "General Secretary HAB"
+VP = "Vice President"
+
+POSITION_CHOICES = (
+    (GENERAL_SECRETARY_CULTURAL, GENERAL_SECRETARY_CULTURAL),
+    (GENERAL_SECRETARY_HAB, GENERAL_SECRETARY_HAB),
+    (GENERAL_SECRETARY_SPORTS, GENERAL_SECRETARY_SPORTS),
+    (GENERAL_SECRETARY_TECHNICAL, GENERAL_SECRETARY_TECHNICAL),
+    (GENERAL_SECRETARY_WELFARE, GENERAL_SECRETARY_WELFARE),
+    (PG_SENATOR, PG_SENATOR),
+    (UG_SENATOR, UG_SENATOR),
+    (VP, VP),
+)
+
+FORM_POSITION_CHOICES = POSITION_CHOICES + ((SELECT, SELECT),)
+
+Hostel_Name=(
+    ('brahmaputra','Brahmaputra'),
+    ('dihing','Dihing'),
+    ('manas','Manas'),
+    ('lohit','Lohit'),
+    ('barak','Barak'),
+
+)
+
+Hostel_Names = Hostel_Name +  ((SELECT, SELECT),)
