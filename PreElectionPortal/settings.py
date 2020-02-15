@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portal.apps.PortalConfig',
+    'stats.apps.StatsConfig',
     'django_summernote',
     'imagekit',
     'crispy_forms',
