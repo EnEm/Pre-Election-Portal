@@ -12,6 +12,8 @@ def chart(request):
       data = {}
       data['y'] = 100*key.no_of_votes/key.total_residents
       data['label'] = key.name
+      data['count'] = key.no_of_votes
+      data['residents'] = key.total_residents
       dataSource['data'].append(data)
 
     dicti = {'output': dataSource['data']}
