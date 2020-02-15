@@ -255,7 +255,10 @@ class SortQuestionsAPI(APIView):
 
         data['html_questions'] = render_to_string(
             template_name='questions.html',
-            context={'questions': questions, 'user': request.user.junta},
+            context={'questions': questions,
+                     'user': request.user.junta,
+                     'question_type': sort_on,
+                     'comment_form': CommentForm()},
             request=request
         )
 

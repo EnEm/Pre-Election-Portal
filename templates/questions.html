@@ -17,6 +17,15 @@
                     {{ question.answer|safe }}
                 </div>
             {% endif %}
+
+            {% ifequal question_type "my-questions" %}
+                {% if question.answered %}
+                    <a class="btn btn-primary" href="{% url 'portal:answer' question.pk %}">Update</a>
+                {% else %}
+                    <a class="btn btn-primary" href="{% url 'portal:answer' question.pk %}">Answer</a>
+                {% endif %}
+            {% endifequal %}
+
             <span class="vote-tray">
                 {% if user in question.upvotes.all %}
                     <span><a class="btn-upvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_upvote_api_url }}" ><i style="color: blue" class="far fa-thumbs-up"></i></a></span>
