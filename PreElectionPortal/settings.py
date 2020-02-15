@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'imagekit',
     'crispy_forms',
     'rest_framework',
+    'stats.apps.StatsConfig'
 ]
 
 MIDDLEWARE = [
