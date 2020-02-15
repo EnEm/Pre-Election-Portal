@@ -31,3 +31,14 @@ POSITION_CHOICES = (
 )
 
 FORM_POSITION_CHOICES = POSITION_CHOICES + ((SELECT, SELECT),)
+
+Hostel_Name=(
+    ('brahmaputra','Brahmaputra'),
+    ('dihing','Dihing'),
+    ('manas','Manas'),
+    ('lohit','Lohit'),
+    ('barak','Barak'),
+
+)
+
+Hostel_Names = Hostel_Name +  ((SELECT, SELECT),)

@@ -1,8 +1,9 @@
 from django.urls import path, re_path
 
-from .views import graph
+from . import views
 app_name='stats'
 
 urlpatterns = [
-    path('',graph,name='graph')
+    path('',views.chart,name='chart'),
+    path('update/',views.update,name='update'),
 ]

@@ -1,6 +1,8 @@
 from django import forms
 from django_summernote.widgets import SummernoteWidget
-from .models import Question, Candidate, Comment
+from .models import Question, Candidate, Comment, Hostel
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit
 from . import choices
 
 
@@ -38,3 +40,16 @@ class CommentForm(forms.ModelForm):
 
 class AnswerForm(forms.Form):
     answer = forms.CharField(widget=SummernoteWidget)
+
+class UpdateStatsForm(forms.ModelForm):
+    # name = forms.ChoiceField(choices=choices.Hostel_Names, initial=choices.SELECT)
+    
+    class Meta:
+        model = Hostel
+        fields = ('name','no_of_votes','total_residents',)
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Save'))

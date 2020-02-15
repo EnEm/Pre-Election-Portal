@@ -29,10 +29,9 @@
         {% block bodyBlock %}
         <br>
         <br>
-        <br><br>
         <br>
         <br>
-        <div id="chartContainer" style= "height: 350px; width: 100%;align-self:center" ></div>
+        <div id="chartContainer" style= "height: 350px; width: 85%;margin: auto auto;" ></div>
         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
         <link href="//netdna.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -65,82 +64,4 @@
         }
         </script>
         
-        
-             <!-- <div class="container my-4">
-
-
-                <hr class="my-4">
-
-                <div>
-                <canvas id="myChart" style="max-width: 1000px;"></canvas>
-                </div>
-
-            </div>
-
-
-
-            <script>
-                var l=[];
-                var lab=[];
-                {% for hh in hostels %}
-                l.push(({{hh.no_of_votes}}/{{hh.total_residents}})*100);
-                lab.push('{{hh.name}}');
-             
-                {% endfor %}
-               
-                var ctxP = document.getElementById("myChart").getContext('2d');
-                var mybarChart = new Chart(ctxP, {
-                type: 'bar',
-                data: {
-                    labels: lab,
-                    datasets: [{
-                    label:"Votes in %",
-                    data: l,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(46, 240, 58, 0.2)',
-                        'rgba(15, 0, 115, 0.2)',
-                        'rgba(0, 255, 200, 0.2)',
-                        'rgba(235, 73, 143, 0.2)',
-                        'rgba(232, 120, 255, 0.2)',
-                        'rgba(126, 96, 191, 0.2)',
-                        'rgba(87, 247, 113, 0.2)',
-                        'rgba(142, 245, 69, 0.2)',
-                        'rgba(245, 125, 69, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(46, 240, 58, 1)',
-                        'rgba(15, 0, 115, 1)',
-                        'rgba(0, 255, 200, 1)',
-                        'rgba(235, 73, 143, 1)',
-                        'rgba(232, 120, 255, 1)',
-                        'rgba(126, 96, 191, 1)',
-                        'rgba(87, 247, 113, 1)',
-                        'rgba(142, 245, 69, 1)',
-                        'rgba(245, 125, 69, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    
-                   }]
-                },
-                 options: {
-				scales: {
-				yAxes: [{
-				ticks: {
-				beginAtZero: true
-				}
-				}]
-				}
-				}
-				});
-            </script> -->
         {% endblock %}
