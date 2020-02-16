@@ -34,6 +34,11 @@
 <br>
 <div id="chartContainer" style="height: 350px; width: 90%;margin: auto auto;"></div>
 <br><br><br>
+{% if user.is_superuser %}
+        <div class="col text-center">
+            <a class="btn btn-primary mt-3 mb-3 ml-90" href="{% url 'stats:createhostel' %}" role="button">Create</a>
+        </div>
+        {% endif %}
 <div class='container' style="width: 60%; margin: auto auto; background-color:azure;">
     <table class="table table-striped">
         <thead class="thead-dark">
@@ -41,6 +46,10 @@
                 <th scope="col">Hostel</th>
                 <th scope="col">Total Residents</th>
                 <th scope="col">Voted</th>
+                {% if user.is_superuser %}
+                <th scope="col">Delete entry</th>
+                <th scope="col">Update entry</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -49,6 +58,10 @@
                 <th scope="row">{{ hh.label }}</th>
                 <td>{{ hh.residents}}</td>
                 <td>{{ hh.count }}</td>
+                {% if user.is_superuser %}
+                <td><a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'stats:deletehostel' hh.id %}" role="button">Delete</a></td>
+                <td><a class="btn btn-success btn-sm mt-1 mb-1" href="{% url 'stats:updatehostel' hh.id %}" role="button">Update</a></td>
+                {% endif %}
             </tr>
             {% endfor %}
         </tbody>
@@ -63,7 +76,7 @@
 
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
-            theme: "light1", // "light1", "light2", "dark1", "dark2"
+            theme: "dark2", // "light1", "light2", "dark1", "dark2"
             title: {
                 text: "Voting statistics Gymkhana Elections 2020"
             },

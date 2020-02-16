@@ -14,7 +14,7 @@
 
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav ml-auto">
-                    {% if is_authenticated %}
+                    {% if user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'portal:logout' %}">Logout</a></li>
                     {% else %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'portal:login' %}">Login</a></li>
