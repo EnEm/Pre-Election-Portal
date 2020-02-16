@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>PreElection Portal</title>
+
+  <!-- css -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/nivo-lightbox.css" rel="stylesheet" />
+  <link href="css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+  <link href="css/animations.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet">
+  <link href="color/default.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel = "icon" href ="swc.jpg" type = "image/x-icon"> 
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
+  <!-- <section class="hero" id="intro">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-right navicon">
+          <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center inner">
+          <div class="animatedParent">
+            <h1 class="animated fadeInDown" id="center1">Pre-Election Portal</h1>
+            <p class="animated fadeInUp" id="center2">Your one stop destination for all the informations regarding the upcoming election.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+          <a href="#about" class="learn-more-btn btn-scroll">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+  <!-- Navigation -->
+  <div id="navigation">
+    <nav class="navbar navbar-custom" role="navigation">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <div class="site-logo">
+              <a href="index.html" class="brand"><img id="logoiit" src="iitg.png"/></a>
+            </div>
+          </div>
+
+
+          <div class="col-md-10">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                                                <i class="fa fa-bars"></i>
+                                                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="menu">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="#about">Rules</a></li>
+                <li><a href="candidate.html">Candidates</a></li>
+                <li><a href="#">Statistics</a></li>
+
+                <li><a href="#">Login</a></li>
+              </ul>
+            </div>
+            <!-- /.Navbar-collapse -->
+
+          </div>
+        </div>
+      </div>
+      <!-- /.container -->
+    </nav>
+  </div>
+  <!-- /Navigation -->
+
+      <!-- adding filter css -->
+      <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+    
+     
+        body {
+          background-color :white;
+          padding: 0px;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        /* Center website */
+        .main {
+          max-width: 1000px;
+          margin: auto;
+        }
+        
+        h1 {
+          font-size: 50px;
+          word-break: break-all;
+        }
+        
+        .row {
+          margin: 10px -16px;
+        }
+        
+        /* Add padding BETWEEN each column */
+        .row,
+        .row > .column {
+          padding: 8px;
+        }
+        
+        /* Create four equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 25.00%;
+          display: none; /* Hide all elements by default */
+        }
+        
+        /* Clear floats after rows */ 
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        /* Content */
+        .content {
+          background-color:lightcyan;
+          padding: 0px;
+          
+        }
+        
+        /* The "show" class is added to the filtered elements */
+        .show {
+          display: block;
+        }
+        
+        /* Style the buttons */
+        .btn1 {
+          border: none;
+          outline: none;
+          padding: 12px 16px;
+          background-color: white;
+          cursor: pointer;
+        }
+        
+        .btn1:hover {
+          background-color: #ddd;
+        }
+        
+        .btn1.active {
+          background-color: #666;
+          color: white;
+        }
+        /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 900px) {
+      .column {
+        width: 50%;
+      }
+    }
+    
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+      }
+    }
+    </style>
+
+
+
+<div id="myBtnContainer" >
+    
+    <button class="btn1 active" onclick="filterSelection('all')"> &nbsp;&nbsp;&nbsp;&nbsp;<strong>Show all</strong>&nbsp;&nbsp; &nbsp;&nbsp;</button>
+    <button class="btn1" onclick="filterSelection('vp')"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>VP</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+    <button class="btn1" onclick="filterSelection('technical')"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Technical</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+   <button class="btn1" onclick="filterSelection('cultural')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Cultural</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+   <button class="btn1" onclick="filterSelection('sports')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Sports</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+   <button class="btn1" onclick="filterSelection('vp')"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>SAIL</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+   <button class="btn1" onclick="filterSelection('welfare')"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Welfare</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+   <button class="btn1" onclick="filterSelection('hab')"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>HAB</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+   <button class="btn1" onclick="filterSelection('ugsenator')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong> UG Senator</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+
+   <button class="btn1" onclick="filterSelection('pgsenator')">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<strong>PG Senator</strong>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+ </div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="container">
+                    <div class="row">
+                        <div class="heading-title text-center">
+                            <h3 class="text-uppercase">Candidates </h3>
+                            <p class="p-top-30 half-txt">Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend. </p>
+                        </div>
+
+                        <div class="column vp">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="profile.jpg" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <h4>Vatsal Sinha</h4>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="agendas.html">Know More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5>Vatsal Sinha</h5>
+                                <span>Contesting For</span>
+                                <br>
+                                <span>General Secretary Tech Board</span>
+                            </div>
+                        </div>
+                        <div class="column vp">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="profile.jpg" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <h4>Vatsal Sinha</h4>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="agendas.html">Know More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5>Vatsal Sinha</h5>
+                                <span>Contesting For</span>
+                                <br>
+                                <span>General Secretary Tech Board</span>
+                            </div>
+                        </div>
+                        <div class="column vp">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="profile.jpg" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <h4>Vatsal Sinha</h4>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="agendas.html">Know More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5>Vatsal Sinha</h5>
+                                <span>Contesting For</span>
+                                <br>
+                                <span>General Secretary Tech Board</span>
+                            </div>
+                        </div>
+                    <div class="column technical">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="profile.jpg" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <h4>Vatsal Sinha</h4>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="agendas.html">Know More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5>Vatsal Sinha</h5>
+                                <span>Contesting For</span>
+                                <br>
+                                <span>General Secretary Tech Board</span>
+                            </div>
+                        </div>
+                        <div class="column sports">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="profile.jpg" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <h4>Vatsal Sinha</h4>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="agendas.html">Know More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5>Vatsal Sinha</h5>
+                                <span>Contesting For</span>
+                                <br>
+                                <span>General Secretary Tech Board</span>
+                            </div>
+                        </div>
+                        <div class="column sports">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="profile.jpg" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <h4>Vatsal Sinha</h4>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="agendas.html">Know More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5>Vatsal Sinha</h5>
+                                <span>Contesting For</span>
+                                <br>
+                                <span>General Secretary Tech Board</span>
+                            </div>
+                        </div>
+                        <div class="column vp">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="profile.jpg" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <h4>Vatsal Sinha</h4>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="agendas.html">Know More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5>Vatsal Sinha</h5>
+                                <span>Contesting For</span>
+                                <br>
+                                <span>General Secretary Tech Board</span>
+                            </div>
+                        </div>
+                        <div class="column vp">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="profile.jpg" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <h4>Vatsal Sinha</h4>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="agendas.html">Know More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5>Vatsal Sinha</h5>
+                                <span>Contesting For</span>
+                                <br>
+                                <span>General Secretary Tech Board</span>
+                            </div>
+                        </div>
+                        <div class="column sports">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="profile.jpg" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <h4>Vatsal Sinha</h4>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="agendas.html">Know More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5>Vatsal Sinha</h5>
+                                <span>Contesting For</span>
+                                <br>
+                                <span>General Secretary Tech Board</span>
+                            </div>
+                        </div>
+                        <div class="column sports">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="profile.jpg" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <h4>Vatsal Sinha</h4>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="agendas.html">Know More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5>Vatsal Sinha</h5>
+                                <span>Contesting For</span>
+                                <br>
+                                <span>General Secretary Tech Board</span>
+                            </div>
+                        </div>
+                      </div>
+</div>
+
+<!-- END GRID -->
+
+
+<!-- END MAIN -->
+
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+  
+
+
+   <!--Footer   -->
+    <footer>
+        <div class="container">
+          <div class="row animate-box">
+            <div class="col-md-6">
+              <ul class="footer-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="candidate.html">Candidates</a></li>
+                <li><a href="#">Statistics</a></li>
+              </ul>
+            </div>
+            <div class="col-md-6 text-right copyright">
+              &copy;Copyright - SWC. All Rights Reserved.
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/jquery.appear.js"></script>
+    <script src="js/stellar.js"></script>
+    <script src="js/nivo-lightbox.min.js"></script>
+
+    <script src="js/custom.js"></script>
+    <script src="js/css3-animate-it.js"></script>
+    <script src="contactform/contactform.js"></script>
+       <script src="js/myscripts.js"></script>
+
+
+</body>
+</html>

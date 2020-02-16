@@ -178,6 +178,38 @@ blockquote strong {
 	margin-top: 20px;
 }
 
+/* -----------Card ----------*/
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 300px;
+	margin: auto;
+	text-align: center;
+	font-family: arial;
+  }
+  
+  .price {
+	color: grey;
+	font-size: 22px;
+  }
+  
+  .card button {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	color: white;
+	background-color: #000;
+	text-align: center;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
+  }
+  
+  .card button:hover {
+	opacity: 0.7;
+  }
+
+
+  /* ----------- */
 
 /* ------- Navigation ------------ */
 #navigation {
@@ -192,7 +224,6 @@ blockquote strong {
 
 .navbar {
     margin-bottom: 0;
-
 }
 
 .navbar-brand {
@@ -594,7 +625,25 @@ hr.bold {
 --- About
 ============================ */
 
+/* -----------------------
+	------------------
+	CARD-----------*/
 
+	.card {
+		 /* Add shadows to create the "card" effect  */
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		transition: 0.3s;
+	  }
+	  
+	  /* On mouse-over, add a deeper shadow */ 
+	  .card:hover {
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	  }
+	  
+	  /* Add some padding inside the card container */ 
+	  .container {
+		padding: 2px 16px;
+	  }
 
 
 /* ===========================
