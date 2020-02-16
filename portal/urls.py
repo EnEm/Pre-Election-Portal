@@ -17,6 +17,7 @@ from .views import (
     DeleteQuestionAPIToggle,
     DeleteCommentAPIToggle,
     SortQuestionsAPI,
+    candidate_detail_view,
 )
 
 app_name = 'portal'
@@ -38,4 +39,5 @@ urlpatterns = [
     re_path('^api/sort/$', SortQuestionsAPI.as_view(), name='api-sort'),
     path('login/', user_login, name='login'),
     path('logout/', user_logout, name='logout'),
+    re_path("^candidate/(?P<pk>[0-9]+)/$", candidate_detail_view, name='candidate-detail'),
 ]

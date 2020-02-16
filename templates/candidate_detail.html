@@ -1,0 +1,423 @@
+<!DOCTYPE HTML>
+{% load static %}
+{% load custom_tags %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_field %}
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Agendas</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/3fb32c2b41.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<!--navbar-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Modernizr JS -->
+
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="{% static 'js/respond.min.js' %}"></script>
+	<![endif]-->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<meta charset="UTF-8">
+	<meta name="description" content="Free Web tutorials">
+	<meta name="keywords" content="Election,Agendas,IITG,SWC">
+	<meta name="author" content="SWC">
+	<style>
+		#Heading1
+		{
+		  width: 100%;
+		  padding-bottom: 5px;
+		  padding-right: 5px;
+		  background-color: white;
+		  font-family: "Karla", Arial, sans-serif;
+		}
+
+		.flex-container {
+		  display: flex;
+		  flex-wrap: wrap;
+		  justify-content: space-between;
+		   flex-direction: row;
+		}
+
+		.flexbox > div {
+		  /*
+		    1/3  - 3 columns per row
+		    10px - spacing between columns
+		  */
+		  box-sizing: border-box;
+		  margin-bottom: 10px;
+		  outline: 1px dotted white;
+		  width: calc(1/3*100% - (1 - 1/3)*10px);
+		}
+
+		#logo1{
+		  max-width: 90px;
+		  max-height: 90px;
+		}
+		#head1{
+
+		  top: 18px;
+		  left: 10px;
+		}
+		.pad{
+			padding-top: 20px;
+		}
+		.topnav {
+		  overflow: hidden;
+		  background-color: #3498DB;
+		}
+
+		.topnav a {
+		  float: left;
+		  display: block;
+		  color: #f2f2f2;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		  font-size: 17px;
+		}
+
+		.topnav a:hover {
+		  background-color: #ddd;
+		  color: black;
+		}
+
+		.topnav a.active {
+		  background-color: #4CAF50;
+		  color: white;
+		}
+		.topnav .icon {
+		  display: none;
+		}
+		@media screen and (max-width: 600px) {
+		  .topnav a:not(:first-child) {display: none;}
+		  .topnav a.icon {
+		    float: right;
+		    display: block;
+		  }
+
+		}
+
+		@media screen and (max-width: 600px) {
+		  .topnav.responsive {position: relative;}
+		  .topnav.responsive .icon {
+		    position: absolute;
+		    right: 0;
+		    top: 0;
+		  }
+		  .topnav.responsive a {
+		    float: none;
+		    display: block;
+		    text-align: left;
+		  }
+		}
+		#ig
+		{border-radius:25px;
+			border:solid;
+			padding:0px;}
+		footer {
+    background-color: #404040;
+}
+
+footer {
+	text-align: center;
+	padding: 50px 0 30px ;
+
+}
+
+footer .copyright {
+	color: #f8f8f8;
+	font-size: 14px;
+}
+
+footer a.totop {
+	color: #fff;
+	margin-bottom: 30px;
+}
+footer a.totop:focus {
+	outline: 0;
+}
+
+
+
+/* menu */
+ul.footer-menu {
+	list-style: none;
+}
+
+ul.footer-menu li {
+	float: left;
+	margin: 0 0 0 10px;
+
+}
+
+ul.footer-menu li a {
+	color: #fff;
+	font-size: 16px;
+	padding-left: 9px;
+	line-height: 1.1em;
+}
+
+ul.footer-menu li:first-child a {
+	border-left: none;
+	padding-left: 0;
+}
+
+		</style>
+
+	</head>
+	<body >
+            <div class="flex-container animate-box" id="Heading1">
+	      <div id="logo1"><img src="{% static 'images/iitg.png' %}" alt="logo" id="logo1" /></div>
+            <div id="head1"><h1 class="display-4" id="head1"><div class="pad">Pre-Election Portal</div></h1></div>
+	    </div>
+	    <div class="topnav animate-box" id="myTopnav">
+		  <a href="#home"><i class="fa fa-fw fa-home"></i>Home</a>
+		  <a href="{% url 'stats:graph' %}"><i class="fa fa-bar-chart"></i>Statistics</a>
+		  <a href="#login"><i class="fa fa-fw fa-user"></i>Login</a>
+		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		    <i class="fa fa-bars"></i>
+		  </a>
+		</div>
+
+        {% if candidate %}
+		<div id="colorlib-about">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 animate-box" align="center">
+						<div id="ig">
+                            {% if candidate.user.profile_pic %}
+                                <img  src="{{ candidate.user.profile_pic.url }}" alt="candidate" width="80%" >
+                            {% else %}
+                                <img  src="{% static 'images/profile.jpg' %}" alt="candidate" width="80%" >
+                            {% endif %}
+						</div>
+					</div>
+					<div class="col-md-6 col-md-push-1 animate-box">
+						<div class="about-desc">
+							<div class="desc">
+								<div class="rotate">
+									<h2 class="heading">About</h2>
+								</div>
+								<h2>{{ candidate.user.user.first_name }} {{ candidate.user.user.last_name }}</h2>
+								<p><strong>Email:</strong>{{ candidate.user.user.email }}</p>
+								<p><strong>Contesting For:</strong>{{ candidate.position }}</p>
+								<p><strong>Bio:</strong>{{ candidate.bio | safe }}</p>
+      							<br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="container">
+				<div class="row animate-box">
+					<h2 align="center" >Here's What I Plan to DO!</h2>
+				</div>
+				<div class="col-md-15 animate-box ">
+						<div class="about-desc">
+							<div class="desc">
+								<div class="col-md-15">
+									<div class="rotate">
+											<h2 class="heading">Key points of Agenda</h2>
+									</div>
+                                    {{ candidate.key_points | safe }}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+                <div class="container">
+                    <div class="row animate-box">
+                        <h2 align="center" >Ask Me Anything!</h2>
+                    </div>
+
+                    <div class="card border-dark m-3">
+        <div class="card-header border-dark">
+            <strong>Ask Me Anything</strong>
+        </div>
+        <form id="question-form" class="form-group" action="{% url 'portal:index' %}" method="post" data-href="{% url 'portal:ajax-load-candidates' %}">
+            <div class="card-body">
+                {% if question_form %}
+                    {% csrf_token %}
+                    {{ question_form.question | as_crispy_field }}
+                    <div class="row">
+                        <div class="col-6">
+                            {{ question_form.position | as_crispy_field }}
+                        </div>
+                        <div class="col-6">
+                            {{ question_form.asked_to | as_crispy_field }}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="card-footer">
+                <input class="btn btn-primary btn-rounded" type="submit" name="Ask" value="Ask">
+            </div>
+        </form>
+    </div>
+
+                    <div class="col-md-15 animate-box ">
+                        {% for question in questions %}
+                            <div class="card border-dark m-3">
+                                <div class="card-header">
+                                    <strong>{{ question.question }}</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        <div class="text-muted">
+                                            <strong>Asked to {{ question.asked_to }}</strong>
+                                        </div>
+                                        <p><small class="text-muted">Asked by {{ question.asked_by }} on {{ question.asked_on }}</small></p>
+                                    </div>
+                                    {% if question.answered %}
+                                        <div class="card-text">
+                                            {{ question.answer|safe }}
+                                        </div>
+                                    {% endif %}
+
+                                    {% ifequal question_type "my-questions" %}
+                                        {% if question.answered %}
+                                            <a class="btn btn-primary" href="{% url 'portal:answer' question.pk %}">Update</a>
+                                        {% else %}
+                                            <a class="btn btn-primary" href="{% url 'portal:answer' question.pk %}">Answer</a>
+                                        {% endif %}
+                                    {% endifequal %}
+
+                                    <span class="vote-tray">
+                                        {% if user in question.upvotes.all %}
+                                            <span><a class="btn-upvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_upvote_api_url }}" ><i style="color: blue" class="far fa-thumbs-up"></i></a></span>
+                                        {% else %}
+                                            <span><a class="btn-upvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_upvote_api_url }}" ><i class="far fa-thumbs-up"></i></a></span>
+                                        {% endif %}
+                                        <span class="text-vote">{{ question.upvotes.count }}</span>
+                                    </span>
+                                    <span class="toggle-comment"><i class="fas fa-comment"></i></span>
+
+                                    <div class="comments" style="display: none">
+                                        {% if comment_form %}
+                                            <form method="post" action="{% url 'portal:comment' question.pk %}">
+                                                {% csrf_token %}
+                                                {{ comment_form.as_p }}
+                        {#                                <button type="submit">Submit</button>#}
+                                            </form>
+                                        {% endif %}
+                                        {% if question.comments.count != 0%}
+                                            <div class="ml-5">
+                                                <br>
+                                                {% for comment in question.comments.all  %}
+                                                    {% if comment.approved %}
+                                                        <strong><p>{{ comment.comment_by }}</p></strong>
+                                                        <p><i>{{ comment.comment|safe }}</i></p>
+
+                                                        <span class="vote-tray">
+                                                            {% if user in comment.upvotes.all %}
+                                                                <span><a class="btn-upvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_upvote_api_url }}" ><i style="color: blue" class="far fa-thumbs-up"></i></a></span>
+                                                            {% else %}
+                                                                <span><a class="btn-upvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_upvote_api_url }}" ><i class="far fa-thumbs-up"></i></a></span>
+                                                            {% endif %}
+                                                            <span class="text-vote">{{ comment.upvotes.count|subtract:comment.downvotes.count }}</span>
+                                                            {% if user in comment.downvotes.all %}
+                                                                <span><a class="btn-downvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_downvote_api_url }}"><i style="color: red" class="far fa-thumbs-down"></i></a></span>
+                                                            {% else %}
+                                                                <span><a class="btn-downvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_downvote_api_url }}"><i class="far fa-thumbs-down"></i></a></span>
+                                                            {% endif %}
+                                                        </span>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+				</div>
+            </div>
+        {% else %}
+            Candidate Not Found
+        {% endif %}
+
+	<footer>
+		 <div class="container">
+	      <div class="row">
+	        <div class="col-md-6">
+	          <ul class="footer-menu">
+	            <li><a href="#">Home</a></li>
+	            <li><a href="#">Candidates</a></li>
+	            <li><a href="{% url 'stats:graph' %}">Statistics</a></li>
+	          </ul>
+	        </div>
+	        <div class="col-md-6 text-right copyright">
+	          &copy;Copyright - SWC. All Rights Reserved.
+	        </div>
+	      </div>
+	    </div>
+	</footer>
+
+	</div>
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+
+	<!-- Magnific Popup -->
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'js/magnific-popup-options.js' %}"></script>
+
+	<!-- Main JS (Do not remove) -->
+	<script src="{% static 'js/main.js' %}"></script>
+	<script>
+		function myFunction() {
+		  var x = document.getElementById("myTopnav");
+		  if (x.className === "topnav" ) {
+		    x.className += " responsive";
+		  }
+		  else if (x.className === "log" ) {
+		    x.className += " responsive";
+		  }
+		  else {
+		    x.className = "topnav";
+		  }
+		}
+	</script>
+
+	</body>
+</html>
+

@@ -13,6 +13,21 @@ from .models import Question, Candidate, Comment
 from . import choices
 
 
+def candidate_detail_view(request, pk):
+    try:
+        candidate = Candidate.objects.get(id=pk)
+        d = {
+            'candidate': candidate,
+            'comment_form': CommentForm(),
+            'question_form': AskForm(),
+            'questions': Question.objects.filter(asked_to=candidate).filter(approved=True).order_by('-asked_on')
+        }
+        print(d)
+    except:
+        d = {'candidate': None}
+    return render(request, 'candidate_detail.html', d)
+
+
 class UpvoteAPIToggle(APIView):
     authentication_classes = [authentication.SessionAuthentication]
     permission_classes = [permissions.IsAuthenticated]
@@ -245,7 +260,7 @@ class SortQuestionsAPI(APIView):
         if sort_on == "my-questions":
             user = request.user.junta.candidate.all()[0]
             print("candidate =", user)
-            questions = Question.objects.filter(asked_to=user).order_by(sort_by)
+            questions = Question.objects.filter(asked_to=user).filter(approved=True).order_by(sort_by)
         else:
             user = request.user.junta
             if user.role == "Candidate":

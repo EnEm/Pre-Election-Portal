@@ -1,2 +1,4 @@
-venv
-portal/migrations
+venv/*
+portal/__pycache__
+PreElectionPortal/__pycache__/
+portal/migrations/
