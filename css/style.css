@@ -30,7 +30,7 @@ body {
     font-family: 'Ek Mukta', sans-serif;
 	font-weight: 300;
     color: #666;
-    background-color: #fff;
+    background-color: rgb(161, 154, 179);
 	font-size: 16px;
     line-height: 1.6em;
 	font-weight: 400;
@@ -1111,4 +1111,95 @@ a.btn:focus{
 
 section {
 	overflow: hidden !important;
+}
+
+
+    /* * {
+      box-sizing: border-box;
+    }
+     */
+
+ 
+    body {
+      background-color :white;
+      padding: 0px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    /* Center website */
+    .main {
+      max-width: 1000px;
+      margin: auto;
+    }
+    
+    h1 {
+      font-size: 50px;
+      word-break: break-all;
+    }
+    
+    .row {
+      margin: 10px -16px;
+    }
+    
+    /* Add padding BETWEEN each column */
+    .row,
+    .row > .column {
+      padding: 8px;
+    }
+    
+    /* Create four equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 25.00%;
+      display: none; /* Hide all elements by default */
+    }
+    
+    /* Clear floats after rows */ 
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Content */
+    .content {
+      background-color:lightcyan;
+      padding: 0px;
+      
+    }
+    
+    /* The "show" class is added to the filtered elements */
+    .show {
+      display: block;
+    }
+    
+    /* Style the buttons */
+    .btn1 {
+      border: none;
+      outline: none;
+      padding: 17px 45px;
+      background-color: rgb(219, 226, 219);
+      cursor: pointer;
+    }
+    
+    .btn1:hover {
+      background-color: #ddd;
+    }
+    
+    .btn1.active {
+      background-color: #666;
+      color: white;
+    }
+    /* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
 }
