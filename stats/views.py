@@ -3,7 +3,8 @@ from portal.models import Hostel
 
 
 def chart(request):
-    context={
-        'hostels' : Hostel.objects.all()
+    context = {
+        'hostels': Hostel.objects.all(),
+        'nbar': 'stats'
     }
-    return render(request,'stats/111.html',context)
+    return render(request, 'stats/111.html', context)

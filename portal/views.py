@@ -25,6 +25,7 @@ def candidate_detail_view(request, pk):
         print(d)
     except:
         d = {'candidate': None}
+    d['nbar'] = 'candidates'
     return render(request, 'candidate_detail.html', d)
 
 
@@ -273,7 +274,7 @@ class SortQuestionsAPI(APIView):
 def index(request):
     question_form = AskForm()
     comment_form = CommentForm()
-    d = {'question_form': question_form, 'comment_form': comment_form}
+    d = {'question_form': question_form, 'comment_form': comment_form, 'nbar': 'home'}
     if request.session['user']['is_authenticated']:
         d['is_authenticated'] = True
         user = User.objects.get(email=request.session['user']['email'])
