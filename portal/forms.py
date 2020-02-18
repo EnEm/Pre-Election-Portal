@@ -1,6 +1,4 @@
 from django import forms
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit
 from django_summernote.widgets import SummernoteWidget
 from .models import Question, Candidate, Comment, Hostel
 from crispy_forms.helper import FormHelper
@@ -9,25 +7,11 @@ from . import choices
 
 
 class AskForm(forms.ModelForm):
-    position = forms.ChoiceField(choices=choices.FORM_POSITION_CHOICES, initial=choices.SELECT, widget=forms.Select(
-        attrs={'class': 'custom-select'}
-    ))
+    position = forms.ChoiceField(choices=choices.FORM_POSITION_CHOICES, initial=choices.SELECT)
 
     class Meta:
         model = Question
         fields = ('question', 'position', 'asked_to')
-        widgets = {
-            'asked_to': forms.Select(
-                attrs={
-                    'class': 'custom-select'
-                }
-            ),
-            'question': forms.TextInput(
-                attrs={
-                    'class': 'form-control'
-                }
-            )
-        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

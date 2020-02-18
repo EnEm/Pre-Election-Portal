@@ -1,0 +1,6 @@
+<option value="">---------</option>
+{% if candidates %}
+    {% for candidate in candidates %}
+        <option value="{{ candidate.pk }}">{{ candidate }}</option>
+    {% endfor %}
+{% endif %}

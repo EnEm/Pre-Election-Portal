@@ -1,0 +1,7 @@
+pillow
+Django
+django_summernote
+django-imagekit
+psycopg2
+django-crispy-forms
+djangorestframework

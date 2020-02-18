@@ -133,13 +133,3 @@ body {
     color: #777;
   }
 }
-
-.toggle-comment {
-  color: #777777;
-}
-
-.toggle-comment:hover,
-.btn-upvote:hover,
-.btn-downvote:hover {
-  cursor: pointer;
-}
