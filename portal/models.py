@@ -1,9 +1,18 @@
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 from django.db import models
 from django.shortcuts import reverse
 from django.utils import timezone
 
 from . import choices
+
+
+class User(models.Model):
+    first_name = models.CharField(max_length=64)
+    last_name = models.CharField(max_length=64)
+    email = models.EmailField(primary_key=True)
+
+    def __str__(self):
+        return '{} {}'.format(self.first_name, self.last_name)
 
 
 class Junta(models.Model):
@@ -51,7 +60,7 @@ class Question(models.Model):
     downvotes = models.ManyToManyField(Junta, related_name='question_downvoted')
 
     class Meta:
-        ordering = ['asked_on']
+        ordering = ['-asked_on']
 
     @staticmethod
     def approve_questions(queryset):

@@ -1,53 +1,71 @@
-from django.shortcuts import HttpResponse, reverse, redirect
+from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
+from .graph_helper import get_user
+from .auth_helper import get_sign_in_url, get_token_from_code, store_token, store_user, remove_user_and_token, get_token
+from portal.models import User, Junta
+from portal.choices import VOTER
 
-# The Sign In Url to redirect to Outlook Login
-from authentication.authhelper import get_signin_url
 
-# Outlook gives us authorization code, we ask for a token from it
-from authentication.authhelper import get_token_from_code
+def initialize_context(request):
+    context = {}
 
-# The helper to get data from outlook like roll number, email, name
-from authentication.outlookservice import get_me
+    # Check for any errors in the session
+    error = request.session.pop('flash_error', None)
+
+    if error != None:
+        context['errors'] = []
+        context['errors'].append(error)
+
+    # Check for user in the session
+    context['user'] = request.session.get('user', {'is_authenticated': False})
+    return context
+
 
 def home(request):
+    context = initialize_context(request)
 
-  # Redirecting to gettoken view after authenticating
-  redirect_uri = request.build_absolute_uri(
-      reverse('authentication:gettoken'))
-
-  # Building the sig in url
-  sign_in_url = get_signin_url(redirect_uri)
-
-  return HttpResponse('<a href="' + sign_in_url + '">Click here to sign in and test outlook OAuth2</a>')
+    return render(request, 'home.html', context)
 
 
-# Add import statement to include new function
+def sign_in(request):
+    # Get the sign-in URL
+    sign_in_url, state = get_sign_in_url()
+    # Save the expected state so we can validate in the callback
+    request.session['auth_state'] = state
+    # Redirect to the Azure sign-in page
+    return HttpResponseRedirect(sign_in_url)
 
-def gettoken(request):
 
-  #################################
-  # Set redirect after saving token
-  redirect_url = None
-  ################################
+def sign_out(request):
+    # Clear out the user and token
+    remove_user_and_token(request)
+
+    return HttpResponseRedirect(reverse('home'))
 
 
-  # get Token from code
-  auth_code = request.GET['code']
-  redirect_uri = request.build_absolute_uri(reverse('authentication:gettoken'))
-  token = get_token_from_code(auth_code, redirect_uri)
-  access_token = token['access_token']
+def callback(request):
+    # Get the state saved in session
+    expected_state = request.session.pop('auth_state', '')
+    # Make the token request
+    token = get_token_from_code(request.get_full_path(), expected_state)
 
-  # Save the token in session
-  request.session['access_token'] = access_token
+    # Get the user's profile
+    user = get_user(token)
 
-  # redirect_url = request.session.get('redirect_url', None)
-  
-  if redirect_url is None:
+    print(user)
 
-    #####################
-    # Get user from token
-    user = get_me(access_token)
+    try:
+        request.user = User.objects.get(email=user['mail'])
+    except:
+        user_ = User(first_name=user['displayName'], last_name="", email=user['mail'])
+        user_.save()
+        junta_ = Junta(user=user_, role=VOTER)
+        junta_.save()
+        request.user = user_
 
-    return HttpResponse("Token: %s<br>Name: %s<br>Roll Number: %s<br> Mail: %s" % (access_token, user['displayName'], user['surname'], user['mail']))
-  else: 
-    return redirect(redirect_url)
+    # Save token and user
+    store_token(request, token)
+    store_user(request, user)
+
+    return HttpResponseRedirect(reverse('home'))

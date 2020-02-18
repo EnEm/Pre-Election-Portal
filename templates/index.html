@@ -6,173 +6,6 @@
 
 {% block titleBlock %}
     <title>Pre Election Portal</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/3fb32c2b41.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
-    <script>
-        {% block jqueryBlock %}
-            function updateVoteCount(span, upvotes, downvotes, upvoteColor, downvoteColor) {
-                console.log(span.children());
-                span.children().children().attr("data-upvote", upvotes);
-                span.children().children().attr("data-downvote", downvotes);
-                span.children(".text-vote").text(upvotes-downvotes);
-                span.children("span:nth-child(1)").children().children().css("color", upvoteColor);
-                span.children("span:nth-child(3)").children().children().css("color", downvoteColor);
-                console.log(upvoteColor, downvoteColor)
-            }
-
-            $("body").on('click', '.btn-upvote', function (e) {
-                e.preventDefault();
-                const this_ = $(this);
-                const upvoteUrl = this_.attr("data-href");
-                const upvoteCount = parseInt(this_.attr("data-upvote"));
-                const downvoteCount = parseInt(this_.attr("data-downvote"));
-                $.ajax({
-                    url: upvoteUrl,
-                    method: "GET",
-                    data: {},
-                    success: function (data) {
-                        console.log(data);
-                        const newUpvotes = upvoteCount + data.upvote;
-                        const newDownvotes = downvoteCount + data.downvote;
-                        updateVoteCount(this_.parent().parent(), newUpvotes, newDownvotes, data.upvoteColor, data.downvoteColor);
-                    },
-                    error: function (error) {
-                        console.log("error");
-                        console.log(error);
-                    }
-                });
-            });
-
-            $("body").on('click', '.btn-downvote', function (e) {
-                const this_ = $(this);
-                const downvoteUrl = this_.attr("data-href");
-                const upvoteCount = parseInt(this_.attr("data-upvote"));
-                const downvoteCount = parseInt(this_.attr("data-downvote"));
-                $.ajax({
-                    url: downvoteUrl,
-                    method: "GET",
-                    data: {},
-                    success: function (data) {
-                        console.log(data);
-                        const newUpvotes = upvoteCount + data.upvote;
-                        const newDownvotes = downvoteCount + data.downvote;
-                        updateVoteCount(this_.parent().parent(), newUpvotes, newDownvotes, data.upvoteColor, data.downvoteColor);
-                    },
-                    error: function (error) {
-                        console.log("error");
-                        console.log(error);
-                    }
-                });
-            });
-
-            $("#id_position").change(function (e) {
-                const url = $("#question-form").attr("data-href");
-                const position = $(this).val();
-
-                $.ajax({
-                    url: url,
-                    data: {
-                        'position': position
-                    },
-                    success: function (data) {
-                        $("#id_asked_to").html(data);
-                    }
-                });
-            });
-
-            $(".btn-approve").click(function (e) {
-                e.preventDefault();
-                const this_ = $(this);
-                const approveUrl = this_.attr("data-href");
-                $.ajax({
-                    url: approveUrl,
-                    method: "GET",
-                    data: {},
-                    success: function (data) {
-                        this_.text("Approved");
-                    },
-                    error: function (error) {
-                        console.log("error");
-                        console.log(error);
-                        alert("Error in approving");
-                    }
-                });
-            });
-
-            $(".btn-delete").click(function (e) {
-                e.preventDefault();
-                const this_ = $(this);
-                const deleteUrl = this_.attr("data-href");
-                $.ajax({
-                    url: deleteUrl,
-                    method: "GET",
-                    data: {},
-                    success: function (data) {
-                        this_.text("Deleted");
-                    },
-                    error: function (error) {
-                        console.log("error");
-                        console.log(error);
-                        alert("Error in Deleting");
-                    }
-                });
-            });
-
-            $(".btn-sort-recent").click(function (e) {
-                e.preventDefault();
-                const this_ = $(this);
-                const sort_by = "-asked_on";
-                const sort_on = this_.attr("data-sort-on");
-                const user = this_.attr("data-user");
-                $.ajax({
-                    type: "GET",
-                    url: "{% url 'portal:api-sort' %}",
-                    data: {
-                        'sort_by': sort_by,
-                        'sort_on': sort_on,
-                        'user': user,
-                    }
-                }).done(function (data) {
-                    this_.parent().parent().children(".container-questions").html(data.html_questions);
-                    this_.css("border-style", "inset");
-                    this_.parent().children(".btn-sort-upvotes").css("border-style", 'outset');
-                });
-            });
-
-            $(".btn-sort-upvotes").click(function (e) {
-                e.preventDefault();
-                const this_ = $(this);
-                const sort_by = "upvotes";
-                const sort_on = this_.attr("data-sort-on");
-                const user = this_.attr("data-user");
-                $.ajax({
-                    type: "GET",
-                    url: "{% url 'portal:api-sort' %}",
-                    data: {
-                        'sort_by': sort_by,
-                        'sort_on': sort_on,
-                        'user': user,
-                    }
-                }).done(function (data) {
-                    this_.parent().parent().children(".container-questions").html(data.html_questions);
-                    this_.css("border-style", "inset");
-                    this_.parent().children(".btn-sort-recent").css("border-style", 'outset');
-                });
-            });
-
-            $("body").on('click', '.toggle-comment', function (e) {
-                e.preventDefault();
-                $(this).parent().children(".comments").toggle("1000");
-            });
-        {% endblock %}
-    </script>
 {% endblock %}
 
 {% block bodyBlock %}
@@ -184,7 +17,14 @@
                     <p><strong>{{ question.question }}</strong></p>
                 </div>
                 <div class="card-body">
-                    <span><a class="btn-approve" data-href="{% url 'portal:api-approve' question.pk  %}" ><i class="fas fa-check"></i></a><a class="btn-delete" data-href="{% url 'portal:api-delete-question' question.pk  %}" ><i class="fas fa-trash-alt"></i></a></span>
+                    <div class="card-text">
+                        <div class="text-muted">
+                            <strong>Asked to {{ question.asked_to }}</strong>
+                        </div>
+                        <p><small class="text-muted">Asked by {{ question.asked_by }} on {{ question.asked_on }}</small></p>
+                    </div>
+                    <span><a class="btn-approve" data-href="{% url 'portal:api-approve' question.pk  %}" ><i class="fas fa-check"></i></a></span>
+                    <span><a class="btn-delete" data-href="{% url 'portal:api-delete-question' question.pk  %}" ><i class="fas fa-trash-alt"></i></a></span>
                 </div>
             </div>
         {% endfor %}
@@ -197,8 +37,15 @@
                     <p><strong>{{ comment.question.question }}</strong></p>
                 </div>
                 <div class="card-body">
+                    <div class="card-text">
+                        <div class="text-muted">
+                            <strong>Asked to {{ comment.question.asked_to }}</strong>
+                        </div>
+                        <p><small class="text-muted">Asked by {{ comment.comment_by }} on {{ comment.commented_on }}</small></p>
+                    </div>
                     <p><i>{{ comment.comment|safe }}</i></p>
-                    <span><button class="btn-approve" data-href="{% url 'portal:api-approve-comment' comment.pk  %}" >Approve</button><button class="btn-delete" data-href="{% url 'portal:api-delete-comment' comment.pk  %}" >Delete</button></span>
+                    <span><a class="btn-approve" data-href="{% url 'portal:api-approve-comment' comment.pk  %}" ><i class="fas fa-check"></i></a></span>
+                    <span><a class="btn-delete" data-href="{% url 'portal:api-delete-comment' comment.pk  %}" ><i class="fas fa-trash-alt"></i></a></span>
                 </div>
             </div>
         {% endfor %}
@@ -323,7 +170,7 @@
                             </span>
                             <span class="toggle-comment"><i class="fas fa-comment"></i></span>
 
-                            {% ifequal user.role "Election Commission" %}
+                            {% ifequal user.junta.role "Election Commission" %}
                                 <a class="btn-delete" data-href="{% url 'portal:api-delete-question' question.pk  %}" ><i class="fas fa-trash-alt"></i></a>
                             {% endifequal %}
 
@@ -356,7 +203,7 @@
                                                         <span><a class="btn-downvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_downvote_api_url }}"><i class="far fa-thumbs-down"></i></a></span>
                                                     {% endif %}
                                                 </span>
-                                                {% ifequal user.role "Election Commission" %}
+                                                {% ifequal user.junta.role "Election Commission" %}
                                                     <a class="btn-delete" data-href="{% url 'portal:api-delete-comment' comment.pk  %}" ><i class="fas fa-trash-alt"></i></a>
                                                 {% endifequal %}
                                             {% endif %}

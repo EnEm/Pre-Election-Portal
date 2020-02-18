@@ -1,0 +1,202 @@
+<!Doctype html>
+{% load static %}
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        {% block titleBlock %}
+        {% endblock %}
+    </head>
+    <body>
+
+        <nav class="navbar navbar-static-top navbar-expand-md navbar-dark bg-dark">
+            <a class="navbar-brand" href="{% url 'portal:index' %}">Pre Election Portal</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav ml-auto">
+                    {% if is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'portal:logout' %}">Logout</a></li>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'portal:login' %}">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+
+        {% block bodyBlock %}
+        {% endblock %}
+
+
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/3fb32c2b41.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
+        <script>
+            $(document).ready(function () {
+                {% block jqueryBlock %}
+                {% endblock %}
+                function updateVoteCount(span, upvotes, downvotes, upvoteColor, downvoteColor) {
+                    console.log(span.children());
+                    span.children().children().attr("data-upvote", upvotes);
+                    span.children().children().attr("data-downvote", downvotes);
+                    span.children(".text-vote").text(upvotes-downvotes);
+                    span.children("span:nth-child(1)").children().children().css("color", upvoteColor);
+                    span.children("span:nth-child(3)").children().children().css("color", downvoteColor);
+                    console.log(upvoteColor, downvoteColor)
+                }
+
+                $("body").on('click', '.btn-upvote', function (e) {
+                    e.preventDefault();
+                    const this_ = $(this);
+                    const upvoteUrl = this_.attr("data-href");
+                    const upvoteCount = parseInt(this_.attr("data-upvote"));
+                    const downvoteCount = parseInt(this_.attr("data-downvote"));
+                    $.ajax({
+                        url: upvoteUrl,
+                        method: "GET",
+                        data: {},
+                        success: function (data) {
+                            console.log(data);
+                            const newUpvotes = upvoteCount + data.upvote;
+                            const newDownvotes = downvoteCount + data.downvote;
+                            updateVoteCount(this_.parent().parent(), newUpvotes, newDownvotes, data.upvoteColor, data.downvoteColor);
+                        },
+                        error: function (error) {
+                            console.log("error");
+                            console.log(error);
+                        }
+                    });
+                });
+
+                $("body").on('click', '.btn-downvote', function (e) {
+                    const this_ = $(this);
+                    const downvoteUrl = this_.attr("data-href");
+                    const upvoteCount = parseInt(this_.attr("data-upvote"));
+                    const downvoteCount = parseInt(this_.attr("data-downvote"));
+                    $.ajax({
+                        url: downvoteUrl,
+                        method: "GET",
+                        data: {},
+                        success: function (data) {
+                            console.log(data);
+                            const newUpvotes = upvoteCount + data.upvote;
+                            const newDownvotes = downvoteCount + data.downvote;
+                            updateVoteCount(this_.parent().parent(), newUpvotes, newDownvotes, data.upvoteColor, data.downvoteColor);
+                        },
+                        error: function (error) {
+                            console.log("error");
+                            console.log(error);
+                        }
+                    });
+                });
+
+                $("#id_position").change(function (e) {
+                    const url = $("#question-form").attr("data-href");
+                    const position = $(this).val();
+
+                    $.ajax({
+                        url: url,
+                        data: {
+                            'position': position
+                        },
+                        success: function (data) {
+                            $("#id_asked_to").html(data);
+                        }
+                    });
+                });
+
+                $(".btn-approve").click(function (e) {
+                    e.preventDefault();
+                    const this_ = $(this);
+                    const approveUrl = this_.attr("data-href");
+                    $.ajax({
+                        url: approveUrl,
+                        method: "GET",
+                        data: {},
+                        success: function (data) {
+                            this_.text("Approved");
+                        },
+                        error: function (error) {
+                            console.log("error");
+                            console.log(error);
+                            alert("Error in approving");
+                        }
+                    });
+                });
+
+                $(".btn-delete").click(function (e) {
+                    e.preventDefault();
+                    const this_ = $(this);
+                    const deleteUrl = this_.attr("data-href");
+                    $.ajax({
+                        url: deleteUrl,
+                        method: "GET",
+                        data: {},
+                        success: function (data) {
+                            this_.text("Deleted");
+                        },
+                        error: function (error) {
+                            console.log("error");
+                            console.log(error);
+                            alert("Error in Deleting");
+                        }
+                    });
+                });
+
+                $(".btn-sort-recent").click(function (e) {
+                    e.preventDefault();
+                    const this_ = $(this);
+                    const sort_by = "-asked_on";
+                    const sort_on = this_.attr("data-sort-on");
+                    const user = this_.attr("data-user");
+                    $.ajax({
+                        type: "GET",
+                        url: "{% url 'portal:api-sort' %}",
+                        data: {
+                            'sort_by': sort_by,
+                            'sort_on': sort_on,
+                            'user': user,
+                        }
+                    }).done(function (data) {
+                        this_.parent().parent().children(".container-questions").html(data.html_questions);
+                        this_.css("border-style", "inset");
+                        this_.parent().children(".btn-sort-upvotes").css("border-style", 'outset');
+                    });
+                });
+
+                $(".btn-sort-upvotes").click(function (e) {
+                    e.preventDefault();
+                    const this_ = $(this);
+                    const sort_by = "upvotes";
+                    const sort_on = this_.attr("data-sort-on");
+                    const user = this_.attr("data-user");
+                    $.ajax({
+                        type: "GET",
+                        url: "{% url 'portal:api-sort' %}",
+                        data: {
+                            'sort_by': sort_by,
+                            'sort_on': sort_on,
+                            'user': user,
+                        }
+                    }).done(function (data) {
+                        this_.parent().parent().children(".container-questions").html(data.html_questions);
+                        this_.css("border-style", "inset");
+                        this_.parent().children(".btn-sort-recent").css("border-style", 'outset');
+                    });
+                });
+
+                $("body").on('click', '.toggle-comment', function (e) {
+                    e.preventDefault();
+                    $(this).parent().children(".comments").toggle("1000");
+                });
+            })
+        </script>
+
+    </body>
+</html>

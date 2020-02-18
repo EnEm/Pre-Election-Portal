@@ -1,12 +1,9 @@
-from django.conf.urls import url
+from django.urls import path
 from authentication import views
 
-app_name = 'authentication'
 urlpatterns = [
-    # The home view ('/authentication/')
-    url(r'^$', views.home, name='home'),
-    # Explicit home ('/authentication/home/')
-    url(r'^home/$', views.home, name='home'),
-    # Redirect to get token ('/authentication/gettoken/')
-    url(r'^gettoken/$', views.gettoken, name='gettoken'),
+    path('', views.home, name='home'),
+    path('signin', views.sign_in, name='signin'),
+    path('callback', views.callback, name='callback'),
+    path('signout', views.sign_out, name='signout'),
 ]
