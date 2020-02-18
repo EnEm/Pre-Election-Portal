@@ -5,10 +5,8 @@
 {% block content %}
   <form method="post" novalidate>
     {% csrf_token %}
-    {{ form|crispy }}
+  
     <br>
     <button type="submit" class="btn btn-success" >Save</button>
-    <br>
   </form>
-  <br>
 {% endblock %}
