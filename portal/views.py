@@ -26,6 +26,7 @@ def candidate_detail_view(request, pk):
     except:
         d = {'candidate': None}
     d['nbar'] = 'candidates'
+    d['user'] = User.objects.get(email=request.session['user']['email'])
     return render(request, 'candidate_detail.html', d)
 
 
@@ -243,28 +244,32 @@ class SortQuestionsAPI(APIView):
         data[sort_by] = sort_by
         data[sort_on] = sort_on
         user_ = User.objects.get(email=request.session['user']['email'])
+        junta_pk = request.GET.get('junta_pk')
         if sort_on == "my-questions":
-            user = user_.junta.candidate.all()[0]
-            print("candidate =", user)
-            questions = Question.objects.filter(asked_to=user).filter(approved=True)
+            questions = Question.objects.filter(asked_to__user__pk=junta_pk).filter(approved=True)
         else:
-            user = user_.junta
             if user_.junta.role == "Candidate":
-                questions = Question.objects.filter(~Q(asked_to=user_.junta.candidate.all()[0])).filter(approved=True)
+                questions = Question.objects.filter(~Q(asked_to__user__pk=junta_pk)).filter(
+                    approved=True)
             else:
                 questions = Question.objects.filter(approved=True)
 
-        if sort_by=='upvotes':
-            questions = sorted(questions, key = lambda t: t.upvotes.count(), reverse = True)
+        if sort_by == 'upvotes':
+            questions = sorted(questions, key=lambda t: t.upvotes.count(), reverse=True)
         else:
             questions = questions.order_by('-asked_on')
 
+        context = {'questions': questions,
+                   'user': user_,
+                   'question_type': sort_on,
+                   'comment_form': CommentForm()}
+
+        if user_.junta.role == "Candidate":
+            context['candidate'] = Candidate.objects.get(user__pk=junta_pk)
+
         data['html_questions'] = render_to_string(
             template_name='questions.html',
-            context={'questions': questions,
-                     'user': user_.junta,
-                     'question_type': sort_on,
-                     'comment_form': CommentForm()},
+            context=context,
             request=request
         )
 
@@ -287,12 +292,12 @@ def index(request):
             d['unapproved_comments'] = unapproved_comments
             d['role'] = 'admin'
         elif user.junta.role == choices.CANDIDATE:
-            approved_questions = Question.objects.filter(approved=True)\
-                                                 .filter(~Q(asked_to=user.junta.candidate.all()[0]))\
-                                                 .order_by('-asked_on')
-            my_questions = Question.objects.filter(asked_to=user.junta.candidate.all()[0])\
-                                           .filter(approved=True)\
-                                           .order_by('-asked_on')
+            approved_questions = Question.objects.filter(approved=True) \
+                .filter(~Q(asked_to=user.junta.candidate.all()[0])) \
+                .order_by('-asked_on')
+            my_questions = Question.objects.filter(asked_to=user.junta.candidate.all()[0]) \
+                .filter(approved=True) \
+                .order_by('-asked_on')
             print(my_questions)
             d['my_questions'] = my_questions
         else:
@@ -379,7 +384,6 @@ def comment_view(request, pk):
 
 
 def user_login(request):
-
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')

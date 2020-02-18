@@ -46,7 +46,7 @@
                                 <li class="nav-item {% if nbar == 'rules' %}active{% endif %}"><a class="nav-link" href="#about">Rules</a></li>
                                 <li class="nav-item {% if nbar == 'candidates' %}active{% endif %}"><a class="nav-link" href="candidates.html">Candidates</a></li>
                                 <li class="nav-item {% if nbar == 'stats' %}active{% endif %}"><a class="nav-link" class="nav-link" href="{% url 'stats:chart' %}">Statistics</a></li>
-                                {% if user.is_authenticated %}
+                                {% if is_authenticated %}
                                     <li class="nav-item{% if nbar == 'logout' %}active{% endif %}"><a class="nav-link" href="{% url 'portal:logout' %}">Logout</a></li>
                                 {% else %}
                                     <li class="nav-item {% if nbar == 'login' %}active{% endif %}"><a class="nav-link" href="#">Login</a></li>
@@ -220,7 +220,7 @@
         data: {
         'sort_by': sort_by,
         'sort_on': sort_on,
-        'user': user,
+        'junta_pk': user,
         }
         }).done(function (data) {
         this_.parent().parent().children(".container-questions").html(data.html_questions);
@@ -241,7 +241,7 @@
         data: {
         'sort_by': sort_by,
         'sort_on': sort_on,
-        'user': user,
+        'junta_pk': user,
         }
         }).done(function (data) {
         this_.parent().parent().children(".container-questions").html(data.html_questions);

@@ -102,8 +102,8 @@
 
                 <div class="col-md-15 animate-box ">
                     <span id="my-questions-sort-tray" class="sort-tray ml-3">
-                        <button class="btn-sort-recent" type="button" data-sort-on="my-questions" data-user="{{ user }}" style="border-style: inset">Recent</button>
-                        <button class="btn-sort-upvotes" type="button" data-sort-on="my-questions" data-user="{{ user }}" style="border-style: outset">Upvotes</button>
+                        <button class="btn-sort-recent" type="button" data-sort-on="my-questions" data-user="{{ candidate.user.pk }}" style="border-style: inset">Recent</button>
+                        <button class="btn-sort-upvotes" type="button" data-sort-on="my-questions" data-user="{{ candidate.user.pk }}" style="border-style: outset">Upvotes</button>
                     </span>
                     <div class="container-questions">
                         {% for question in questions %}
@@ -124,7 +124,7 @@
                                         </div>
                                     {% endif %}
 
-                                    {% ifequal question_type "my-questions" %}
+                                    {% ifequal user.junta.pk candidate.user.pk %}
                                         {% if question.answered %}
                                             <a class="btn btn-primary" href="{% url 'portal:answer' question.pk %}">Update</a>
                                         {% else %}
@@ -133,7 +133,7 @@
                                     {% endifequal %}
 
                                     <span class="vote-tray">
-                                        {% if user in question.upvotes.all %}
+                                        {% if user.junta in question.upvotes.all %}
                                             <span><a class="btn-upvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_upvote_api_url }}" ><i style="color: blue" class="far fa-thumbs-up"></i></a></span>
                                         {% else %}
                                             <span><a class="btn-upvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_upvote_api_url }}" ><i class="far fa-thumbs-up"></i></a></span>
@@ -158,13 +158,13 @@
                                                         <p><i>{{ comment.comment|safe }}</i></p>
 
                                                         <span class="vote-tray">
-                                                            {% if user in comment.upvotes.all %}
+                                                            {% if user.junta in comment.upvotes.all %}
                                                                 <span><a class="btn-upvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_upvote_api_url }}" ><i style="color: blue" class="far fa-thumbs-up"></i></a></span>
                                                             {% else %}
                                                                 <span><a class="btn-upvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_upvote_api_url }}" ><i class="far fa-thumbs-up"></i></a></span>
                                                             {% endif %}
                                                             <span class="text-vote">{{ comment.upvotes.count|subtract:comment.downvotes.count }}</span>
-                                                            {% if user in comment.downvotes.all %}
+                                                            {% if user.junta in comment.downvotes.all %}
                                                                 <span><a class="btn-downvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_downvote_api_url }}"><i style="color: red" class="far fa-thumbs-down"></i></a></span>
                                                             {% else %}
                                                                 <span><a class="btn-downvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_downvote_api_url }}"><i class="far fa-thumbs-down"></i></a></span>
