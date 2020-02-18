@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_tags %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_field %}
+
+    {% block titleBlock %}
+        <title>Agendas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+        <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+        <link rel="stylesheet" href="{% static 'css/new.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {% endblock %}
+
+
+    {% block bodyBlock %}
+
+        {% if candidate %}
+            <div id="colorlib-about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 animate-box" align="center">
+                            <div id="ig">
+                                {% if candidate.user.profile_pic %}
+                                    <img  src="{{ candidate.user.profile_pic.url }}" alt="candidate" width="80%" >
+                                {% else %}
+                                    <img  src="{% static 'images/profile.jpg' %}" alt="candidate" width="80%" >
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-md-push-1 animate-box">
+                            <div class="about-desc">
+                                <div class="desc">
+                                    <div class="rotate">
+                                        <h2 class="heading">About</h2>
+                                    </div>
+                                    <h2>{{ candidate.user.user.first_name }} {{ candidate.user.user.last_name }}</h2>
+                                    <p><strong>Email:</strong>{{ candidate.user.user.email }}</p>
+                                    <p><strong>Contesting For:</strong>{{ candidate.position }}</p>
+                                    <p><strong>Bio:</strong>{{ candidate.bio | safe }}</p>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="container">
+                    <div class="row animate-box">
+                        <h2 align="center" >Here's What I Plan to DO!</h2>
+                    </div>
+                    <div class="col-md-15 animate-box ">
+                        <div class="about-desc">
+                            <div class="desc">
+                                <div class="col-md-15">
+                                    {{ candidate.key_points | safe }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row animate-box">
+                    <h2 align="center" >Ask Me Anything!</h2>
+                </div>
+
+                <div class="card border-dark m-3 animate-box">
+                    <div class="card-header border-dark">
+                        <strong>Ask Me Anything</strong>
+                    </div>
+                    <form id="question-form" class="form-group" action="{% url 'portal:index' %}" method="post" data-href="{% url 'portal:ajax-load-candidates' %}">
+                        <div class="card-body">
+                            {% if question_form %}
+                                {% csrf_token %}
+                                {{ question_form.question | as_crispy_field }}
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ question_form.position | as_crispy_field }}
+                                    </div>
+                                    <div class="col-6">
+                                        {{ question_form.asked_to | as_crispy_field }}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="card-footer">
+                            <input class="btn btn-primary btn-rounded" type="submit" name="Ask" value="Ask">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-md-15 animate-box ">
+                    <span id="my-questions-sort-tray" class="sort-tray ml-3">
+                        <button class="btn-sort-recent" type="button" data-sort-on="my-questions" data-user="{{ user }}" style="border-style: inset">Recent</button>
+                        <button class="btn-sort-upvotes" type="button" data-sort-on="my-questions" data-user="{{ user }}" style="border-style: outset">Upvotes</button>
+                    </span>
+                    <div class="container-questions">
+                        {% for question in questions %}
+                            <div class="card border-dark m-3">
+                                <div class="card-header">
+                                    <strong>{{ question.question }}</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        <div class="text-muted">
+                                            <strong>Asked to {{ question.asked_to }}</strong>
+                                        </div>
+                                        <p><small class="text-muted">Asked by {{ question.asked_by }} on {{ question.asked_on }}</small></p>
+                                    </div>
+                                    {% if question.answered %}
+                                        <div class="card-text">
+                                            {{ question.answer|safe }}
+                                        </div>
+                                    {% endif %}
+
+                                    {% ifequal question_type "my-questions" %}
+                                        {% if question.answered %}
+                                            <a class="btn btn-primary" href="{% url 'portal:answer' question.pk %}">Update</a>
+                                        {% else %}
+                                            <a class="btn btn-primary" href="{% url 'portal:answer' question.pk %}">Answer</a>
+                                        {% endif %}
+                                    {% endifequal %}
+
+                                    <span class="vote-tray">
+                                        {% if user in question.upvotes.all %}
+                                            <span><a class="btn-upvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_upvote_api_url }}" ><i style="color: blue" class="far fa-thumbs-up"></i></a></span>
+                                        {% else %}
+                                            <span><a class="btn-upvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_upvote_api_url }}" ><i class="far fa-thumbs-up"></i></a></span>
+                                        {% endif %}
+                                        <span class="text-vote">{{ question.upvotes.count }}</span>
+                                    </span>
+                                    <span class="toggle-comment"><i class="fas fa-comment"></i></span>
+
+                                    <div class="comments" style="display: none">
+                                        {% if comment_form %}
+                                            <form method="post" action="{% url 'portal:comment' question.pk %}">
+                                                {% csrf_token %}
+                                                {{ comment_form.as_p }}
+                                            </form>
+                                        {% endif %}
+                                        {% if question.comments.count != 0%}
+                                            <div class="ml-5">
+                                                <br>
+                                                {% for comment in question.comments.all  %}
+                                                    {% if comment.approved %}
+                                                        <strong><p>{{ comment.comment_by }}</p></strong>
+                                                        <p><i>{{ comment.comment|safe }}</i></p>
+
+                                                        <span class="vote-tray">
+                                                            {% if user in comment.upvotes.all %}
+                                                                <span><a class="btn-upvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_upvote_api_url }}" ><i style="color: blue" class="far fa-thumbs-up"></i></a></span>
+                                                            {% else %}
+                                                                <span><a class="btn-upvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_upvote_api_url }}" ><i class="far fa-thumbs-up"></i></a></span>
+                                                            {% endif %}
+                                                            <span class="text-vote">{{ comment.upvotes.count|subtract:comment.downvotes.count }}</span>
+                                                            {% if user in comment.downvotes.all %}
+                                                                <span><a class="btn-downvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_downvote_api_url }}"><i style="color: red" class="far fa-thumbs-down"></i></a></span>
+                                                            {% else %}
+                                                                <span><a class="btn-downvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_downvote_api_url }}"><i class="far fa-thumbs-down"></i></a></span>
+                                                            {% endif %}
+                                                        </span>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            Candidate Not Found
+        {% endif %}
+
+    {% endblock %}
+
+    {% block scriptBlock %}
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/magnific-popup-options.js' %}"></script>
+
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myTopnav");
+              if (x.className === "topnav" ) {
+                x.className += " responsive";
+              }
+              else if (x.className === "log" ) {
+                x.className += " responsive";
+              }
+              else {
+                x.className = "topnav";
+              }
+            }
+        </script>
+
+        <!-- Main JS (Do not remove) -->
+        <script src="{% static 'js/main.js' %}"></script>
+    {% endblock %}
+
+

@@ -32,6 +32,7 @@ class CommentAdmin(SummernoteModelAdmin):
     actions = ('approve_comments',)
 
 
+admin.site.register(models.User)
 admin.site.register(models.Junta, JuntaAdmin)
 admin.site.register(models.Candidate, CandidateAdmin)
 admin.site.register(models.Question, QuestionAdmin)

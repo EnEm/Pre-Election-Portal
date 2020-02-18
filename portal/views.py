@@ -2,29 +2,44 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, get_object_or_404, reverse
+from django.template.loader import render_to_string
+from django.utils import timezone
+from django.db.models import Q
 from rest_framework import authentication, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from django.utils import timezone
 from .forms import AskForm, AnswerForm, CommentForm
-from .models import Question, Candidate, Comment
-from django.db.models import Q
+from .models import Question, Candidate, Comment, User
 from . import choices
 
 
+def candidate_detail_view(request, pk):
+    try:
+        candidate = Candidate.objects.get(id=pk)
+        d = {
+            'candidate': candidate,
+            'comment_form': CommentForm(),
+            'question_form': AskForm(),
+            'questions': Question.objects.filter(asked_to=candidate).filter(approved=True).order_by('-asked_on')
+        }
+        print(d)
+    except:
+        d = {'candidate': None}
+    d['nbar'] = 'candidates'
+    return render(request, 'candidate_detail.html', d)
+
+
 class UpvoteAPIToggle(APIView):
-    authentication_classes = [authentication.SessionAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, pk=None, format=None):
         obj = get_object_or_404(Question, pk=pk)
-        user = self.request.user
+        user = User.objects.get(email=request.session['user']['email'])
         updated = False
         upvote = 0
         downvote = 0
         upvoteColor = "black"
         downvoteColor = "black"
-        if user.is_authenticated:
+        if request.session['user']['is_authenticated']:
             updated = True
             if user.junta in obj.upvotes.all():
                 obj.upvotes.remove(user.junta)
@@ -48,18 +63,16 @@ class UpvoteAPIToggle(APIView):
 
 
 class DownvoteAPIToggle(APIView):
-    authentication_classes = [authentication.SessionAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, pk=None, format=None):
         obj = get_object_or_404(Question, pk=pk)
-        user = self.request.user
+        user = User.objects.get(email=request.session['user']['email'])
         updated = False
         upvote = 0
         downvote = 0
         upvoteColor = "black"
         downvoteColor = "black"
-        if user.is_authenticated:
+        if request.session['user']['is_authenticated']:
             updated = True
             if user.junta in obj.downvotes.all():
                 obj.downvotes.remove(user.junta)
@@ -83,18 +96,16 @@ class DownvoteAPIToggle(APIView):
 
 
 class UpvoteAPIToggleComment(APIView):
-    authentication_classes = [authentication.SessionAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, pk=None, format=None):
         obj = get_object_or_404(Comment, pk=pk)
-        user = self.request.user
+        user = User.objects.get(email=request.session['user']['email'])
         updated = False
         upvote = 0
         downvote = 0
         upvoteColor = "black"
         downvoteColor = "black"
-        if user.is_authenticated:
+        if request.session['user']['is_authenticated']:
             updated = True
             if user.junta in obj.upvotes.all():
                 obj.upvotes.remove(user.junta)
@@ -118,18 +129,16 @@ class UpvoteAPIToggleComment(APIView):
 
 
 class DownvoteAPIToggleComment(APIView):
-    authentication_classes = [authentication.SessionAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, pk=None, format=None):
         obj = get_object_or_404(Comment, pk=pk)
-        user = self.request.user
+        user = User.objects.get(email=request.session['user']['email'])
         updated = False
         upvote = 0
         downvote = 0
         upvoteColor = "black"
         downvoteColor = "black"
-        if user.is_authenticated:
+        if request.session['user']['is_authenticated']:
             updated = True
             if user.junta in obj.downvotes.all():
                 obj.downvotes.remove(user.junta)
@@ -153,14 +162,12 @@ class DownvoteAPIToggleComment(APIView):
 
 
 class ApproveAPIToggle(APIView):
-    authentication_classes = [authentication.SessionAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, pk=None, format=None):
         obj = get_object_or_404(Question, pk=pk)
-        user = self.request.user
+        user = User.objects.get(email=request.session['user']['email'])
         updated = False
-        if user.is_authenticated:
+        if request.session['user']['is_authenticated']:
             if user.junta.role == choices.ELECTION_COMMISSION:
                 if not obj.approved:
                     updated = True
@@ -174,14 +181,12 @@ class ApproveAPIToggle(APIView):
 
 
 class ApproveAPIToggleComment(APIView):
-    authentication_classes = [authentication.SessionAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, pk=None, format=None):
         obj = get_object_or_404(Comment, pk=pk)
-        user = self.request.user
+        user = User.objects.get(email=request.session['user']['email'])
         updated = False
-        if user.is_authenticated:
+        if request.session['user']['is_authenticated']:
             if user.junta.role == choices.ELECTION_COMMISSION:
                 if not obj.approved:
                     updated = True
@@ -193,26 +198,99 @@ class ApproveAPIToggleComment(APIView):
         }
         return Response(data)
 
+
+class DeleteQuestionAPIToggle(APIView):
+
+    def get(self, request, pk=None, format=None):
+        obj = get_object_or_404(Question, pk=pk)
+        user = User.objects.get(email=request.session['user']['email'])
+        updated = False
+        if request.session['user']['is_authenticated']:
+            if user.junta.role == choices.ELECTION_COMMISSION:
+                updated = True
+                for comment in obj.comments.all():
+                    comment.delete()
+                obj.delete()
+        data = {
+            'updated': updated,
+        }
+        return Response(data)
+
+
+class DeleteCommentAPIToggle(APIView):
+
+    def get(self, request, pk=None, format=None):
+        obj = get_object_or_404(Comment, pk=pk)
+        user = User.objects.get(email=request.session['user']['email'])
+        updated = False
+        if request.session['user']['is_authenticated']:
+            if user.junta.role == choices.ELECTION_COMMISSION:
+                updated = True
+                obj.delete()
+        data = {
+            'updated': updated,
+        }
+        return Response(data)
+
+
+class SortQuestionsAPI(APIView):
+
+    def get(self, request, *args, **kwargs):
+        data = {}
+        # qs = self.get_queryset()
+        sort_by = request.GET.get('sort_by')
+        sort_on = request.GET.get('sort_on')
+        data[sort_by] = sort_by
+        data[sort_on] = sort_on
+        user_ = User.objects.get(email=request.session['user']['email'])
+        if sort_on == "my-questions":
+            user = user_.junta.candidate.all()[0]
+            print("candidate =", user)
+            questions = Question.objects.filter(asked_to=user).filter(approved=True)
+        else:
+            user = user_.junta
+            if user_.junta.role == "Candidate":
+                questions = Question.objects.filter(~Q(asked_to=user_.junta.candidate.all()[0])).filter(approved=True)
+            else:
+                questions = Question.objects.filter(approved=True)
+
+        if sort_by=='upvotes':
+            questions = sorted(questions, key = lambda t: t.upvotes.count(), reverse = True)
+        else:
+            questions = questions.order_by('-asked_on')
+
+        data['html_questions'] = render_to_string(
+            template_name='questions.html',
+            context={'questions': questions,
+                     'user': user_.junta,
+                     'question_type': sort_on,
+                     'comment_form': CommentForm()},
+            request=request
+        )
+
+        return Response(data)
+
+
 def index(request):
     question_form = AskForm()
     comment_form = CommentForm()
-    d = {'question_form': question_form, 'comment_form': comment_form}
-    if request.user.is_authenticated:
+    d = {'question_form': question_form, 'comment_form': comment_form, 'nbar': 'home'}
+    if request.session['user']['is_authenticated']:
         d['is_authenticated'] = True
-        user = request.user.junta
+        user = User.objects.get(email=request.session['user']['email'])
         d['user'] = user
-        if user.role == choices.ELECTION_COMMISSION:
+        if user.junta.role == choices.ELECTION_COMMISSION:
             unapproved_questions = Question.objects.filter(approved=False).order_by('-asked_on')
             unapproved_comments = Comment.objects.filter(approved=False).order_by('-commented_on')
             approved_questions = Question.objects.filter(approved=True).order_by('-asked_on')
             d['unapproved_questions'] = unapproved_questions
             d['unapproved_comments'] = unapproved_comments
             d['role'] = 'admin'
-        elif user.role == choices.CANDIDATE:
+        elif user.junta.role == choices.CANDIDATE:
             approved_questions = Question.objects.filter(approved=True)\
-                                                 .filter(~Q(asked_to=request.user.junta.candidate.all()[0]))\
+                                                 .filter(~Q(asked_to=user.junta.candidate.all()[0]))\
                                                  .order_by('-asked_on')
-            my_questions = Question.objects.filter(asked_to=request.user.junta.candidate.all()[0])\
+            my_questions = Question.objects.filter(asked_to=user.junta.candidate.all()[0])\
                                            .filter(approved=True)\
                                            .order_by('-asked_on')
             print(my_questions)
@@ -227,7 +305,7 @@ def index(request):
             questionForm = AskForm(request.POST)
             if questionForm.is_valid():
                 question = questionForm.save(commit=False)
-                question.asked_by = request.user.junta
+                question.asked_by = user.junta
                 question.save()
                 questionForm.save_m2m()
                 pass
@@ -246,38 +324,16 @@ def load_candidates(request):
     return render(request, 'candidates_dropdown_list.html', {'candidates': candidates})
 
 
-def sort_questions(request):
-    order_by = request.GET.get('order_by')
-    question_type = request.GET.get('question_type')
-    candidate = request.GET.get('candidate')
-
-    questions = None
-
-    if question_type == 'unapproved':
-        questions = Question.objects.filter(approved=False)
-    elif candidate == choices.VOTER:
-        questions = Question.objects.filter(approved=True)
-    else:
-        if question_type == 'my':
-            questions = Question.objects.filter(asked_to=request.user.junta.candidate.all()[0])
-        else:
-            questions = Question.objects.filter(asked_to=~Q(request.user.junta.candidate.all()[0]))
-
-    if order_by == 'recent':
-        questions = questions.order_by('-asked_on')
-    else:
-        questions = questions.order_by('upvotes')
-
-
 def answer_view(request, pk):
     question = Question.objects.get(pk=pk)
     answer_form = AnswerForm()
+    user = User.objects.get(email=request.session['user']['email'])
     if question.answered:
         answer_form = AnswerForm({'answer': question.answer})
 
     d = {'question': question, 'answer_form': answer_form}
 
-    if request.user.is_authenticated:
+    if request.session['user']['is_authenticated']:
         d['is_authenticated'] = True
 
     if request.POST:
@@ -298,17 +354,17 @@ def answer_view(request, pk):
 def comment_view(request, pk):
     question = Question.objects.get(pk=pk)
     comment_form = CommentForm()
-
+    user = User.objects.get(email=request.session['user']['email'])
     d = {'question': question, 'comment_form': comment_form}
 
-    if request.user.is_authenticated:
+    if request.session['user']['is_authenticated']:
         d['is_authenticated'] = True
 
     if request.POST:
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
-            comment.comment_by = request.user.junta
+            comment.comment_by = user.junta
             comment.question = question
             comment.comment = form.cleaned_data['comment']
             comment.commented_on = timezone.now()
