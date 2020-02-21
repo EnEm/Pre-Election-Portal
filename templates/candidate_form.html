@@ -21,7 +21,9 @@
     {% block bodyBlock %}
 
         {% if candidate %}
-            <form>
+            <form method="post" action="{% url 'portal:candidate-detail-edit' candidate.pk %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input class="float btn btn-skin text-white" type="submit">
                 <div id="colorlib-about">
                     <div class="container">
                         <div class="row">
@@ -41,9 +43,9 @@
                                         <h2>{{ candidate.user.user.first_name }} {{ candidate.user.user.last_name }}</h2>
                                         <p><strong>Email:</strong>&nbsp;{{ candidate.user.user.email }}</p>
                                         <p><strong>Contesting For:</strong>&nbsp;{{ candidate.position }}</p>
-                                        <p>{{ candidate_form.bio }}</p>
-                                        <p>{{ candidate_form.videos }}</p>
-                                        <p>{{ candidate_form.agenda }}</p>
+                                        <p><strong>Bio:</strong>{{ candidate_form.bio }}</p>
+                                        <p><strong>Video:&nbsp;</strong>{{ candidate_form.videos }}</p>
+                                        <p><strong>Agenda:&nbsp;</strong>{{ candidate_form.agenda }}</p>
                                         <br>
                                     </div>
                                 </div>

@@ -45,8 +45,8 @@ class Candidate(models.Model):
         return '{} {}'.format(self.user.user.first_name, self.user.user.last_name)
 
     @staticmethod
-    def get_absolute_url():
-        return reverse('portal:candidate-detail', kwargs={'pk': pk})
+    def get_absolute_url(self):
+        return reverse('portal:candidate-detail', kwargs={'pk': self.pk})
 
 
 class Question(models.Model):

@@ -22,7 +22,7 @@
 
         {% if candidate %}
             {% ifequal user.junta.pk candidate.user.pk %}
-                <a class="float btn btn-skin text-white">
+                <a class="float btn btn-skin text-white" href="{% url 'portal:candidate-detail-edit' candidate.pk %}">
                     <i class="fa fa-pencil"></i>&nbsp;Edit
                 </a>
             {% endifequal %}

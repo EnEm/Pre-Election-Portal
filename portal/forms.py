@@ -69,6 +69,6 @@ class EditCandidateForm(forms.ModelForm):
         exclude = ('user', 'position',)
 
         widgets = {
-            'bio': SummernoteWidget(attrs={'summernote': {'width': '50%', 'height': '400px'}}),
-            'key_points': SummernoteWidget()
+            'bio': SummernoteWidget(attrs={'summernote': {'width': '100%', 'height': '400px'}}),
+            'key_points': SummernoteWidget(attrs={'summernote': {'width': '100%', 'height': '400px'}})
         }
