@@ -1,9 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse
 from django.utils.decorators import method_decorator
 from portal.models import Hostel
 from portal.forms import UpdateStatsForm
 from django.views.generic import CreateView, UpdateView, DeleteView
-from .decorators import user_is_admin
+from portal.decorators import user_has_role
 from portal.models import User
 from portal.choices import ELECTION_COMMISSION
 
@@ -32,10 +32,11 @@ def chart(request):
         pass
 
     print(dicti)
+    request.session['redirect_callback'] = reverse('stats:chart')
     return render(request, 'stats/hostel_stats.html', context=dicti)
 
 
-@user_is_admin
+@user_has_role(ELECTION_COMMISSION)
 def update(request):
     if request.method == "POST":
         form = UpdateStatsForm(request.POST)
@@ -47,7 +48,7 @@ def update(request):
         return render(request, 'stats/update.html', {'form': form})
 
 
-@method_decorator(user_is_admin, name='dispatch')
+@method_decorator(user_has_role(ELECTION_COMMISSION), name='dispatch')
 class HostelCreateview(CreateView):
     model = Hostel
     fields = ['name', 'total_residents', 'no_of_votes']
@@ -55,7 +56,7 @@ class HostelCreateview(CreateView):
     success_url = '/statistics'
 
 
-@method_decorator(user_is_admin, name='dispatch')
+@method_decorator(user_has_role(ELECTION_COMMISSION), name='dispatch')
 class HostelUpdateview(UpdateView):
     model = Hostel
     fields = ['name', 'total_residents', 'no_of_votes']
@@ -63,7 +64,7 @@ class HostelUpdateview(UpdateView):
     success_url = '/statistics'
 
 
-@method_decorator(user_is_admin, name='dispatch')
+@method_decorator(user_has_role(ELECTION_COMMISSION), name='dispatch')
 class hostelDeleteview(DeleteView):
     model = Hostel
     template_name = 'stats/hosteldelete.html'

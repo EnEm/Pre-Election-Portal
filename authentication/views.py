@@ -22,12 +22,6 @@ def initialize_context(request):
     return context
 
 
-def home(request):
-    context = initialize_context(request)
-    context.update({'nbar': 'home'})
-    return render(request, 'home.html', context)
-
-
 def sign_in(request):
     # Get the sign-in URL
     sign_in_url, state = get_sign_in_url()
@@ -41,7 +35,12 @@ def sign_out(request):
     # Clear out the user and token
     remove_user_and_token(request)
 
-    return HttpResponseRedirect(reverse('authentication:home'))
+    try:
+        callback_url = request.session['redirect_callback']
+    except KeyError:
+        callback_url = reverse('portal:index')
+
+    return HttpResponseRedirect(callback_url)
 
 
 def callback(request):
@@ -53,11 +52,10 @@ def callback(request):
     # Get the user's profile
     user = get_user(token)
 
-    print(user)
 
     try:
         request.user = User.objects.get(email=user['mail'])
-    except:
+    except User.DoesNotExist:
         user_ = User(first_name=user['displayName'], last_name="", email=user['mail'])
         user_.save()
         junta_ = Junta(user=user_, role=VOTER)
@@ -68,4 +66,16 @@ def callback(request):
     store_token(request, token)
     store_user(request, user)
 
-    return HttpResponseRedirect(reverse('authentication:home'))
+    try:
+        callback_url = request.session['redirect_callback']
+    except KeyError:
+        callback_url = reverse('portal:index')
+
+    return HttpResponseRedirect(callback_url)
+
+
+def save_session(request):
+    print("save-session")
+    cur = request.GET.get('cur')
+    print("CUR", cur)
+    request.session['redirect_callback'] = cur

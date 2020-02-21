@@ -9,6 +9,7 @@ from django.forms.models import model_to_dict
 
 from .forms import AskForm, AnswerForm, CommentForm, EditCandidateForm, EditProfilePic
 from .models import Question, Candidate, Comment, User
+from .decorators import user_has_role
 from . import choices
 
 from rest_framework.response import Response
@@ -46,6 +47,8 @@ def candidate_detail_view(request, pk):
         d['user'] = User.objects.get(email=request.session['user']['email'])
     except KeyError:
         d['user'] = User.objects.get(email='voter@voter.voter')
+
+    request.session['redirect_callback'] = reverse('portal:candidate-detail', kwargs={'pk': pk})
     return render(request, 'candidate_detail.html', d)
 
 
@@ -299,6 +302,7 @@ class SortQuestionsAPI(APIView):
 
 
 def index(request):
+    request.session['redirect_callback'] = reverse('portal:index')
     question_form = AskForm()
     comment_form = CommentForm()
     d = {'question_form': question_form, 'comment_form': comment_form, 'nbar': 'home'}
@@ -349,7 +353,7 @@ def index(request):
         else:
             return HttpResponseRedirect(reverse('portal:login'))
 
-    return render(request, 'index.html', d)
+    return render(request, 'home.html')
 
 
 def candidates_view(request):
@@ -358,7 +362,7 @@ def candidates_view(request):
         'nbar': 'candidates',
         'choices': choices,
     }
-
+    request.session['redirect_callback'] = reverse('portal:candidates')
     return render(request, 'candidates.html', d)
 
 
@@ -380,7 +384,7 @@ def answer_view(request, pk):
     if request.session['user']['is_authenticated']:
         d['is_authenticated'] = True
 
-    if request.POST:
+    if request.method == 'POST':
         form = AnswerForm(request.POST)
         if form.is_valid():
             answer = form.cleaned_data['answer']
@@ -412,7 +416,7 @@ def comment_view(request, pk):
     if d['is_authenticated']:
         user = User.objects.get(email=request.session['user']['email'])
     print(user)
-    if request.POST:
+    if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
@@ -455,26 +459,32 @@ def user_logout(request):
 
 
 def edit_candidate_view(request, pk):
-    candidate = Candidate.objects.get(pk=pk)
-    junta = candidate.user
-    if request.POST:
-        candidate_form = EditCandidateForm(request.POST, instance=candidate)
-        profile_pic_form = EditProfilePic(request.POST, instance=junta)
-        if candidate_form.is_valid() and profile_pic_form.is_valid():
-            candidate_form.save()
-            profile_pic_form.save()
-        else:
-            print("CandidateForm POST Error: ", candidate_form.errors)
-            print("ProfilePicForm POST Error: ", profile_pic_form.errors)
-        return HttpResponseRedirect(reverse('portal:candidate-detail', kwargs={'pk': pk}))
 
-    candidate_form = EditCandidateForm(initial=model_to_dict(candidate))
-    profile_pic_form = EditProfilePic(initial=model_to_dict(junta))
+    @user_has_role(role=choices.CANDIDATE, pk=pk)
+    def func(request, pk):
+        candidate = Candidate.objects.get(pk=pk)
+        junta = candidate.user
+        if request.method == 'POST':
+            candidate_form = EditCandidateForm(request.POST, instance=candidate)
+            profile_pic_form = EditProfilePic(request.POST, request.FILES, instance=junta)
+            print(profile_pic_form)
+            if candidate_form.is_valid() and profile_pic_form.is_valid():
+                candidate_form.save()
+                profile_pic_form.save()
+            else:
+                print("CandidateForm POST Error: ", candidate_form.errors)
+                print("ProfilePicForm POST Error: ", profile_pic_form.errors)
+            return HttpResponseRedirect(reverse('portal:candidate-detail', kwargs={'pk': pk}))
 
-    d = {
-        'candidate': candidate,
-        'nbar': 'candidate',
-        'candidate_form': candidate_form,
-        'profile_pic_form': profile_pic_form,
-    }
-    return render(request, 'candidate_form.html', d)
+        candidate_form = EditCandidateForm(initial=model_to_dict(candidate))
+        profile_pic_form = EditProfilePic(initial=model_to_dict(junta))
+
+        d = {
+            'candidate': candidate,
+            'nbar': 'candidate',
+            'candidate_form': candidate_form,
+            'profile_pic_form': profile_pic_form,
+        }
+        return render(request, 'candidate_form.html', d)
+
+    return func(request, pk)

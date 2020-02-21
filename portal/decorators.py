@@ -1,32 +1,38 @@
-from django.urls import URLPattern, URLResolver
-from django.conf.urls.defaults import patterns, url, include
-from django.contrib import admin
-from myproject.myapp.decorators import superuser_required
+from django.core.exceptions import PermissionDenied
+from portal.models import User, Candidate
+from portal.choices import CANDIDATE
+from functools import wraps
 
-class DecoratedURLPattern(RegexURLPattern):
-    def resolve(self, *args, **kwargs):
-        result = super(DecoratedURLPattern, self).resolve(*args, **kwargs)
-        if result:
-            result.func = self._decorate_with(result.func)
-        return result
 
-class DecoratedRegexURLResolver(RegexURLResolver):
-    def resolve(self, *args, **kwargs):
-        result = super(DecoratedRegexURLResolver, self).resolve(*args, **kwargs)
-        if result:
-            result.func = self._decorate_with(result.func)
-        return result
+def user_has_role(role, pk=0):
+    def decorator(function):
+        @wraps(function)
+        def wrap(request, *args, **kwargs):
+            d = dict()
+            try:
+                if request.session['user']['is_authenticated']:
+                    d['is_authenticated'] = True
+                else:
+                    d['is_authenticated'] = False
+            except (KeyError, AttributeError) as e:
+                d['is_authenticated'] = False
+            if d['is_authenticated']:
+                user = User.objects.get(email=request.session['user']['email'])
+                if user.junta.role == role:
+                    if role == CANDIDATE:
+                        if user.junta.candidate.all()[0] == Candidate.objects.get(pk=pk):
+                            return function(request, *args, **kwargs)
+                        else:
+                            print(pk, user.junta.candidate.all()[0].pk, pk == user.junta.candidate.all()[0].pk)
+                            raise PermissionDenied
+                    else:
+                        return function(request, *args, **kwargs)
+                else:
+                    print("role", user.junta.role)
+                    raise PermissionDenied
+            else:
+                raise PermissionDenied
 
-def decorated_includes(func, includes, *args, **kwargs):
-    urlconf_module, app_name, namespace = includes
+        return wrap
 
-    for item in urlconf_module:
-        if isinstance(item, RegexURLPattern):
-            item.__class__ = DecoratedURLPattern
-            item._decorate_with = func
-
-        elif isinstance(item, RegexURLResolver):
-            item.__class__ = DecoratedRegexURLResolver
-            item._decorate_with = func
-
-    return urlconf_module, app_name, namespace
+    return decorator
