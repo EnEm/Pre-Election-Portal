@@ -1,79 +1,75 @@
 {% extends 'base.html' %}
 
-        {% block bodyBlock %}
-        <style>
-          .form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background: #fff;
-    width: 355px;
-    height: 85%;
-    margin: -100px 0 0 -170px;
-    padding: 40px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-  }
-  .form h2 {
-    margin: 0 0 20px;
-    line-height: 1;
-    color: #44c4e7;
-    font-size: 18px;
-    font-weight: 400;
-  }
-  .form input {
-    outline: none;
-    display: block;
-    width: 100%;
-    margin: 0 0 20px;
-    padding: 10px 15px;
-    border: 1px solid #ccc;
-    color: #ccc;
-    font-family: "Roboto";
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    font-size: 14px;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-transition: 0.2s linear;
-    -moz-transition: 0.2s linear;
-    -ms-transition: 0.2s linear;
-    -o-transition: 0.2s linear;
-    transition: 0.2s linear;
-  }
-  .form input:focus {
-    color: #333;
-    border: 1px solid #44c4e7;
-  }
-  .form button {
-    cursor: pointer;
-    background: #44c4e7;
-    width: 100%;
-    padding: 10px 15px;
-    border: 0;
-    color: #fff;
-    font-family: "Roboto";
-    font-size: 14px;
-    font-weight: 400;
-  
-  }
-  .form button:hover {
-    background: #369cb8;
-  }
-        </style>
-        
-        <div class="form animated zoomIn" >
-          <!-- <div class="row justify-content-center">
-            <div > -->
-              <h5 >Update Voting Statistics</h5>
-              {% block content %}
-              {% endblock %}
-            <!-- </div>
-          </div> -->
-        </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      {% endblock %}
+{% block titleBlock %}
+    {% block title %}
+    {% endblock %}
+    <style>
+        .form {
+            background: #fff;
+            max-width: 335px;
+            height: auto;
+            margin: max(10vw, 10vh) auto;
+            padding: 40px;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+          }
+        .form h2 {
+            margin: 0 0 20px;
+            line-height: 1;
+            color: #44c4e7;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .form input {
+            outline: none;
+            display: block;
+            width: 100%;
+            margin: 0 0 20px;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            color: #ccc;
+            font-family: "Roboto", serif;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            font-size: 14px;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-transition: 0.2s linear;
+            -moz-transition: 0.2s linear;
+            -ms-transition: 0.2s linear;
+            -o-transition: 0.2s linear;
+            transition: 0.2s linear;
+        }
+        .form input:focus {
+            color: #333;
+            border: 1px solid #44c4e7;
+        }
+        .form button {
+            cursor: pointer;
+            background: #44c4e7;
+            width: 100%;
+            padding: 10px 15px;
+            border: 0;
+            color: #fff;
+            font-family: "Roboto", serif;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        .form button:hover {
+            background: #369cb8;
+        }
+    </style>
+
+{% endblock %}
 
 
-        
+{% block bodyBlock %}
+
+    <div class="form animated zoomIn" >
+          <h5 >Update Voting Statistics</h5>
+          {% block content %}
+          {% endblock %}
+    </div>
+
+{% endblock %}

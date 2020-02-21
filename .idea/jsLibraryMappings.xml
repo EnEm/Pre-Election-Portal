@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$" libraries="{3fb32c2b41, Chart, all, b6b1691ae7, bootstrap.bundle, canvasjs, font-awesome, jquery-1.11.1, jquery-3.4.1, jquery.slim, summernote-lite}" />
+    <file url="file://$PROJECT_DIR$" libraries="{3fb32c2b41, Chart, all, animate, b6b1691ae7, bootstrap.bundle, canvasjs, font-awesome, jquery-1.11.1, jquery-3.3.1, jquery-3.4.1, jquery.slim, summernote-lite}" />
   </component>
 </project>
