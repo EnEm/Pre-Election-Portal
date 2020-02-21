@@ -12,6 +12,7 @@ ROLES_CHOICES = (
 
 PG_SENATOR = "PG Senator"
 UG_SENATOR = "UG Senator"
+GIRL_SENATOR = "Girl Senator"
 GENERAL_SECRETARY_TECHNICAL = "General Secretary Technical"
 GENERAL_SECRETARY_WELFARE = "General Secretary Welfare"
 GENERAL_SECRETARY_SPORTS = "General Secretary Sports"
@@ -27,18 +28,41 @@ POSITION_CHOICES = (
     (GENERAL_SECRETARY_WELFARE, GENERAL_SECRETARY_WELFARE),
     (PG_SENATOR, PG_SENATOR),
     (UG_SENATOR, UG_SENATOR),
+    (GIRL_SENATOR, GIRL_SENATOR),
     (VP, VP),
 )
 
 FORM_POSITION_CHOICES = POSITION_CHOICES + ((SELECT, SELECT),)
 
-Hostel_Name=(
-    ('brahmaputra','Brahmaputra'),
-    ('dihing','Dihing'),
-    ('manas','Manas'),
-    ('lohit','Lohit'),
-    ('barak','Barak'),
 
+BRAHMAPUTRA = 'Brahmaputra'
+DIHING = 'Dihing'
+MANAS = 'Manas'
+LOHIT = 'Lohit'
+BARAK = 'Barak'
+UMIAM = 'Umiam'
+KAMENG = 'Kameng'
+SIANG = 'Siang'
+KAPILI = 'Kapili'
+DIBANG = 'Dinbang'
+DISANG = 'Disang'
+DHANSIRI = 'Dhansiri'
+SUBANSIRI = 'Subansiri'
+MARRIED_SCHOLARS_HOSTEL = 'Married Scholars Hostel'
+
+HOSTEL_CHOICES = (
+    (BRAHMAPUTRA, BRAHMAPUTRA),
+    (DIHING, DIHING),
+    (MANAS, MANAS),
+    (LOHIT, LOHIT),
+    (BARAK, BARAK),
+    (UMIAM, UMIAM),
+    (KAMENG, KAMENG),
+    (SIANG, SIANG),
+    (KAPILI, KAPILI),
+    (DIBANG, DIBANG),
+    (DISANG, DISANG),
+    (DHANSIRI, DHANSIRI),
+    (SUBANSIRI, SUBANSIRI),
+    (MARRIED_SCHOLARS_HOSTEL, MARRIED_SCHOLARS_HOSTEL)
 )
-
-Hostel_Names = Hostel_Name +  ((SELECT, SELECT),)

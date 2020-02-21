@@ -30,56 +30,53 @@
 
     <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
-        <!-- Navigation -->
-        <div id="navigation">
-            <nav class="navbar navbar-expand-lg bg-light navbar-light" role="navigation">
-                        <div class="site-logo">
-                            <a href="{% url 'portal:index' %}" class="navbar-brand"><img id="logoiit" src="{% static 'images/iitg.png' %}"/></a>
+        <div id="page-container">
+            <!-- Navigation -->
+            <div id="navigation">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light" role="navigation">
+                            <div class="site-logo">
+                                <a href="{% url 'portal:index' %}" class="navbar-brand"><img id="logoiit" src="{% static 'images/iitg.png' %}"/></a>
+                            </div>
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item {% if nbar == 'home' %}active{% endif %}"><a class="nav-link" href="{% url 'portal:index' %}">Home</a></li>
+                                    <li class="nav-item {% if nbar == 'rules' %}active{% endif %}"><a class="nav-link" href="#">Rules</a></li>
+                                    <li class="nav-item {% if nbar == 'candidates' %}active{% endif %}"><a class="nav-link" href="{% url 'portal:candidates' %}">Candidates</a></li>
+                                    <li class="nav-item {% if nbar == 'stats' %}active{% endif %}"><a class="nav-link" class="nav-link" href="{% url 'stats:chart' %}">Statistics</a></li>
+                                    {% if request.session.user %}
+                                        <li class="nav-item{% if nbar == 'logout' %}active{% endif %}"><a class="nav-link" href="{% url 'authentication:signout' %}">Logout</a></li>
+                                    {% else %}
+                                        <li class="nav-item {% if nbar == 'login' %}active{% endif %}"><a class="nav-link" href="{% url 'authentication:signin' %}">Login</a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                </nav>
+            </div>
+            <!-- /Navigation -->
+
+            <div id="content-wrap">
+                {% block bodyBlock %}
+                {% endblock %}
+            </div>
+
+
+            <footer id="footer">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 text-center copyright">
+                            &copy;Copyright - SWC. All Rights Reserved.
                         </div>
-
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item {% if nbar == 'home' %}active{% endif %}"><a class="nav-link" href="{% url 'portal:index' %}">Home</a></li>
-                                <li class="nav-item {% if nbar == 'rules' %}active{% endif %}"><a class="nav-link" href="#about">Rules</a></li>
-                                <li class="nav-item {% if nbar == 'candidates' %}active{% endif %}"><a class="nav-link" href="candidates.html">Candidates</a></li>
-                                <li class="nav-item {% if nbar == 'stats' %}active{% endif %}"><a class="nav-link" class="nav-link" href="{% url 'stats:chart' %}">Statistics</a></li>
-                                {% if is_authenticated %}
-                                    <li class="nav-item{% if nbar == 'logout' %}active{% endif %}"><a class="nav-link" href="{% url 'portal:logout' %}">Logout</a></li>
-                                {% else %}
-                                    <li class="nav-item {% if nbar == 'login' %}active{% endif %}"><a class="nav-link" href="#">Login</a></li>
-                                {% endif %}
-                            </ul>
-                        </div>
-            </nav>
-        </div>
-        <!-- /Navigation -->
-
-        {% block bodyBlock %}
-        {% endblock %}
-
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <ul class="footer-menu">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="candidates.html">Candidates</a></li>
-                            <li><a href="#">Statistics</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 text-right copyright">
-                        &copy;Copyright - SWC. All Rights Reserved.
                     </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
+        </div>
 
         <!-- Core JavaScript Files -->
-        {% block scriptBlock %}
-        {% endblock %}
+
         <script src="{% static 'js/jquery.min.js' %}"></script>
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
         <script src="{% static 'js/jquery.sticky.js' %}"></script>
@@ -91,11 +88,12 @@
         <script src="{% static 'js/custom.js' %}"></script>
         <script src="{% static 'js/css3-animate-it.js' %}"></script>
         <script src="{% static 'css/contactform/contactform.js' %}"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+{#        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>#}
         <script src="//netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="https://kit.fontawesome.com/3fb32c2b41.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
+        {% block scriptBlock %}
+        {% endblock %}
         <script>
         $(document).ready(function () {
         {% block jqueryBlock %}
@@ -224,8 +222,8 @@
         }
         }).done(function (data) {
         this_.parent().parent().children(".container-questions").html(data.html_questions);
-        this_.css("border-style", "inset");
-        this_.parent().children(".btn-sort-upvotes").css("border-style", 'outset');
+        this_.addClass('active');
+        this_.parent().children(".btn-sort-upvotes").removeClass('active');
         });
         });
 
@@ -245,8 +243,8 @@
         }
         }).done(function (data) {
         this_.parent().parent().children(".container-questions").html(data.html_questions);
-        this_.css("border-style", "inset");
-        this_.parent().children(".btn-sort-recent").css("border-style", 'outset');
+        this_.addClass('active');
+        this_.parent().children(".btn-sort-recent").removeClass('active');
         });
         });
 

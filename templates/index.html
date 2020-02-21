@@ -54,8 +54,8 @@
     {% if my_questions %}
         <div class="container-questions-static">
             <span id="my-questions-sort-tray" class="sort-tray ml-3">
-                <button class="btn-sort-recent" type="button" data-sort-on="my-questions" data-user="{{ user.junta.pk }}" style="border-style: inset">Recent</button>
-                <button class="btn-sort-upvotes" type="button" data-sort-on="my-questions" data-user="{{ user.junta.pk }}" style="border-style: outset">Upvotes</button>
+                <a class="btn btn-sort-recent btn-skin btn-rounded text-white active" type="button" data-sort-on="my-questions" data-user="{{ user.junta.pk }}">Recent</a>
+                <a class="btn btn-sort-upvotes btn-skin btn-rounded text-white" type="button" data-sort-on="my-questions" data-user="{{ user.junta.pk }}">Upvotes</a>
             </span>
 
             <div class="container-questions">
@@ -77,9 +77,9 @@
                             {% endif %}
 
                             {% if question.answered %}
-                                <a class="btn btn-primary" href="{% url 'portal:answer' question.pk %}">Update</a>
+                                <a class="btn btn-skin" href="{% url 'portal:answer' question.pk %}">Update</a>
                             {% else %}
-                                <a class="btn btn-primary" href="{% url 'portal:answer' question.pk %}">Answer</a>
+                                <a class="btn btn-skin" href="{% url 'portal:answer' question.pk %}">Answer</a>
                             {% endif %}
 
                             <span class="vote-tray">
@@ -90,14 +90,14 @@
                                 {% endif %}
                                 <span class="text-vote">{{ question.upvotes.count }}</span>
                             </span>
-                            <span class="toggle-comment"><i class="fas fa-comment"></i></span>
+                            <span class="toggle-comment"><i class="fa fa-comments"></i></span>
 
                             <div class="comments" style="display: none">
                                 {% if comment_form %}
                                     <form method="post" action="{% url 'portal:comment' question.pk %}">
                                         {% csrf_token %}
                                         {{ comment_form.as_p }}
-        {#                                <button type="submit">Submit</button>#}
+                                        <button type="submit">Submit</button>
                                     </form>
                                 {% endif %}
                                 {% if question.comments.count != 0%}
@@ -138,8 +138,8 @@
     {% if approved_questions %}
         <div class="container-questions-static">
             <span id="approved-sort-tray" class="sort-tray ml-3">
-                <button class="btn-sort-recent" type="button" data-sort-on="approved" data-user="{{ user.junta.pk }}" style="border-style: inset">Recent</button>
-                <button class="btn-sort-upvotes" type="button" data-sort-on="approved" data-user="{{ user.junta.pk }}" style="border-style: outset">Upvotes</button>
+                <a class="btn btn-sort-recent btn-skin btn-rounded text-white active" type="button" data-sort-on="approved" data-user="{{ user.junta.pk }}">Recent</a>
+                <a class="btn btn-sort-upvotes btn-skin btn-rounded text-white" type="button" data-sort-on="approved" data-user="{{ user.junta.pk }}">Upvotes</a>
             </span>
 
             <div class="container-questions">
@@ -168,7 +168,7 @@
                                 {% endif %}
                                 <span class="text-vote">{{ question.upvotes.count }}</span>
                             </span>
-                            <span class="toggle-comment"><i class="fas fa-comment"></i></span>
+                            <span class="toggle-comment"><i class="fa fa-comments"></i></span> <span>{{ question.comments.count }}</span>
 
                             {% ifequal user.junta.role "Election Commission" %}
                                 <a class="btn-delete" data-href="{% url 'portal:api-delete-question' question.pk  %}" ><i class="fas fa-trash-alt"></i></a>
@@ -240,7 +240,7 @@
                 {% endif %}
             </div>
             <div class="card-footer">
-                <input class="btn btn-primary btn-rounded" type="submit" name="Ask" value="Ask">
+                <input class="btn btn-skin btn-rounded" type="submit" name="Ask" value="Ask">
             </div>
         </form>
     </div>

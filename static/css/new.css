@@ -41,8 +41,13 @@ body {
 .team-member {
     overflow: hidden;
 }
-.team-member, .team-member .team-img {
-    position: relative;
+
+.img-fluid {
+    background-position: center;
+    background-size: cover;
+    padding-top: 100%;
+    width: 100%;
+    position: center;
 }
 
 .team-hover {
@@ -111,7 +116,6 @@ body {
 .team-title {
     position: static;
     padding: 20px 0;
-    display: inline-block;
     letter-spacing: 2px;
     width: 100%;
 }
@@ -167,4 +171,21 @@ body {
 #return-to-top:hover i {
     color: #fff;
     top: 5px;
+}
+
+.btn1 {
+    /*max-width: 15%;*/
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 500px) {
+    .btn1 {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width: 1549px) {
+    .btn1 {
+        width: 30%;
+    }
 }

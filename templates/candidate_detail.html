@@ -1,10 +1,7 @@
-<!DOCTYPE HTML>
-
 {% extends 'base.html' %}
 {% load static %}
 {% load custom_tags %}
 {% load crispy_forms_tags %}
-{% load crispy_forms_field %}
 
     {% block titleBlock %}
         <title>Agendas</title>
@@ -14,7 +11,6 @@
         <link rel="stylesheet" href="{% static 'css/animate.css' %}">
         <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
         <link rel="stylesheet" href="{% static 'css/new.css' %}">
-        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
         <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,16 +21,17 @@
     {% block bodyBlock %}
 
         {% if candidate %}
+            {% ifequal user.junta.pk candidate.user.pk %}
+                <a class="float btn btn-skin text-white">
+                    <i class="fa fa-pencil"></i>&nbsp;Edit
+                </a>
+            {% endifequal %}
             <div id="colorlib-about">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-5 animate-box" align="center">
-                            <div id="ig">
-                                {% if candidate.user.profile_pic %}
-                                    <img  src="{{ candidate.user.profile_pic.url }}" alt="candidate" width="80%" >
-                                {% else %}
-                                    <img  src="{% static 'images/profile.jpg' %}" alt="candidate" width="80%" >
-                                {% endif %}
+                            <div id="ig" style="width: 80%">
+                                <div class="img-fluid" style="background-image: url('{% if candidate.user.profile_pic %}{{ candidate.user.profile_pic.url }}{% else %}{% static 'images/profile.jpg' %}{% endif %}');"></div>
                             </div>
                         </div>
                         <div class="col-md-6 col-md-push-1 animate-box">
@@ -44,9 +41,17 @@
                                         <h2 class="heading">About</h2>
                                     </div>
                                     <h2>{{ candidate.user.user.first_name }} {{ candidate.user.user.last_name }}</h2>
-                                    <p><strong>Email:</strong>{{ candidate.user.user.email }}</p>
-                                    <p><strong>Contesting For:</strong>{{ candidate.position }}</p>
-                                    <p><strong>Bio:</strong>{{ candidate.bio | safe }}</p>
+                                    <p><strong>Email:</strong>&nbsp;{{ candidate.user.user.email }}</p>
+                                    <p><strong>Contesting For:</strong>&nbsp;{{ candidate.position }}</p>
+                                    {% if candidate.bio %}
+                                        <p><strong>Bio:</strong>&nbsp;{{ candidate.bio | safe }}</p>
+                                    {% endif %}
+                                    {% if candidate.videos %}
+                                        <p><strong>Video:</strong>&nbsp;<a href="{{ candidate.videos.url }}" target="_blank">Click here</a></p>
+                                    {% endif %}
+                                    {% if candidate.agenda %}
+                                        <p><strong>Ageda:</strong>&nbsp;<a href="{{ candidate.agenda.url }}" target="_blank">Click here to read full Agenda</a></p>
+                                    {% endif %}
                                     <br>
                                 </div>
                             </div>
@@ -72,42 +77,42 @@
 
             <div class="container">
                 <div class="row animate-box">
-                    <h2 align="center" >Ask Me Anything!</h2>
+                    <div class="desc">
+                        <div class="rotate">
+                            <h2 class="heading">Ask Me Anything!</h2>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="card border-dark m-3 animate-box">
                     <div class="card-header border-dark">
                         <strong>Ask Me Anything</strong>
                     </div>
-                    <form id="question-form" class="form-group" action="{% url 'portal:index' %}" method="post" data-href="{% url 'portal:ajax-load-candidates' %}">
+                    <form id="question-form" class="form-group" action="{% url 'portal:candidate-detail' candidate.pk %}" method="post" data-href="{% url 'portal:ajax-load-candidates' %}">
                         <div class="card-body">
                             {% if question_form %}
                                 {% csrf_token %}
                                 {{ question_form.question | as_crispy_field }}
-                                <div class="row">
-                                    <div class="col-6">
-                                        {{ question_form.position | as_crispy_field }}
-                                    </div>
-                                    <div class="col-6">
-                                        {{ question_form.asked_to | as_crispy_field }}
-                                    </div>
-                                </div>
                             {% endif %}
                         </div>
                         <div class="card-footer">
-                            <input class="btn btn-primary btn-rounded" type="submit" name="Ask" value="Ask">
+                            <input class="btn btn-skin btn-rounded" type="submit" name="Ask" value="Ask">
                         </div>
                     </form>
                 </div>
+            </div>
 
-                <div class="col-md-15 animate-box ">
-                    <span id="my-questions-sort-tray" class="sort-tray ml-3">
-                        <button class="btn-sort-recent" type="button" data-sort-on="my-questions" data-user="{{ candidate.user.pk }}" style="border-style: inset">Recent</button>
-                        <button class="btn-sort-upvotes" type="button" data-sort-on="my-questions" data-user="{{ candidate.user.pk }}" style="border-style: outset">Upvotes</button>
-                    </span>
+            <div class="container">
+                <div class="col-md-15">
+                    {% if questions %}
+                        <span id="my-questions-sort-tray" class="sort-tray ml-3 animate-box">
+                            <a class="btn btn-sort-recent btn-skin btn-rounded text-white active" type="button" data-sort-on="my-questions" data-user="{{ candidate.user.pk }}">Recent</a>
+                            <a class="btn btn-sort-upvotes btn-skin btn-rounded text-white" type="button" data-sort-on="my-questions" data-user="{{ candidate.user.pk }}">Upvotes</a>
+                        </span>
+                    {% endif %}
                     <div class="container-questions">
                         {% for question in questions %}
-                            <div class="card border-dark m-3">
+                            <div class="card border-dark m-3 animate-box">
                                 <div class="card-header">
                                     <strong>{{ question.question }}</strong>
                                 </div>
@@ -126,9 +131,9 @@
 
                                     {% ifequal user.junta.pk candidate.user.pk %}
                                         {% if question.answered %}
-                                            <a class="btn btn-primary" href="{% url 'portal:answer' question.pk %}">Update</a>
+                                            <a class="btn btn-skin" href="{% url 'portal:answer' question.pk %}">Update</a>
                                         {% else %}
-                                            <a class="btn btn-primary" href="{% url 'portal:answer' question.pk %}">Answer</a>
+                                            <a class="btn btn-skin" href="{% url 'portal:answer' question.pk %}">Answer</a>
                                         {% endif %}
                                     {% endifequal %}
 
@@ -140,13 +145,14 @@
                                         {% endif %}
                                         <span class="text-vote">{{ question.upvotes.count }}</span>
                                     </span>
-                                    <span class="toggle-comment"><i class="fas fa-comment"></i></span>
+                                    <span class="toggle-comment"><i class="fa fa-comments"></i></span> <span>{{ question.comments.count }}</span>
 
                                     <div class="comments" style="display: none">
                                         {% if comment_form %}
                                             <form method="post" action="{% url 'portal:comment' question.pk %}">
                                                 {% csrf_token %}
-                                                {{ comment_form.as_p }}
+                                                {{ comment_form }}
+                                                <span><i class="fas fa-send"></i></span>
                                             </form>
                                         {% endif %}
                                         {% if question.comments.count != 0%}
@@ -154,7 +160,12 @@
                                                 <br>
                                                 {% for comment in question.comments.all  %}
                                                     {% if comment.approved %}
-                                                        <strong><p>{{ comment.comment_by }}</p></strong>
+                                                        <div class="card-text">
+                                                            <div class="text-muted">
+                                                                <strong>{{ comment.comment_by }}</strong>
+                                                            </div>
+                                                            <p><small class="text-muted">Commented on {{ comment.commented_on }}</small></p>
+                                                        </div>
                                                         <p><i>{{ comment.comment|safe }}</i></p>
 
                                                         <span class="vote-tray">
@@ -208,6 +219,8 @@
         </script>
 
         <!-- Main JS (Do not remove) -->
+        <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
         <script src="{% static 'js/main.js' %}"></script>
     {% endblock %}
 

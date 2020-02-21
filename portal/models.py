@@ -1,4 +1,3 @@
-# from django.contrib.auth.models import User
 from django.db import models
 from django.shortcuts import reverse
 from django.utils import timezone
@@ -44,6 +43,10 @@ class Candidate(models.Model):
 
     def __str__(self):
         return '{} {}'.format(self.user.user.first_name, self.user.user.last_name)
+
+    @staticmethod
+    def get_absolute_url():
+        return reverse('portal:candidate-detail', kwargs={'pk': pk})
 
 
 class Question(models.Model):
@@ -125,7 +128,7 @@ class Comment(models.Model):
 
 
 class Hostel(models.Model):
-    name = models.CharField(max_length=64)
+    name = models.CharField(max_length=64, choices=choices.HOSTEL_CHOICES, unique=True)
     total_residents = models.IntegerField(default=0)
     no_of_votes = models.IntegerField(default=0)
 

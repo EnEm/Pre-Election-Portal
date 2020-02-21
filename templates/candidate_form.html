@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_tags %}
+{% load crispy_forms_tags %}
+
+    {% block titleBlock %}
+        <title>Agendas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+        <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+        <link rel="stylesheet" href="{% static 'css/new.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {% endblock %}
+
+
+    {% block bodyBlock %}
+
+        {% if candidate %}
+            <form>
+                <div id="colorlib-about">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5 animate-box" align="center">
+                                <div id="ig" style="width: 80%">
+                                    <div class="img-fluid" style="background-image: url('{% if candidate.user.profile_pic %}{{ candidate.user.profile_pic.url }}{% else %}{% static 'images/profile.jpg' %}{% endif %}');"></div>
+                                    <br>
+                                    <p>{{ profile_pic_form.profile_pic }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-md-push-1 animate-box">
+                                <div class="about-desc">
+                                    <div class="desc">
+                                        <div class="rotate">
+                                            <h2 class="heading">About</h2>
+                                        </div>
+                                        <h2>{{ candidate.user.user.first_name }} {{ candidate.user.user.last_name }}</h2>
+                                        <p><strong>Email:</strong>&nbsp;{{ candidate.user.user.email }}</p>
+                                        <p><strong>Contesting For:</strong>&nbsp;{{ candidate.position }}</p>
+                                        <p>{{ candidate_form.bio }}</p>
+                                        <p>{{ candidate_form.videos }}</p>
+                                        <p>{{ candidate_form.agenda }}</p>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row animate-box">
+                            <h2 align="center" >Here's What I Plan to DO!</h2>
+                        </div>
+                        <div class="col-md-15 animate-box ">
+                            <div class="about-desc">
+                                <div class="desc">
+                                    <div class="col-md-15">
+                                        {{ candidate_form.key_points }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        {% else %}
+            Candidate Not Found
+        {% endif %}
+
+    {% endblock %}
+
+    {% block scriptBlock %}
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/magnific-popup-options.js' %}"></script>
+
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myTopnav");
+              if (x.className === "topnav" ) {
+                x.className += " responsive";
+              }
+              else if (x.className === "log" ) {
+                x.className += " responsive";
+              }
+              else {
+                x.className = "topnav";
+              }
+            }
+        </script>
+
+        <!-- Main JS (Do not remove) -->
+        <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    {% endblock %}
+
+

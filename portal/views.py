@@ -5,28 +5,47 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.template.loader import render_to_string
 from django.utils import timezone
 from django.db.models import Q
-from rest_framework import authentication, permissions
-from rest_framework.response import Response
-from rest_framework.views import APIView
-from .forms import AskForm, AnswerForm, CommentForm
+from django.forms.models import model_to_dict
+
+from .forms import AskForm, AnswerForm, CommentForm, EditCandidateForm, EditProfilePic
 from .models import Question, Candidate, Comment, User
 from . import choices
+
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 
 def candidate_detail_view(request, pk):
     try:
         candidate = Candidate.objects.get(id=pk)
-        d = {
-            'candidate': candidate,
-            'comment_form': CommentForm(),
-            'question_form': AskForm(),
-            'questions': Question.objects.filter(asked_to=candidate).filter(approved=True).order_by('-asked_on')
-        }
-        print(d)
-    except:
-        d = {'candidate': None}
-    d['nbar'] = 'candidates'
-    d['user'] = User.objects.get(email=request.session['user']['email'])
+    except Candidate.DoesNotExist:
+        candidate = None
+
+    if request.method == 'POST':
+        try:
+            if request.session['user']['is_authenticated'] and candidate is not None:
+                user = User.objects.get(email=request.session['user']['email'])
+                questionForm = AskForm(request.POST)
+                if questionForm.is_valid():
+                    question = questionForm.save(commit=False)
+                    question.asked_by = user.junta
+                    question.asked_to = candidate
+                    question.save()
+                    questionForm.save_m2m()
+                    pass
+                else:
+                    print(questionForm.errors)
+                return HttpResponseRedirect(reverse('portal:candidate-detail', kwargs={'pk': pk}))
+        except KeyError:
+            return HttpResponseRedirect(reverse('authentication:signin'))
+
+    d = {'candidate': candidate, 'comment_form': CommentForm(), 'question_form': AskForm(),
+         'questions': Question.objects.filter(asked_to=candidate).filter(approved=True).order_by('-asked_on'),
+         'nbar': 'candidates'}
+    try:
+        d['user'] = User.objects.get(email=request.session['user']['email'])
+    except KeyError:
+        d['user'] = User.objects.get(email='voter@voter.voter')
     return render(request, 'candidate_detail.html', d)
 
 
@@ -243,7 +262,10 @@ class SortQuestionsAPI(APIView):
         sort_on = request.GET.get('sort_on')
         data[sort_by] = sort_by
         data[sort_on] = sort_on
-        user_ = User.objects.get(email=request.session['user']['email'])
+        try:
+            user_ = User.objects.get(email=request.session['user']['email'])
+        except KeyError:
+            user_ = User.objects.get(email='voter@voter.voter')
         junta_pk = request.GET.get('junta_pk')
         if sort_on == "my-questions":
             questions = Question.objects.filter(asked_to__user__pk=junta_pk).filter(approved=True)
@@ -264,7 +286,7 @@ class SortQuestionsAPI(APIView):
                    'question_type': sort_on,
                    'comment_form': CommentForm()}
 
-        if user_.junta.role == "Candidate":
+        if user_.junta.role == "Candidate" and sort_on == 'my-questions':
             context['candidate'] = Candidate.objects.get(user__pk=junta_pk)
 
         data['html_questions'] = render_to_string(
@@ -280,8 +302,14 @@ def index(request):
     question_form = AskForm()
     comment_form = CommentForm()
     d = {'question_form': question_form, 'comment_form': comment_form, 'nbar': 'home'}
-    if request.session['user']['is_authenticated']:
-        d['is_authenticated'] = True
+    try:
+        if request.session['user']['is_authenticated']:
+            d['is_authenticated'] = True
+        else:
+            d['is_authenticated'] = False
+    except KeyError:
+        d['is_authenticated'] = False
+    if d['is_authenticated']:
         user = User.objects.get(email=request.session['user']['email'])
         d['user'] = user
         if user.junta.role == choices.ELECTION_COMMISSION:
@@ -307,6 +335,7 @@ def index(request):
     d['approved_questions'] = approved_questions
     if request.method == 'POST':
         if d['is_authenticated']:
+            user = User.objects.get(email=request.session['user']['email'])
             questionForm = AskForm(request.POST)
             if questionForm.is_valid():
                 question = questionForm.save(commit=False)
@@ -321,6 +350,16 @@ def index(request):
             return HttpResponseRedirect(reverse('portal:login'))
 
     return render(request, 'index.html', d)
+
+
+def candidates_view(request):
+    d = {
+        'candidates': Candidate.objects.all(),
+        'nbar': 'candidates',
+        'choices': choices,
+    }
+
+    return render(request, 'candidates.html', d)
 
 
 def load_candidates(request):
@@ -359,12 +398,20 @@ def answer_view(request, pk):
 def comment_view(request, pk):
     question = Question.objects.get(pk=pk)
     comment_form = CommentForm()
-    user = User.objects.get(email=request.session['user']['email'])
-    d = {'question': question, 'comment_form': comment_form}
+    d = {'question': question, 'comment_form': comment_form, 'is_authenticated': False}
 
-    if request.session['user']['is_authenticated']:
-        d['is_authenticated'] = True
+    try:
+        if request.session['user']['is_authenticated']:
+            d['is_authenticated'] = True
+        else:
+            return HttpResponseRedirect(reverse('authentication:signin'))
+    except KeyError:
+        return HttpResponseRedirect(reverse('authentication:signin'))
 
+    user = None
+    if d['is_authenticated']:
+        user = User.objects.get(email=request.session['user']['email'])
+    print(user)
     if request.POST:
         form = CommentForm(request.POST)
         if form.is_valid():
@@ -375,7 +422,6 @@ def comment_view(request, pk):
             comment.commented_on = timezone.now()
             comment.save()
             form.save_m2m()
-            pass
         else:
             print("CommentForm POST Error: ", form.errors)
         return HttpResponseRedirect(reverse('portal:index'))
@@ -406,3 +452,29 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse("portal:index"))
+
+
+def edit_candidate_view(request, pk):
+    candidate = Candidate.objects.get(pk=pk)
+    junta = candidate.user
+    if request.POST:
+        candidate_form = EditCandidateForm(request.POST, instance=candidate)
+        profile_pic_form = EditProfilePic(request.POST, instance=junta)
+        if candidate_form.is_valid() and profile_pic_form.is_valid():
+            candidate_form.save()
+            profile_pic_form.save()
+        else:
+            print("CandidateForm POST Error: ", candidate_form.errors)
+            print("ProfilePicForm POST Error: ", profile_pic_form.errors)
+        return HttpResponseRedirect(reverse('portal:candidate-detail', kwargs={'pk': pk}))
+
+    candidate_form = EditCandidateForm(initial=model_to_dict(candidate))
+    profile_pic_form = EditProfilePic(initial=model_to_dict(junta))
+
+    d = {
+        'candidate': candidate,
+        'nbar': 'candidate',
+        'candidate_form': candidate_form,
+        'profile_pic_form': profile_pic_form,
+    }
+    return render(request, 'candidate_form.html', d)

@@ -18,13 +18,15 @@
                 </div>
             {% endif %}
 
-            {% ifequal user.junta.pk candidate.user.pk %}
-                {% if question.answered %}
-                    <a class="btn btn-primary" href="{% url 'portal:answer' question.pk %}">Update</a>
-                {% else %}
-                    <a class="btn btn-primary" href="{% url 'portal:answer' question.pk %}">Answer</a>
-                {% endif %}
-            {% endifequal %}
+            {% if candidate %}
+                {% ifequal user.junta.pk candidate.user.pk %}
+                    {% if question.answered %}
+                        <a class="btn btn-skin" href="{% url 'portal:answer' question.pk %}">Update</a>
+                    {% else %}
+                        <a class="btn btn-skin" href="{% url 'portal:answer' question.pk %}">Answer</a>
+                    {% endif %}
+                {% endifequal %}
+            {% endif %}
 
             <span class="vote-tray">
                 {% if user.junta in question.upvotes.all %}
@@ -34,7 +36,7 @@
                 {% endif %}
                 <span class="text-vote">{{ question.upvotes.count }}</span>
             </span>
-            <span class="toggle-comment"><i class="fas fa-comment"></i></span>
+            <span class="toggle-comment"><i class="fa fa-comments"></i></span> <span>{{ question.comments.count }}</span>
 
             <div class="comments" style="display: none">
                 {% if comment_form %}

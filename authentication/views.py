@@ -24,7 +24,7 @@ def initialize_context(request):
 
 def home(request):
     context = initialize_context(request)
-
+    context.update({'nbar': 'home'})
     return render(request, 'home.html', context)
 
 
@@ -41,7 +41,7 @@ def sign_out(request):
     # Clear out the user and token
     remove_user_and_token(request)
 
-    return HttpResponseRedirect(reverse('home'))
+    return HttpResponseRedirect(reverse('authentication:home'))
 
 
 def callback(request):
@@ -68,4 +68,4 @@ def callback(request):
     store_token(request, token)
     store_user(request, user)
 
-    return HttpResponseRedirect(reverse('home'))
+    return HttpResponseRedirect(reverse('authentication:home'))

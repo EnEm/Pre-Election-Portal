@@ -1,13 +1,232 @@
-{% extends "layout.html" %}
-{% block content %}
-<div class="jumbotron">
-  <h1>Python Graph Tutorial</h1>
-  <p class="lead">This sample app shows how to use the Microsoft Graph API to access Outlook and OneDrive data from Python</p>
-  {% if user.is_authenticated %}
-    <h4>Welcome {{ user.name }}!</h4>
-    <p>Use the navigation bar at the top of the page to get started.</p>
-  {% else %}
-    <a href="{% url 'signin' %}" class="btn btn-primary btn-large">Click here to sign in</a>
-  {% endif %}
-</div>
-{% endblock %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="">
+
+      <title>PreElection Portal</title>
+
+        <!-- css -->
+
+        <link href="//netdna.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" id="bootstrap-css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/nivo-lightbox.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/nivo-lightbox-theme/default/default.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/animations.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <link href="{% static 'color/default.css' %}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="{% static 'images/swc.jpg' %}" rel="icon" type="image/x-icon">
+    </head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
+  <section class="hero" id="intro">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center navicon">
+          <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-md-offset-2 text-center inner">
+          <div class="animatedParent">
+            <h1 class="animated fadeInDown" id="center1">Pre-Election Portal</h1>
+            <p class="animated fadeInUp" id="center2">Your one stop destination for all the informations regarding the upcoming election.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-md-offset-3 text-center">
+          <a href="#about" class="learn-more-btn btn-scroll">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+        <!-- Navigation -->
+        <div id="navigation">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light" role="navigation">
+                        <div class="site-logo">
+                            <a href="{% url 'portal:index' %}" class="navbar-brand"><img id="logoiit" src="{% static 'images/iitg.png' %}"/></a>
+                        </div>
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item {% if nbar == 'home' %}active{% endif %}"><a class="nav-link" href="{% url 'portal:index' %}">Home</a></li>
+                                <li class="nav-item {% if nbar == 'rules' %}active{% endif %}"><a class="nav-link" href="#">Rules</a></li>
+                                <li class="nav-item {% if nbar == 'candidates' %}active{% endif %}"><a class="nav-link" href="{% url 'portal:candidates' %}">Candidates</a></li>
+                                <li class="nav-item {% if nbar == 'stats' %}active{% endif %}"><a class="nav-link" class="nav-link" href="{% url 'stats:chart' %}">Statistics</a></li>
+                                {% if request.session.user %}
+                                    <li class="nav-item{% if nbar == 'logout' %}active{% endif %}"><a class="nav-link" href="{% url 'portal:logout' %}">Logout</a></li>
+                                {% else %}
+                                    <li class="nav-item {% if nbar == 'login' %}active{% endif %}"><a class="nav-link" href="{% url 'authentication:signin' %}">Login</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+            </nav>
+        </div>
+        <!-- /Navigation -->
+
+
+  <!-- Section: about -->
+  <section id="about" class="home-section color-dark bg-white">
+    <div class="container marginbot-50">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="animatedParent">
+            <div class="section-heading text-center animated bounceInDown">
+              <h2 class="h-bold">About the Pre-Election Portal</h2>
+              <div class="divider-header"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container">
+
+
+      <div class="row justify-content-center">
+
+        <div class="col-lg-8 col-lg-offset-2 animatedParent">
+          <div class="text-center animated bounceInUp">
+            <p>
+              Lorem ipsum dolor sit amet, vis tale malis tacimates et, graece doctus omnesque ne est, deserunt pertinacia ne nam. Pro eu simul affert referrentur, natum mutat erroribus te his
+            </p>
+            <p>
+              Ne mundi fabulas corrumpit vim, nulla vivendum conceptam eu nam. Ius ex principes complectitur, ex quo duis suscipit. Ius fastidii reprimique no. Sadipscing appellantur pri ad. Oratio moderatius definitiones cum ex, mea ne brute vivendum percipitur.
+            </p>
+            <a href="#service" class="btn btn-skin btn-scroll">What we Offer</a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </section>
+  <!-- /Section: about -->
+
+
+  <!-- Section: services -->
+  <section id="service" class="home-section color-dark bg-gray">
+    <div class="container marginbot-50">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div>
+            <div class="section-heading text-center">
+              <h2 class="h-bold">What we Offer</h2>
+              <div class="divider-header"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center">
+      <div class="container">
+
+        <div class="row animatedParent">
+          <div class="col-md-4">
+            <div class="animated rotateInDownLeft">
+              <div class="service-box">
+                <div class="service-icon">
+                  <span class="fa fa-laptop fa-2x"></span>
+                </div>
+                <div class="service-desc">
+                  <h5>Agendas Of Candidates</h5>
+                  <div class="divider-header"></div>
+                  <p>
+                    Ad denique euripidis signiferumque vim, iusto admodum quo cu. No tritani neglegentur mediocritatem duo.
+                  </p>
+                  <a href="{% url 'portal:candidates' %}" class="btn btn-skin">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="animated bounceInUp">
+              <div class="service-box">
+                <div class="service-icon">
+                  <span class="fa fa-bar-chart-o fa-2x"></span>
+                </div>
+                <div class="service-desc">
+                  <h5>Statistics</h5>
+                  <div class="divider-header"></div>
+                  <p>
+                    Ad denique euripidis signiferumque vim, iusto admodum quo cu. No tritani neglegentur mediocritatem duo.
+                  </p>
+                  <a href="{% url 'stats:chart' %}" class="btn btn-skin">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="animated rotateInDownRight">
+              <div class="service-box">
+                <div class="service-icon">
+                  <span class="fa fa-question fa-2x"></span>
+                </div>
+                <div class="service-desc">
+                  <h5>Ask Me Anything</h5>
+                  <div class="divider-header"></div>
+                  <p>
+                    Ad denique euripidis signiferumque vim, iusto admodum quo cu. No tritani neglegentur mediocritatem duo.
+                  </p>
+                  <a href="{% url 'portal:index' %}" class="btn btn-skin">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="footer-menu">
+                            <li><a href="{% url 'portal:index' %}">Home</a></li>
+                            <li><a href="{% url 'portal:candidates' %}">Candidates</a></li>
+                            <li><a href="{% url 'stats:chart' %}">Statistics</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 text-right copyright">
+                        &copy;Copyright - SWC. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Core JavaScript Files -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/jquery.sticky.js' %}"></script>
+        <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+        <script src="{% static 'js/jquery.scrollTo.js' %}"></script>
+        <script src="{% static 'js/jquery.appear.js' %}"></script>
+        <script src="{% static 'js/stellar.js' %}"></script>
+        <script src="{% static 'js/nivo-lightbox.min.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+        <script src="{% static 'js/css3-animate-it.js' %}"></script>
+        <script src="{% static 'css/contactform/contactform.js' %}"></script>
+
+</body>
+</html>
