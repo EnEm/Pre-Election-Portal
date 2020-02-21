@@ -7,8 +7,8 @@ from django.utils import timezone
 from django.db.models import Q
 from django.forms.models import model_to_dict
 
-from .forms import AskForm, AnswerForm, CommentForm, EditCandidateForm, EditProfilePic
-from .models import Question, Candidate, Comment, User
+from .forms import AskForm, AnswerForm, CommentForm, EditCandidateForm, EditProfilePic, AddForm
+from .models import Question, Candidate, Comment, User, Junta
 from .decorators import user_has_role
 from . import choices
 
@@ -50,6 +50,63 @@ def candidate_detail_view(request, pk):
 
     request.session['redirect_callback'] = reverse('portal:candidate-detail', kwargs={'pk': pk})
     return render(request, 'candidate_detail.html', d)
+
+
+def users_list(request):
+
+    d = {
+        'candidates': User.objects.filter(junta__role=choices.CANDIDATE).order_by('first_name'),
+        'voters': User.objects.filter(junta__role=choices.VOTER).order_by('first_name'),
+        'admins': User.objects.filter(junta__role=choices.ELECTION_COMMISSION).order_by('first_name'),
+        'add_form': AddForm(),
+    }
+    try:
+        if request.session['user']['is_authenticated']:
+            if User.objects.get(email=request.session['user']['email']).junta.role == choices.ELECTION_COMMISSION:
+                d['allowed'] = True
+    except KeyError:
+        return HttpResponseRedirect(reverse('authentication:signin'))
+
+    return render(request, 'voter-list.html', d)
+
+def add_candidate(request, pk):
+    try:
+        junta = Junta.objects.get(id=pk)
+    except Junta.DoesNotExist:
+        junta = None
+
+    if request.method == 'POST':
+        try:
+            if request.session['user']['is_authenticated'] and junta is not None:
+                try:
+                    if User.objects.get(email=request.session['user']['email']).junta.role == choices.ELECTION_COMMISSION:
+                        pass
+                except User.DoesNotExist:
+                    return HttpResponseRedirect(reverse('portal:users-list'))
+                # questionForm = AskForm(request.POST)
+                # if questionForm.is_valid():
+                #     question = questionForm.save(commit=False)
+                #     question.asked_by = user.junta
+                #     question.asked_to = candidate
+                #     question.save()
+                #     questionForm.save_m2m()
+                #     pass
+                # else:
+                #     print(questionForm.errors)
+                # return HttpResponseRedirect(reverse('portal:candidate-detail', kwargs={'pk': pk}))
+        except KeyError:
+            return HttpResponseRedirect(reverse('portal:users-list'))
+
+    # d = {'candidate': candidate, 'comment_form': CommentForm(), 'question_form': AskForm(),
+    #      'questions': Question.objects.filter(asked_to=candidate).filter(approved=True).order_by('-asked_on'),
+    #      'nbar': 'candidates'}
+    # try:
+    #     d['user'] = User.objects.get(email=request.session['user']['email'])
+    # except KeyError:
+    #     d['user'] = User.objects.get(email='voter@voter.voter')
+    #
+    # request.session['redirect_callback'] = reverse('portal:candidate-detail', kwargs={'pk': pk})
+    # return render(request, 'u.html', d)
 
 
 class UpvoteAPIToggle(APIView):

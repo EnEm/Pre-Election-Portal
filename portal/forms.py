@@ -30,6 +30,18 @@ class AskForm(forms.ModelForm):
                 print(ValueError)
 
 
+class AddForm(forms.ModelForm):
+    position = forms.ChoiceField(choices=choices.FORM_POSITION_CHOICES, initial=choices.SELECT)
+
+    class Meta:
+        model = Candidate
+        fields = ('user', 'position')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['position'].required = False
+
+
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment

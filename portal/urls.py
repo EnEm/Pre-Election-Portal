@@ -20,6 +20,8 @@ from .views import (
     candidate_detail_view,
     candidates_view,
     edit_candidate_view,
+    users_list,
+    add_candidate,
 )
 
 app_name = 'portal'
@@ -39,6 +41,8 @@ urlpatterns = [
     re_path('^api/(?P<pk>[0-9]+)/delete-comment/$', DeleteCommentAPIToggle.as_view(), name='api-delete-comment'),
     re_path('^ajax/load-candidates/$', load_candidates, name='ajax-load-candidates'),
     re_path('^api/sort/$', SortQuestionsAPI.as_view(), name='api-sort'),
+    re_path('^users_list/$', users_list, name='users-list'),
+    re_path('^(?P<pk>[0-9]+)/add_candidate/$', add_candidate, name='add-candidate'),
     path('login/', user_login, name='login'),
     path('logout/', user_logout, name='logout'),
     re_path("^candidate/(?P<pk>[0-9]+)/$", candidate_detail_view, name='candidate-detail'),

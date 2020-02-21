@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% if allowed %}
+    <div id='election-commission'>
+        <p><strong>Election Commission</strong></p><br>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+            {% for member in admins %}
+            <tr>
+                <th>{{ member.first_name }}</th>
+                <th>{{ member.email }}</th>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+    <div id='candidates'>
+        <p><strong>Candidates</strong></p><br>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+            {% for member in candidates %}
+            <tr>
+                <th>{{ member.first_name }}</th>
+                <th>{{ member.email }}</th>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div id='voters'>
+        <p><strong>VOTERS</strong></p><br>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+            {% for member in voters %}
+            <tr>
+                <th>{{ member.first_name }}</th>
+                <th>{{ member.email }}</th>
+                <th><div class="card border-dark m-3">
+                    <form id="add-form" class="form-group" action="{% url 'portal:add-candidate' member.junta.pk%}" method="post"">
+                        {% if add_form %}
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ add_form.position }}
+                                        <input class="btn btn-skin btn-rounded" type="submit" name="Add" value="Add Candidate">
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </form>
+                </div></th>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% else %}
+    <p><strong>You are not allowed on this page</strong></p>
+{% endif %}
+
+</body>
+</html>
