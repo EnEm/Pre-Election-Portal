@@ -9,10 +9,7 @@
     <link href="{% static 'css/new.css' %}" rel="stylesheet">
 {% endblock %}
 
-
-
 {% block bodyBlock %}
-    <br><br><br><br><br><br><br>
     <div id="myBtnContainer" class="containr">
         <div class="row justify-content-center">
                 <button class="btn1 active" onclick="filterSelection('all')"><strong>Show all</strong></button>
@@ -37,7 +34,7 @@
 
             {% for candidate in candidates %}
                 <div class="column {{ candidate.position }} show">
-                    <div class="team-member animated bounceInLeft">
+                    <div class="team-member animated zoomInLeft">
                         <div class="team-img">
                             <div class="img-fluid" style="background-image: url('{% if candidate.user.profile_pic %}{{ candidate.user.profile_pic.url }}{% else %}{% static 'images/profile.jpg' %}{% endif %}');"></div>
                         </div>
@@ -50,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="team-title text-center animated bounceInRight">
+                    <div class="team-title text-center animated zoomInRight">
                         <p class="small">{{ candidate.user.user.first_name }} {{ candidate.user.user.last_name }}</p>
                         <span><div class="small">Contesting For</div></span>
                         <span>{{ candidate.position }}</span>
