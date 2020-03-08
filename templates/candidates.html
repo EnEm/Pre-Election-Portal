@@ -40,17 +40,14 @@
                         </div>
                         <div class="team-hover">
                             <div class="desk">
-                                <h4>{{ candidate.user.user.first_name }} {{ candidate.user.user.last_name }}</h4>
+                                <h6>{{ candidate.user.user.first_name }} {{ candidate.user.user.last_name }}</h6>
+                                <span><div class="small">Contesting For</div></span>
+                                <span>{{ candidate.position }}</span>
                             </div>
                             <div class="s-link">
                                 <a href="{% url 'portal:candidate-detail' candidate.pk %}">Know More</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="team-title text-center animated zoomInRight">
-                        <p class="small">{{ candidate.user.user.first_name }} {{ candidate.user.user.last_name }}</p>
-                        <span><div class="small">Contesting For</div></span>
-                        <span>{{ candidate.position }}</span>
                     </div>
                 </div>
             {% endfor %}

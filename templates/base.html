@@ -87,10 +87,9 @@
                 height: 60px;
             }
             nav > ul{
-                width: 80%;
+                display: inline-block;
                 margin: 0 auto;
                 padding: 0;
-                float: right;
             }
             nav > ul > li{
                 list-style: none;
@@ -218,7 +217,7 @@
             <div class="logo">
                 <a href="{% url 'portal:index' %}" ><img id="logoiit" src="{% static 'images/iitg.png' %}" alt="logo"/></a>
             </div>
-            <ul class="text-right">
+            <ul>
                 <li class="nav-item {% if nbar == 'home' %}active{% endif %}"><a class="nav-link" href="{% url 'portal:index' %}">Home</a></li>
                 <li class="nav-item {% if nbar == 'rules' %}active{% endif %}"><a class="nav-link" href="#">Rules</a></li>
                 <li class="nav-item {% if nbar == 'candidates' %}active{% endif %}"><a class="nav-link" href="{% url 'portal:candidates' %}">Candidates</a></li>
