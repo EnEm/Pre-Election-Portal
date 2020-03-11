@@ -54,16 +54,15 @@ def candidate_detail_view(request, pk):
 
 def users_list(request):
 
-    d = {
-        'candidates': User.objects.filter(junta__role=choices.CANDIDATE).order_by('first_name'),
-        'voters': User.objects.filter(junta__role=choices.VOTER).order_by('first_name'),
-        'admins': User.objects.filter(junta__role=choices.ELECTION_COMMISSION).order_by('first_name'),
-        'add_form': AddForm(),
-    }
+    d = {}
     try:
         if request.session['user']['is_authenticated']:
             if User.objects.get(email=request.session['user']['email']).junta.role == choices.ELECTION_COMMISSION:
                 d['allowed'] = True
+                d['candidates'] = User.objects.filter(junta__role=choices.CANDIDATE).order_by('first_name')
+                d['voters'] = User.objects.filter(junta__role=choices.VOTER).order_by('first_name')
+                d['admins'] = User.objects.filter(junta__role=choices.ELECTION_COMMISSION).order_by('first_name')
+                d['add_form'] = AddForm();
     except KeyError:
         return HttpResponseRedirect(reverse('authentication:signin'))
 
