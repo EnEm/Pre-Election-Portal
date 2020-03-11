@@ -34,6 +34,7 @@
             <tr>
                 <th>{{ member.first_name }}</th>
                 <th>{{ member.email }}</th>
+                <th>{{ member.junta.candidate.position }}</th>
             </tr>
             {% endfor %}
         </table>
@@ -50,8 +51,9 @@
                 <th>{{ member.first_name }}</th>
                 <th>{{ member.email }}</th>
                 <th><div class="card border-dark m-3">
-                    <form id="add-form" class="form-group" action="{% url 'portal:add-candidate' member.junta.pk%}" method="post"">
+                    <form id="add-form" class="form-group" action="{% url 'portal:add-candidate' member.junta.pk%}" method="post">
                         {% if add_form %}
+                            {% csrf_token %}
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-6">

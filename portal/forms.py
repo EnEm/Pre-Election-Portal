@@ -32,14 +32,16 @@ class AskForm(forms.ModelForm):
 
 class AddForm(forms.ModelForm):
     position = forms.ChoiceField(choices=choices.FORM_POSITION_CHOICES, initial=choices.SELECT)
+    user = forms.ChoiceField(choices=Junta.objects.all())
 
     class Meta:
         model = Candidate
-        fields = ('user', 'position')
+        fields = ('position','user',)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['position'].required = False
+        self.fields['user'].required = False
 
 
 class CommentForm(forms.ModelForm):

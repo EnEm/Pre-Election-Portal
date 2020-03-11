@@ -69,6 +69,7 @@ def users_list(request):
 
     return render(request, 'voter-list.html', d)
 
+
 def add_candidate(request, pk):
     try:
         junta = Junta.objects.get(id=pk)
@@ -80,33 +81,17 @@ def add_candidate(request, pk):
             if request.session['user']['is_authenticated'] and junta is not None:
                 try:
                     if User.objects.get(email=request.session['user']['email']).junta.role == choices.ELECTION_COMMISSION:
-                        pass
+                        add_form = AddForm(request.POST)
+                        new_cand = Candidate(user=junta, position=str(add_form.fields['position']))
+                        junta.role = choices.CANDIDATE
+                        junta.save()
+                        new_cand.save()
                 except User.DoesNotExist:
                     return HttpResponseRedirect(reverse('portal:users-list'))
-                # questionForm = AskForm(request.POST)
-                # if questionForm.is_valid():
-                #     question = questionForm.save(commit=False)
-                #     question.asked_by = user.junta
-                #     question.asked_to = candidate
-                #     question.save()
-                #     questionForm.save_m2m()
-                #     pass
-                # else:
-                #     print(questionForm.errors)
-                # return HttpResponseRedirect(reverse('portal:candidate-detail', kwargs={'pk': pk}))
         except KeyError:
             return HttpResponseRedirect(reverse('portal:users-list'))
 
-    # d = {'candidate': candidate, 'comment_form': CommentForm(), 'question_form': AskForm(),
-    #      'questions': Question.objects.filter(asked_to=candidate).filter(approved=True).order_by('-asked_on'),
-    #      'nbar': 'candidates'}
-    # try:
-    #     d['user'] = User.objects.get(email=request.session['user']['email'])
-    # except KeyError:
-    #     d['user'] = User.objects.get(email='voter@voter.voter')
-    #
-    # request.session['redirect_callback'] = reverse('portal:candidate-detail', kwargs={'pk': pk})
-    # return render(request, 'u.html', d)
+    return HttpResponseRedirect(reverse('portal:users-list'))
 
 
 class UpvoteAPIToggle(APIView):

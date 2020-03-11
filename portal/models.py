@@ -54,7 +54,7 @@ class Question(models.Model):
     asked_to = models.ForeignKey(Candidate, on_delete=models.CASCADE, related_name='question_asked')
     question = models.CharField(max_length=1024)
     approved = models.BooleanField(default=False)
-    approved_by = models.ForeignKey(Junta, on_delete=models.CASCADE, related_name='questions_approved', null=True)
+    approved_by = models.ForeignKey(Junta, on_delete=models.CASCADE, related_name='questions_approved', blank=True, null=True)
     answer = models.TextField(blank=True)
     answered = models.BooleanField(default=False)
     asked_on = models.DateTimeField(blank=True)
