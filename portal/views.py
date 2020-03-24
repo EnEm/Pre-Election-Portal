@@ -1,19 +1,18 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
+from django.forms.models import model_to_dict
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, get_object_or_404, reverse
 from django.template.loader import render_to_string
 from django.utils import timezone
-from django.db.models import Q
-from django.forms.models import model_to_dict
-
-from .forms import AskForm, AnswerForm, CommentForm, EditCandidateForm, EditProfilePic
-from .models import Question, Candidate, Comment, User
-from .decorators import user_has_role
-from . import choices
-
 from rest_framework.response import Response
 from rest_framework.views import APIView
+
+from . import choices
+from .decorators import user_has_role
+from .forms import AskForm, AnswerForm, CommentForm, EditCandidateForm, EditProfilePic
+from .models import Question, Candidate, Comment, User
 
 
 def candidate_detail_view(request, pk):
@@ -47,6 +46,14 @@ def candidate_detail_view(request, pk):
         d['user'] = User.objects.get(email=request.session['user']['email'])
     except KeyError:
         d['user'] = User.objects.get(email='voter@voter.voter')
+
+    try:
+        if request.session['user']['is_authenticated']:
+            user = User.objects.get(email=request.session['user']['email'])
+            if user.junta.role == choices.ELECTION_COMMISSION:
+                d['admin'] = True
+    except KeyError:
+        pass
 
     request.session['redirect_callback'] = reverse('portal:candidate-detail', kwargs={'pk': pk})
     return render(request, 'candidate_detail.html', d)
@@ -302,58 +309,7 @@ class SortQuestionsAPI(APIView):
 
 
 def index(request):
-    request.session['redirect_callback'] = reverse('portal:index')
-    question_form = AskForm()
-    comment_form = CommentForm()
-    d = {'question_form': question_form, 'comment_form': comment_form, 'nbar': 'home'}
-    try:
-        if request.session['user']['is_authenticated']:
-            d['is_authenticated'] = True
-        else:
-            d['is_authenticated'] = False
-    except KeyError:
-        d['is_authenticated'] = False
-    if d['is_authenticated']:
-        user = User.objects.get(email=request.session['user']['email'])
-        d['user'] = user
-        if user.junta.role == choices.ELECTION_COMMISSION:
-            unapproved_questions = Question.objects.filter(approved=False).order_by('-asked_on')
-            unapproved_comments = Comment.objects.filter(approved=False).order_by('-commented_on')
-            approved_questions = Question.objects.filter(approved=True).order_by('-asked_on')
-            d['unapproved_questions'] = unapproved_questions
-            d['unapproved_comments'] = unapproved_comments
-            d['role'] = 'admin'
-        elif user.junta.role == choices.CANDIDATE:
-            approved_questions = Question.objects.filter(approved=True) \
-                .filter(~Q(asked_to=user.junta.candidate.all()[0])) \
-                .order_by('-asked_on')
-            my_questions = Question.objects.filter(asked_to=user.junta.candidate.all()[0]) \
-                .filter(approved=True) \
-                .order_by('-asked_on')
-            print(my_questions)
-            d['my_questions'] = my_questions
-        else:
-            approved_questions = Question.objects.filter(approved=True).order_by('-asked_on')
-    else:
-        approved_questions = Question.objects.filter(approved=True).order_by('-asked_on')
-    d['approved_questions'] = approved_questions
-    if request.method == 'POST':
-        if d['is_authenticated']:
-            user = User.objects.get(email=request.session['user']['email'])
-            questionForm = AskForm(request.POST)
-            if questionForm.is_valid():
-                question = questionForm.save(commit=False)
-                question.asked_by = user.junta
-                question.save()
-                questionForm.save_m2m()
-                pass
-            else:
-                print(questionForm.errors)
-            return HttpResponseRedirect(reverse('portal:index'))
-        else:
-            return HttpResponseRedirect(reverse('portal:login'))
-
-    return render(request, 'home.html')
+    return render(request, 'home.html', {'nbar': 'home'})
 
 
 def candidates_view(request):
@@ -362,6 +318,15 @@ def candidates_view(request):
         'nbar': 'candidates',
         'choices': choices,
     }
+
+    try:
+        if request.session['user']['is_authenticated']:
+            user = User.objects.get(email=request.session['user']['email'])
+            if user.junta.role == choices.ELECTION_COMMISSION:
+                d['admin'] = True
+    except KeyError:
+        pass
+
     request.session['redirect_callback'] = reverse('portal:candidates')
     return render(request, 'candidates.html', d)
 
@@ -374,29 +339,40 @@ def load_candidates(request):
 
 def answer_view(request, pk):
     question = Question.objects.get(pk=pk)
-    answer_form = AnswerForm()
-    user = User.objects.get(email=request.session['user']['email'])
-    if question.answered:
-        answer_form = AnswerForm({'answer': question.answer})
 
-    d = {'question': question, 'answer_form': answer_form}
+    @user_has_role(role=choices.CANDIDATE, pk=question.asked_to.pk)
+    def func(request, pk):
+        question = Question.objects.get(pk=pk)
+        answer_form = AnswerForm()
+        if question.answered:
+            answer_form = AnswerForm({'answer': question.answer})
 
-    if request.session['user']['is_authenticated']:
-        d['is_authenticated'] = True
+        d = {'question': question, 'answer_form': answer_form}
 
-    if request.method == 'POST':
-        form = AnswerForm(request.POST)
-        if form.is_valid():
-            answer = form.cleaned_data['answer']
-            question.answer = answer
-            question.answered = True
-            question.answered_on = timezone.now()
-            question.save()
-        else:
-            print("AnswerForm POST Error: ", form.errors)
-        return HttpResponseRedirect(reverse('portal:index'))
+        try:
+            if request.session['user']['is_authenticated']:
+                d['is_authenticated'] = True
+                user = User.objects.get(email=request.session['user']['email'])
+                if user.junta.role == choices.ELECTION_COMMISSION:
+                    d['admin'] = True
+        except KeyError:
+            pass
 
-    return render(request, 'answer.html', d)
+        if request.method == 'POST':
+            form = AnswerForm(request.POST)
+            if form.is_valid():
+                answer = form.cleaned_data['answer']
+                question.answer = answer
+                question.answered = True
+                question.answered_on = timezone.now()
+                question.save()
+            else:
+                print("AnswerForm POST Error: ", form.errors)
+            return HttpResponseRedirect(reverse('portal:index'))
+
+        return render(request, 'answer.html', d)
+
+    return func(request, pk)
 
 
 def comment_view(request, pk):
@@ -404,17 +380,16 @@ def comment_view(request, pk):
     comment_form = CommentForm()
     d = {'question': question, 'comment_form': comment_form, 'is_authenticated': False}
 
+    user = None
     try:
         if request.session['user']['is_authenticated']:
             d['is_authenticated'] = True
-        else:
-            return HttpResponseRedirect(reverse('authentication:signin'))
+            user = User.objects.get(email=request.session['user']['email'])
+            if user.junta.role == choices.ELECTION_COMMISSION:
+                d['admin'] = True
     except KeyError:
-        return HttpResponseRedirect(reverse('authentication:signin'))
+        pass
 
-    user = None
-    if d['is_authenticated']:
-        user = User.objects.get(email=request.session['user']['email'])
     print(user)
     if request.method == 'POST':
         form = CommentForm(request.POST)
@@ -459,7 +434,6 @@ def user_logout(request):
 
 
 def edit_candidate_view(request, pk):
-
     @user_has_role(role=choices.CANDIDATE, pk=pk)
     def func(request, pk):
         candidate = Candidate.objects.get(pk=pk)
@@ -485,6 +459,72 @@ def edit_candidate_view(request, pk):
             'candidate_form': candidate_form,
             'profile_pic_form': profile_pic_form,
         }
+
+        try:
+            if request.session['user']['is_authenticated']:
+                user = User.objects.get(email=request.session['user']['email'])
+                if user.junta.role == choices.ELECTION_COMMISSION:
+                    d['admin'] = True
+        except KeyError:
+            pass
+
         return render(request, 'candidate_form.html', d)
 
     return func(request, pk)
+
+
+def admin_view(request):
+    request.session['redirect_callback'] = reverse('portal:index')
+    question_form = AskForm()
+    comment_form = CommentForm()
+    d = {'question_form': question_form, 'comment_form': comment_form, 'nbar': 'admin'}
+
+    try:
+        if request.session['user']['is_authenticated']:
+            d['is_authenticated'] = True
+        else:
+            d['is_authenticated'] = False
+    except KeyError:
+        d['is_authenticated'] = False
+
+    if d['is_authenticated']:
+        user = User.objects.get(email=request.session['user']['email'])
+        d['user'] = user
+        if user.junta.role == choices.ELECTION_COMMISSION:
+            d['admin'] = True
+            unapproved_questions = Question.objects.filter(approved=False).order_by('-asked_on')
+            unapproved_comments = Comment.objects.filter(approved=False).order_by('-commented_on')
+            approved_questions = Question.objects.filter(approved=True).order_by('-asked_on')
+            d['unapproved_questions'] = unapproved_questions
+            d['unapproved_comments'] = unapproved_comments
+            d['role'] = 'admin'
+        elif user.junta.role == choices.CANDIDATE:
+            approved_questions = Question.objects.filter(approved=True) \
+                .filter(~Q(asked_to=user.junta.candidate.all()[0])) \
+                .order_by('-asked_on')
+            my_questions = Question.objects.filter(asked_to=user.junta.candidate.all()[0]) \
+                .filter(approved=True) \
+                .order_by('-asked_on')
+            print(my_questions)
+            d['my_questions'] = my_questions
+        else:
+            approved_questions = Question.objects.filter(approved=True).order_by('-asked_on')
+    else:
+        approved_questions = Question.objects.filter(approved=True).order_by('-asked_on')
+    d['approved_questions'] = approved_questions
+    if request.method == 'POST':
+        if d['is_authenticated']:
+            user = User.objects.get(email=request.session['user']['email'])
+            questionForm = AskForm(request.POST)
+            if questionForm.is_valid():
+                question = questionForm.save(commit=False)
+                question.asked_by = user.junta
+                question.save()
+                questionForm.save_m2m()
+                pass
+            else:
+                print(questionForm.errors)
+            return HttpResponseRedirect(reverse('portal:admin'))
+        else:
+            return HttpResponseRedirect(reverse('portal:login'))
+    return render(request, 'index.html', d)

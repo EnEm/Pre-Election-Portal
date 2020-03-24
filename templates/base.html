@@ -222,6 +222,9 @@
                 <li class="nav-item {% if nbar == 'rules' %}active{% endif %}"><a class="nav-link" href="#">Rules</a></li>
                 <li class="nav-item {% if nbar == 'candidates' %}active{% endif %}"><a class="nav-link" href="{% url 'portal:candidates' %}">Candidates</a></li>
                 <li class="nav-item {% if nbar == 'stats' %}active{% endif %}"><a class="nav-link" class="nav-link" href="{% url 'stats:chart' %}">Statistics</a></li>
+                {% if admin %}
+                    <li class="nav-item {% if nbar == 'admin' %}active{% endif %}"><a class="nav-link" class="nav-link" href="{% url 'portal:admin' %}">Admin</a></li>
+                {% endif %}`
                 <li class="nav-item"><a class="nav-link" href="{% if request.session.user %}{% url 'authentication:signout' %}{% else %}{% url 'authentication:signin' %}{% endif %}">{% if request.session.user %}Logout{% else %}Login{% endif %}</a></li>
             </ul>
         </nav>
@@ -406,7 +409,7 @@
         'junta_pk': user,
         }
         }).done(function (data) {
-        this_.parent().parent().children(".container-questions").html(data.html_questions);
+        this_.parent().parent().parent().children(".container-questions").html(data.html_questions);
         this_.addClass('active');
         this_.parent().children(".btn-sort-upvotes").removeClass('active');
         });
@@ -427,7 +430,7 @@
         'junta_pk': user,
         }
         }).done(function (data) {
-        this_.parent().parent().children(".container-questions").html(data.html_questions);
+        this_.parent().parent().parent().children(".container-questions").html(data.html_questions);
         this_.addClass('active');
         this_.parent().children(".btn-sort-recent").removeClass('active');
         });

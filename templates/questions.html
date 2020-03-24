@@ -37,7 +37,9 @@
                 <span class="text-vote">{{ question.upvotes.count }}</span>
             </span>
             <span class="toggle-comment"><i class="fa fa-comments"></i></span> <span>{{ question.comments.count }}</span>
-
+            {% ifequal user.junta.role "Election Commission" %}
+                <a class="btn-delete" data-href="{% url 'portal:api-delete-question' question.pk  %}" ><i class="fas fa-trash-alt"></i></a>
+            {% endifequal %}
             <div class="comments" style="display: none">
                 {% if comment_form %}
                     <form method="post" action="{% url 'portal:comment' question.pk %}">
@@ -67,6 +69,9 @@
                                         <span><a class="btn-downvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_downvote_api_url }}"><i class="far fa-thumbs-down"></i></a></span>
                                     {% endif %}
                                 </span>
+                                {% ifequal user.junta.role "Election Commission" %}
+                                    <a class="btn-delete" data-href="{% url 'portal:api-delete-question' question.pk  %}" ><i class="fas fa-trash-alt"></i></a>
+                                {% endifequal %}
                             {% endif %}
                         {% endfor %}
                     </div>

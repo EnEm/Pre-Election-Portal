@@ -9,16 +9,18 @@
 {% endblock %}
 
 {% block bodyBlock %}
-    
-    {% if question %}
-        <p><strong>{{ question }}</strong></p>
-    {% endif %}
 
-    {% if answer_form %}
-        <form method="post">
-            {% csrf_token %}
-            {{ answer_form.as_p }}
-            <button type="submit">Submit</button>
-        </form>
-    {% endif %}
+    <div class="container">
+        {% if question %}
+            <h3>{{ question }}</h3>
+        {% endif %}
+
+        {% if answer_form %}
+            <form method="post">
+                {% csrf_token %}
+                {{ answer_form.as_p }}
+                <button class="btn btn-skin" type="submit">Submit</button>
+            </form>
+        {% endif %}
+    </div>
 {% endblock %}

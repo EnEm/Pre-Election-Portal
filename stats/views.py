@@ -1,11 +1,12 @@
 from django.shortcuts import render, reverse
 from django.utils.decorators import method_decorator
-from portal.models import Hostel
-from portal.forms import UpdateStatsForm
 from django.views.generic import CreateView, UpdateView, DeleteView
-from portal.decorators import user_has_role
-from portal.models import User
+
 from portal.choices import ELECTION_COMMISSION
+from portal.decorators import user_has_role
+from portal.forms import UpdateStatsForm
+from portal.models import Hostel
+from portal.models import User
 
 
 def chart(request):
@@ -38,14 +39,26 @@ def chart(request):
 
 @user_has_role(ELECTION_COMMISSION)
 def update(request):
+
+    dicti = dict()
+    try:
+        if request.session['user']['is_authenticated']:
+            user = User.objects.get(email=request.session['user']['email'])
+            if user.junta.role == ELECTION_COMMISSION:
+                dicti['admin'] = True
+    except KeyError:
+        pass
+
     if request.method == "POST":
         form = UpdateStatsForm(request.POST)
         if form.is_valid():
             form.save()
-        return render(request, 'stats/update.html', {'form': form})
+        dicti['form'] = form
+        return render(request, 'stats/update.html', dicti)
     else:
         form = UpdateStatsForm()
-        return render(request, 'stats/update.html', {'form': form})
+        dicti['form'] = form
+        return render(request, 'stats/update.html', dicti)
 
 
 @method_decorator(user_has_role(ELECTION_COMMISSION), name='dispatch')
@@ -55,6 +68,17 @@ class HostelCreateview(CreateView):
     template_name = 'stats/update.html'
     success_url = '/statistics'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        try:
+            if self.request.session['user']['is_authenticated']:
+                user = User.objects.get(email=self.request.session['user']['email'])
+                if user.junta.role == ELECTION_COMMISSION:
+                    context['admin'] = True
+        except KeyError:
+            pass
+        return context
+
 
 @method_decorator(user_has_role(ELECTION_COMMISSION), name='dispatch')
 class HostelUpdateview(UpdateView):
@@ -63,9 +87,31 @@ class HostelUpdateview(UpdateView):
     template_name = 'stats/update.html'
     success_url = '/statistics'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        try:
+            if self.request.session['user']['is_authenticated']:
+                user = User.objects.get(email=self.request.session['user']['email'])
+                if user.junta.role == ELECTION_COMMISSION:
+                    context['admin'] = True
+        except KeyError:
+            pass
+        return context
+
 
 @method_decorator(user_has_role(ELECTION_COMMISSION), name='dispatch')
 class hostelDeleteview(DeleteView):
     model = Hostel
     template_name = 'stats/hosteldelete.html'
     success_url = '/statistics'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        try:
+            if self.request.session['user']['is_authenticated']:
+                user = User.objects.get(email=self.request.session['user']['email'])
+                if user.junta.role == ELECTION_COMMISSION:
+                    context['admin'] = True
+        except KeyError:
+            pass
+        return context

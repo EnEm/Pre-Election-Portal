@@ -1,9 +1,10 @@
-from django import forms
-from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
-from .models import Question, Candidate, Comment, Hostel, Junta
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
+from django import forms
+from django_summernote.widgets import SummernoteWidget
+
 from . import choices
+from .models import Question, Candidate, Comment, Hostel, Junta
 
 
 class AskForm(forms.ModelForm):
@@ -40,7 +41,7 @@ class CommentForm(forms.ModelForm):
 
 
 class AnswerForm(forms.Form):
-    answer = forms.CharField(widget=SummernoteWidget)
+    answer = forms.CharField(widget=SummernoteWidget(attrs={'summernote': {'width': '100%', 'height': '500px'}}))
 
 
 class UpdateStatsForm(forms.ModelForm):

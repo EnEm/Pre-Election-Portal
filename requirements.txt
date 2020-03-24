@@ -7,3 +7,5 @@ django-crispy-forms
 djangorestframework
 requests_oauthlib
 pyyaml
+gunicorn
+

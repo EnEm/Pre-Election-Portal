@@ -1346,8 +1346,8 @@ section {
 
 .float {
 	z-index: 100;
-	position:absolute;
-	top:200px;
+	position:fixed;
+	top: 100px;
 	right:40px;
 	color:#FFF;
 	text-align:center;

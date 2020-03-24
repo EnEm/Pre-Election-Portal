@@ -1,0 +1,4692 @@
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn_start.bash: line 26: exec: gunicorn: not found
+Starting preelectionportal2020 as bhasker
+[2020-03-08 16:54:53 +0530] [15333] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fa3ba5fc488>
+  on_reload: <function OnReload.on_reload at 0x7fa3ba5fc598>
+  when_ready: <function WhenReady.when_ready at 0x7fa3ba5fc6a8>
+  pre_fork: <function Prefork.pre_fork at 0x7fa3ba5fc7b8>
+  post_fork: <function Postfork.post_fork at 0x7fa3ba5fc8c8>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fa3ba5fc9d8>
+  worker_int: <function WorkerInt.worker_int at 0x7fa3ba5fcae8>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fa3ba5fcbf8>
+  pre_exec: <function PreExec.pre_exec at 0x7fa3ba5fcd08>
+  pre_request: <function PreRequest.pre_request at 0x7fa3ba5fce18>
+  post_request: <function PostRequest.post_request at 0x7fa3ba5fcea0>
+  child_exit: <function ChildExit.child_exit at 0x7fa3ba619048>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fa3ba619158>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fa3ba619268>
+  on_exit: <function OnExit.on_exit at 0x7fa3ba619378>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-08 16:54:53 +0530] [15333] [INFO] Starting gunicorn 20.0.4
+[2020-03-08 16:54:53 +0530] [15333] [DEBUG] Arbiter booted
+[2020-03-08 16:54:53 +0530] [15333] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (15333)
+[2020-03-08 16:54:53 +0530] [15333] [INFO] Using worker: sync
+[2020-03-08 16:54:53 +0530] [15338] [INFO] Booting worker with pid: 15338
+[2020-03-08 16:54:53 +0530] [15340] [INFO] Booting worker with pid: 15340
+[2020-03-08 16:54:53 +0530] [15342] [INFO] Booting worker with pid: 15342
+[2020-03-08 16:54:53 +0530] [15343] [INFO] Booting worker with pid: 15343
+[2020-03-08 16:54:53 +0530] [15344] [INFO] Booting worker with pid: 15344
+[2020-03-08 16:54:53 +0530] [15333] [DEBUG] 5 workers
+[2020-03-08 16:55:01 +0530] [15333] [INFO] Handling signal: term
+[2020-03-08 11:25:01 +0000] [15342] [INFO] Worker exiting (pid: 15342)
+[2020-03-08 11:25:01 +0000] [15340] [INFO] Worker exiting (pid: 15340)
+[2020-03-08 11:25:01 +0000] [15338] [INFO] Worker exiting (pid: 15338)
+[2020-03-08 11:25:01 +0000] [15344] [INFO] Worker exiting (pid: 15344)
+[2020-03-08 11:25:01 +0000] [15343] [INFO] Worker exiting (pid: 15343)
+[2020-03-08 16:55:01 +0530] [15333] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-08 17:11:46 +0530] [17540] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f59e5e58510>
+  on_reload: <function OnReload.on_reload at 0x7f59e5e58620>
+  when_ready: <function WhenReady.when_ready at 0x7f59e5e58730>
+  pre_fork: <function Prefork.pre_fork at 0x7f59e5e58840>
+  post_fork: <function Postfork.post_fork at 0x7f59e5e58950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f59e5e58a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f59e5e58b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f59e5e58c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f59e5e58d90>
+  pre_request: <function PreRequest.pre_request at 0x7f59e5e58ea0>
+  post_request: <function PostRequest.post_request at 0x7f59e5e58f28>
+  child_exit: <function ChildExit.child_exit at 0x7f59e5e760d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f59e5e761e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f59e5e762f0>
+  on_exit: <function OnExit.on_exit at 0x7f59e5e76400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-08 17:11:46 +0530] [17540] [INFO] Starting gunicorn 20.0.4
+Traceback (most recent call last):
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn", line 11, in <module>
+    sys.exit(run())
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 58, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 228, in run
+    super().run()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 198, in run
+    self.start()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 155, in start
+    self.LISTENERS = sock.create_sockets(self.cfg, self.log, fds)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/sock.py", line 184, in create_sockets
+    sock = sock_type(addr, conf, log)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/sock.py", line 116, in __init__
+    raise ValueError("%r is not a socket" % addr)
+ValueError: '/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock' is not a socket
+Starting preelectionportal2020 as bhasker
+[2020-03-08 17:11:48 +0530] [17548] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f7af0f52510>
+  on_reload: <function OnReload.on_reload at 0x7f7af0f52620>
+  when_ready: <function WhenReady.when_ready at 0x7f7af0f52730>
+  pre_fork: <function Prefork.pre_fork at 0x7f7af0f52840>
+  post_fork: <function Postfork.post_fork at 0x7f7af0f52950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f7af0f52a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f7af0f52b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f7af0f52c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f7af0f52d90>
+  pre_request: <function PreRequest.pre_request at 0x7f7af0f52ea0>
+  post_request: <function PostRequest.post_request at 0x7f7af0f52f28>
+  child_exit: <function ChildExit.child_exit at 0x7f7af0f700d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f7af0f701e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f7af0f702f0>
+  on_exit: <function OnExit.on_exit at 0x7f7af0f70400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-08 17:11:48 +0530] [17548] [INFO] Starting gunicorn 20.0.4
+Traceback (most recent call last):
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn", line 11, in <module>
+    sys.exit(run())
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 58, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 228, in run
+    super().run()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 198, in run
+    self.start()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 155, in start
+    self.LISTENERS = sock.create_sockets(self.cfg, self.log, fds)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/sock.py", line 184, in create_sockets
+    sock = sock_type(addr, conf, log)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/sock.py", line 116, in __init__
+    raise ValueError("%r is not a socket" % addr)
+ValueError: '/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock' is not a socket
+Starting preelectionportal2020 as bhasker
+[2020-03-08 17:11:50 +0530] [17558] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f60f20f9510>
+  on_reload: <function OnReload.on_reload at 0x7f60f20f9620>
+  when_ready: <function WhenReady.when_ready at 0x7f60f20f9730>
+  pre_fork: <function Prefork.pre_fork at 0x7f60f20f9840>
+  post_fork: <function Postfork.post_fork at 0x7f60f20f9950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f60f20f9a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f60f20f9b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f60f20f9c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f60f20f9d90>
+  pre_request: <function PreRequest.pre_request at 0x7f60f20f9ea0>
+  post_request: <function PostRequest.post_request at 0x7f60f20f9f28>
+  child_exit: <function ChildExit.child_exit at 0x7f60f21170d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f60f21171e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f60f21172f0>
+  on_exit: <function OnExit.on_exit at 0x7f60f2117400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-08 17:11:50 +0530] [17558] [INFO] Starting gunicorn 20.0.4
+Traceback (most recent call last):
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn", line 11, in <module>
+    sys.exit(run())
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 58, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 228, in run
+    super().run()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 198, in run
+    self.start()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 155, in start
+    self.LISTENERS = sock.create_sockets(self.cfg, self.log, fds)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/sock.py", line 184, in create_sockets
+    sock = sock_type(addr, conf, log)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/sock.py", line 116, in __init__
+    raise ValueError("%r is not a socket" % addr)
+ValueError: '/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock' is not a socket
+Starting preelectionportal2020 as bhasker
+[2020-03-08 17:11:53 +0530] [17590] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f0f7ae97510>
+  on_reload: <function OnReload.on_reload at 0x7f0f7ae97620>
+  when_ready: <function WhenReady.when_ready at 0x7f0f7ae97730>
+  pre_fork: <function Prefork.pre_fork at 0x7f0f7ae97840>
+  post_fork: <function Postfork.post_fork at 0x7f0f7ae97950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f0f7ae97a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f0f7ae97b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f0f7ae97c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f0f7ae97d90>
+  pre_request: <function PreRequest.pre_request at 0x7f0f7ae97ea0>
+  post_request: <function PostRequest.post_request at 0x7f0f7ae97f28>
+  child_exit: <function ChildExit.child_exit at 0x7f0f7aeb50d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f0f7aeb51e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f0f7aeb52f0>
+  on_exit: <function OnExit.on_exit at 0x7f0f7aeb5400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-08 17:11:53 +0530] [17590] [INFO] Starting gunicorn 20.0.4
+Traceback (most recent call last):
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/bin/gunicorn", line 11, in <module>
+    sys.exit(run())
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 58, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 228, in run
+    super().run()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 198, in run
+    self.start()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 155, in start
+    self.LISTENERS = sock.create_sockets(self.cfg, self.log, fds)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/sock.py", line 184, in create_sockets
+    sock = sock_type(addr, conf, log)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/gunicorn/sock.py", line 116, in __init__
+    raise ValueError("%r is not a socket" % addr)
+ValueError: '/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock' is not a socket
+Starting preelectionportal2020 as bhasker
+[2020-03-08 17:12:16 +0530] [17626] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f5f3dac6510>
+  on_reload: <function OnReload.on_reload at 0x7f5f3dac6620>
+  when_ready: <function WhenReady.when_ready at 0x7f5f3dac6730>
+  pre_fork: <function Prefork.pre_fork at 0x7f5f3dac6840>
+  post_fork: <function Postfork.post_fork at 0x7f5f3dac6950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f5f3dac6a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f5f3dac6b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f5f3dac6c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f5f3dac6d90>
+  pre_request: <function PreRequest.pre_request at 0x7f5f3dac6ea0>
+  post_request: <function PostRequest.post_request at 0x7f5f3dac6f28>
+  child_exit: <function ChildExit.child_exit at 0x7f5f3dae40d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f5f3dae41e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f5f3dae42f0>
+  on_exit: <function OnExit.on_exit at 0x7f5f3dae4400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-08 17:12:16 +0530] [17626] [INFO] Starting gunicorn 20.0.4
+[2020-03-08 17:12:16 +0530] [17626] [DEBUG] Arbiter booted
+[2020-03-08 17:12:16 +0530] [17626] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (17626)
+[2020-03-08 17:12:16 +0530] [17626] [INFO] Using worker: sync
+[2020-03-08 17:12:16 +0530] [17631] [INFO] Booting worker with pid: 17631
+[2020-03-08 17:12:16 +0530] [17633] [INFO] Booting worker with pid: 17633
+[2020-03-08 17:12:16 +0530] [17635] [INFO] Booting worker with pid: 17635
+[2020-03-08 17:12:16 +0530] [17637] [INFO] Booting worker with pid: 17637
+[2020-03-08 17:12:16 +0530] [17638] [INFO] Booting worker with pid: 17638
+[2020-03-08 17:12:16 +0530] [17626] [DEBUG] 5 workers
+[2020-03-08 17:12:29 +0530] [17626] [INFO] Handling signal: term
+[2020-03-08 11:42:29 +0000] [17631] [INFO] Worker exiting (pid: 17631)
+[2020-03-08 11:42:29 +0000] [17635] [INFO] Worker exiting (pid: 17635)
+[2020-03-08 11:42:29 +0000] [17637] [INFO] Worker exiting (pid: 17637)
+[2020-03-08 11:42:29 +0000] [17633] [INFO] Worker exiting (pid: 17633)
+[2020-03-08 11:42:29 +0000] [17638] [INFO] Worker exiting (pid: 17638)
+[2020-03-08 17:12:29 +0530] [17626] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-08 19:01:40 +0530] [1234] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fb27ae06510>
+  on_reload: <function OnReload.on_reload at 0x7fb27ae06620>
+  when_ready: <function WhenReady.when_ready at 0x7fb27ae06730>
+  pre_fork: <function Prefork.pre_fork at 0x7fb27ae06840>
+  post_fork: <function Postfork.post_fork at 0x7fb27ae06950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fb27ae06a60>
+  worker_int: <function WorkerInt.worker_int at 0x7fb27ae06b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fb27ae06c80>
+  pre_exec: <function PreExec.pre_exec at 0x7fb27ae06d90>
+  pre_request: <function PreRequest.pre_request at 0x7fb27ae06ea0>
+  post_request: <function PostRequest.post_request at 0x7fb27ae06f28>
+  child_exit: <function ChildExit.child_exit at 0x7fb27ae240d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fb27ae241e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fb27ae242f0>
+  on_exit: <function OnExit.on_exit at 0x7fb27ae24400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-08 19:01:40 +0530] [1234] [INFO] Starting gunicorn 20.0.4
+[2020-03-08 19:01:40 +0530] [1234] [DEBUG] Arbiter booted
+[2020-03-08 19:01:40 +0530] [1234] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1234)
+[2020-03-08 19:01:40 +0530] [1234] [INFO] Using worker: sync
+[2020-03-08 19:01:40 +0530] [1322] [INFO] Booting worker with pid: 1322
+[2020-03-08 19:01:41 +0530] [1325] [INFO] Booting worker with pid: 1325
+[2020-03-08 19:01:41 +0530] [1329] [INFO] Booting worker with pid: 1329
+[2020-03-08 19:01:41 +0530] [1332] [INFO] Booting worker with pid: 1332
+[2020-03-08 19:01:41 +0530] [1380] [INFO] Booting worker with pid: 1380
+[2020-03-08 19:01:41 +0530] [1234] [DEBUG] 5 workers
+[2020-03-09 02:50:03 +0530] [1234] [INFO] Handling signal: term
+[2020-03-08 21:20:03 +0000] [1329] [INFO] Worker exiting (pid: 1329)
+[2020-03-08 21:20:03 +0000] [1325] [INFO] Worker exiting (pid: 1325)
+[2020-03-08 21:20:03 +0000] [1380] [INFO] Worker exiting (pid: 1380)
+[2020-03-08 21:20:03 +0000] [1332] [INFO] Worker exiting (pid: 1332)
+[2020-03-08 21:20:03 +0000] [1322] [INFO] Worker exiting (pid: 1322)
+[2020-03-09 02:50:03 +0530] [1234] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-09 13:42:26 +0530] [1144] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7feb41e10510>
+  on_reload: <function OnReload.on_reload at 0x7feb41e10620>
+  when_ready: <function WhenReady.when_ready at 0x7feb41e10730>
+  pre_fork: <function Prefork.pre_fork at 0x7feb41e10840>
+  post_fork: <function Postfork.post_fork at 0x7feb41e10950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7feb41e10a60>
+  worker_int: <function WorkerInt.worker_int at 0x7feb41e10b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7feb41e10c80>
+  pre_exec: <function PreExec.pre_exec at 0x7feb41e10d90>
+  pre_request: <function PreRequest.pre_request at 0x7feb41e10ea0>
+  post_request: <function PostRequest.post_request at 0x7feb41e10f28>
+  child_exit: <function ChildExit.child_exit at 0x7feb41e2e0d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7feb41e2e1e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7feb41e2e2f0>
+  on_exit: <function OnExit.on_exit at 0x7feb41e2e400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-09 13:42:26 +0530] [1144] [INFO] Starting gunicorn 20.0.4
+[2020-03-09 13:42:26 +0530] [1144] [DEBUG] Arbiter booted
+[2020-03-09 13:42:26 +0530] [1144] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1144)
+[2020-03-09 13:42:26 +0530] [1144] [INFO] Using worker: sync
+[2020-03-09 13:42:26 +0530] [1201] [INFO] Booting worker with pid: 1201
+[2020-03-09 13:42:26 +0530] [1202] [INFO] Booting worker with pid: 1202
+[2020-03-09 13:42:26 +0530] [1214] [INFO] Booting worker with pid: 1214
+[2020-03-09 13:42:26 +0530] [1219] [INFO] Booting worker with pid: 1219
+[2020-03-09 13:42:26 +0530] [1241] [INFO] Booting worker with pid: 1241
+[2020-03-09 13:42:26 +0530] [1144] [DEBUG] 5 workers
+Starting preelectionportal2020 as bhasker
+[2020-03-09 16:05:03 +0530] [1207] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7ff40f72a510>
+  on_reload: <function OnReload.on_reload at 0x7ff40f72a620>
+  when_ready: <function WhenReady.when_ready at 0x7ff40f72a730>
+  pre_fork: <function Prefork.pre_fork at 0x7ff40f72a840>
+  post_fork: <function Postfork.post_fork at 0x7ff40f72a950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7ff40f72aa60>
+  worker_int: <function WorkerInt.worker_int at 0x7ff40f72ab70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7ff40f72ac80>
+  pre_exec: <function PreExec.pre_exec at 0x7ff40f72ad90>
+  pre_request: <function PreRequest.pre_request at 0x7ff40f72aea0>
+  post_request: <function PostRequest.post_request at 0x7ff40f72af28>
+  child_exit: <function ChildExit.child_exit at 0x7ff40f7480d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7ff40f7481e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7ff40f7482f0>
+  on_exit: <function OnExit.on_exit at 0x7ff40f748400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-09 16:05:03 +0530] [1207] [INFO] Starting gunicorn 20.0.4
+[2020-03-09 16:05:03 +0530] [1207] [DEBUG] Arbiter booted
+[2020-03-09 16:05:03 +0530] [1207] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1207)
+[2020-03-09 16:05:03 +0530] [1207] [INFO] Using worker: sync
+[2020-03-09 16:05:03 +0530] [1212] [INFO] Booting worker with pid: 1212
+[2020-03-09 16:05:03 +0530] [1230] [INFO] Booting worker with pid: 1230
+[2020-03-09 16:05:03 +0530] [1234] [INFO] Booting worker with pid: 1234
+[2020-03-09 16:05:03 +0530] [1242] [INFO] Booting worker with pid: 1242
+[2020-03-09 16:05:03 +0530] [1268] [INFO] Booting worker with pid: 1268
+[2020-03-09 16:05:03 +0530] [1207] [DEBUG] 5 workers
+Starting preelectionportal2020 as bhasker
+[2020-03-09 16:08:50 +0530] [1207] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f4d679c8510>
+  on_reload: <function OnReload.on_reload at 0x7f4d679c8620>
+  when_ready: <function WhenReady.when_ready at 0x7f4d679c8730>
+  pre_fork: <function Prefork.pre_fork at 0x7f4d679c8840>
+  post_fork: <function Postfork.post_fork at 0x7f4d679c8950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f4d679c8a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f4d679c8b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f4d679c8c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f4d679c8d90>
+  pre_request: <function PreRequest.pre_request at 0x7f4d679c8ea0>
+  post_request: <function PostRequest.post_request at 0x7f4d679c8f28>
+  child_exit: <function ChildExit.child_exit at 0x7f4d679e60d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f4d679e61e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f4d679e62f0>
+  on_exit: <function OnExit.on_exit at 0x7f4d679e6400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-09 16:08:50 +0530] [1207] [INFO] Starting gunicorn 20.0.4
+[2020-03-09 16:08:50 +0530] [1207] [DEBUG] Arbiter booted
+[2020-03-09 16:08:50 +0530] [1207] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1207)
+[2020-03-09 16:08:50 +0530] [1207] [INFO] Using worker: sync
+[2020-03-09 16:08:50 +0530] [1212] [INFO] Booting worker with pid: 1212
+[2020-03-09 16:08:50 +0530] [1214] [INFO] Booting worker with pid: 1214
+[2020-03-09 16:08:50 +0530] [1251] [INFO] Booting worker with pid: 1251
+[2020-03-09 16:08:50 +0530] [1253] [INFO] Booting worker with pid: 1253
+[2020-03-09 16:08:50 +0530] [1260] [INFO] Booting worker with pid: 1260
+[2020-03-09 16:08:50 +0530] [1207] [DEBUG] 5 workers
+Starting preelectionportal2020 as bhasker
+[2020-03-09 16:12:10 +0530] [1214] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f6fbb945510>
+  on_reload: <function OnReload.on_reload at 0x7f6fbb945620>
+  when_ready: <function WhenReady.when_ready at 0x7f6fbb945730>
+  pre_fork: <function Prefork.pre_fork at 0x7f6fbb945840>
+  post_fork: <function Postfork.post_fork at 0x7f6fbb945950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f6fbb945a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f6fbb945b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f6fbb945c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f6fbb945d90>
+  pre_request: <function PreRequest.pre_request at 0x7f6fbb945ea0>
+  post_request: <function PostRequest.post_request at 0x7f6fbb945f28>
+  child_exit: <function ChildExit.child_exit at 0x7f6fbb9630d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f6fbb9631e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f6fbb9632f0>
+  on_exit: <function OnExit.on_exit at 0x7f6fbb963400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-09 16:12:10 +0530] [1214] [INFO] Starting gunicorn 20.0.4
+[2020-03-09 16:12:10 +0530] [1214] [DEBUG] Arbiter booted
+[2020-03-09 16:12:10 +0530] [1214] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1214)
+[2020-03-09 16:12:10 +0530] [1214] [INFO] Using worker: sync
+[2020-03-09 16:12:10 +0530] [1219] [INFO] Booting worker with pid: 1219
+[2020-03-09 16:12:10 +0530] [1222] [INFO] Booting worker with pid: 1222
+[2020-03-09 16:12:10 +0530] [1225] [INFO] Booting worker with pid: 1225
+[2020-03-09 16:12:10 +0530] [1243] [INFO] Booting worker with pid: 1243
+[2020-03-09 16:12:10 +0530] [1245] [INFO] Booting worker with pid: 1245
+[2020-03-09 16:12:11 +0530] [1214] [DEBUG] 5 workers
+Starting preelectionportal2020 as bhasker
+[2020-03-09 16:16:15 +0530] [1177] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fceae8f1510>
+  on_reload: <function OnReload.on_reload at 0x7fceae8f1620>
+  when_ready: <function WhenReady.when_ready at 0x7fceae8f1730>
+  pre_fork: <function Prefork.pre_fork at 0x7fceae8f1840>
+  post_fork: <function Postfork.post_fork at 0x7fceae8f1950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fceae8f1a60>
+  worker_int: <function WorkerInt.worker_int at 0x7fceae8f1b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fceae8f1c80>
+  pre_exec: <function PreExec.pre_exec at 0x7fceae8f1d90>
+  pre_request: <function PreRequest.pre_request at 0x7fceae8f1ea0>
+  post_request: <function PostRequest.post_request at 0x7fceae8f1f28>
+  child_exit: <function ChildExit.child_exit at 0x7fceae90f0d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fceae90f1e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fceae90f2f0>
+  on_exit: <function OnExit.on_exit at 0x7fceae90f400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-09 16:16:15 +0530] [1177] [INFO] Starting gunicorn 20.0.4
+[2020-03-09 16:16:15 +0530] [1177] [DEBUG] Arbiter booted
+[2020-03-09 16:16:15 +0530] [1177] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1177)
+[2020-03-09 16:16:15 +0530] [1177] [INFO] Using worker: sync
+[2020-03-09 16:16:15 +0530] [1189] [INFO] Booting worker with pid: 1189
+[2020-03-09 16:16:15 +0530] [1190] [INFO] Booting worker with pid: 1190
+[2020-03-09 16:16:15 +0530] [1193] [INFO] Booting worker with pid: 1193
+[2020-03-09 16:16:15 +0530] [1194] [INFO] Booting worker with pid: 1194
+[2020-03-09 16:16:15 +0530] [1195] [INFO] Booting worker with pid: 1195
+[2020-03-09 16:16:15 +0530] [1177] [DEBUG] 5 workers
+Starting preelectionportal2020 as bhasker
+[2020-03-09 16:18:52 +0530] [1153] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fb3fca23510>
+  on_reload: <function OnReload.on_reload at 0x7fb3fca23620>
+  when_ready: <function WhenReady.when_ready at 0x7fb3fca23730>
+  pre_fork: <function Prefork.pre_fork at 0x7fb3fca23840>
+  post_fork: <function Postfork.post_fork at 0x7fb3fca23950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fb3fca23a60>
+  worker_int: <function WorkerInt.worker_int at 0x7fb3fca23b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fb3fca23c80>
+  pre_exec: <function PreExec.pre_exec at 0x7fb3fca23d90>
+  pre_request: <function PreRequest.pre_request at 0x7fb3fca23ea0>
+  post_request: <function PostRequest.post_request at 0x7fb3fca23f28>
+  child_exit: <function ChildExit.child_exit at 0x7fb3fca410d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fb3fca411e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fb3fca412f0>
+  on_exit: <function OnExit.on_exit at 0x7fb3fca41400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-09 16:18:52 +0530] [1153] [INFO] Starting gunicorn 20.0.4
+[2020-03-09 16:18:52 +0530] [1153] [DEBUG] Arbiter booted
+[2020-03-09 16:18:52 +0530] [1153] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1153)
+[2020-03-09 16:18:52 +0530] [1153] [INFO] Using worker: sync
+[2020-03-09 16:18:52 +0530] [1174] [INFO] Booting worker with pid: 1174
+[2020-03-09 16:18:52 +0530] [1175] [INFO] Booting worker with pid: 1175
+[2020-03-09 16:18:52 +0530] [1178] [INFO] Booting worker with pid: 1178
+[2020-03-09 16:18:52 +0530] [1179] [INFO] Booting worker with pid: 1179
+[2020-03-09 16:18:52 +0530] [1183] [INFO] Booting worker with pid: 1183
+[2020-03-09 16:18:52 +0530] [1153] [DEBUG] 5 workers
+Starting preelectionportal2020 as bhasker
+[2020-03-09 16:24:18 +0530] [1211] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fefcfc21510>
+  on_reload: <function OnReload.on_reload at 0x7fefcfc21620>
+  when_ready: <function WhenReady.when_ready at 0x7fefcfc21730>
+  pre_fork: <function Prefork.pre_fork at 0x7fefcfc21840>
+  post_fork: <function Postfork.post_fork at 0x7fefcfc21950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fefcfc21a60>
+  worker_int: <function WorkerInt.worker_int at 0x7fefcfc21b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fefcfc21c80>
+  pre_exec: <function PreExec.pre_exec at 0x7fefcfc21d90>
+  pre_request: <function PreRequest.pre_request at 0x7fefcfc21ea0>
+  post_request: <function PostRequest.post_request at 0x7fefcfc21f28>
+  child_exit: <function ChildExit.child_exit at 0x7fefcfc3f0d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fefcfc3f1e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fefcfc3f2f0>
+  on_exit: <function OnExit.on_exit at 0x7fefcfc3f400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-09 16:24:18 +0530] [1211] [INFO] Starting gunicorn 20.0.4
+[2020-03-09 16:24:18 +0530] [1211] [DEBUG] Arbiter booted
+[2020-03-09 16:24:18 +0530] [1211] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1211)
+[2020-03-09 16:24:18 +0530] [1211] [INFO] Using worker: sync
+[2020-03-09 16:24:18 +0530] [1216] [INFO] Booting worker with pid: 1216
+[2020-03-09 16:24:18 +0530] [1220] [INFO] Booting worker with pid: 1220
+[2020-03-09 16:24:18 +0530] [1235] [INFO] Booting worker with pid: 1235
+[2020-03-09 16:24:18 +0530] [1241] [INFO] Booting worker with pid: 1241
+[2020-03-09 16:24:18 +0530] [1243] [INFO] Booting worker with pid: 1243
+[2020-03-09 16:24:18 +0530] [1211] [DEBUG] 5 workers
+[2020-03-09 16:43:15 +0530] [1211] [INFO] Handling signal: term
+[2020-03-09 11:13:15 +0000] [1216] [INFO] Worker exiting (pid: 1216)
+[2020-03-09 11:13:15 +0000] [1220] [INFO] Worker exiting (pid: 1220)
+[2020-03-09 11:13:15 +0000] [1235] [INFO] Worker exiting (pid: 1235)
+[2020-03-09 11:13:15 +0000] [1241] [INFO] Worker exiting (pid: 1241)
+[2020-03-09 11:13:15 +0000] [1243] [INFO] Worker exiting (pid: 1243)
+[2020-03-09 16:43:15 +0530] [1211] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-09 19:16:51 +0530] [1229] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f303050a510>
+  on_reload: <function OnReload.on_reload at 0x7f303050a620>
+  when_ready: <function WhenReady.when_ready at 0x7f303050a730>
+  pre_fork: <function Prefork.pre_fork at 0x7f303050a840>
+  post_fork: <function Postfork.post_fork at 0x7f303050a950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f303050aa60>
+  worker_int: <function WorkerInt.worker_int at 0x7f303050ab70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f303050ac80>
+  pre_exec: <function PreExec.pre_exec at 0x7f303050ad90>
+  pre_request: <function PreRequest.pre_request at 0x7f303050aea0>
+  post_request: <function PostRequest.post_request at 0x7f303050af28>
+  child_exit: <function ChildExit.child_exit at 0x7f30305280d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f30305281e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f30305282f0>
+  on_exit: <function OnExit.on_exit at 0x7f3030528400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-09 19:16:51 +0530] [1229] [INFO] Starting gunicorn 20.0.4
+[2020-03-09 19:16:51 +0530] [1229] [DEBUG] Arbiter booted
+[2020-03-09 19:16:51 +0530] [1229] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1229)
+[2020-03-09 19:16:51 +0530] [1229] [INFO] Using worker: sync
+[2020-03-09 19:16:51 +0530] [1240] [INFO] Booting worker with pid: 1240
+[2020-03-09 19:16:51 +0530] [1254] [INFO] Booting worker with pid: 1254
+[2020-03-09 19:16:51 +0530] [1256] [INFO] Booting worker with pid: 1256
+[2020-03-09 19:16:51 +0530] [1259] [INFO] Booting worker with pid: 1259
+[2020-03-09 19:16:51 +0530] [1260] [INFO] Booting worker with pid: 1260
+[2020-03-09 19:16:51 +0530] [1229] [DEBUG] 5 workers
+[2020-03-09 14:52:48 +0000] [1259] [DEBUG] GET /
+[2020-03-09 14:53:10 +0000] [1259] [DEBUG] Ignoring EPIPE
+[2020-03-10 01:10:46 +0530] [1229] [INFO] Handling signal: term
+[2020-03-09 19:40:46 +0000] [1259] [INFO] Worker exiting (pid: 1259)
+[2020-03-09 19:40:47 +0000] [1254] [INFO] Worker exiting (pid: 1254)
+[2020-03-09 19:40:47 +0000] [1256] [INFO] Worker exiting (pid: 1256)
+[2020-03-09 19:40:47 +0000] [1240] [INFO] Worker exiting (pid: 1240)
+[2020-03-09 19:40:47 +0000] [1260] [INFO] Worker exiting (pid: 1260)
+Starting preelectionportal2020 as bhasker
+[2020-03-10 09:36:09 +0530] [1222] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fa24d492510>
+  on_reload: <function OnReload.on_reload at 0x7fa24d492620>
+  when_ready: <function WhenReady.when_ready at 0x7fa24d492730>
+  pre_fork: <function Prefork.pre_fork at 0x7fa24d492840>
+  post_fork: <function Postfork.post_fork at 0x7fa24d492950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fa24d492a60>
+  worker_int: <function WorkerInt.worker_int at 0x7fa24d492b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fa24d492c80>
+  pre_exec: <function PreExec.pre_exec at 0x7fa24d492d90>
+  pre_request: <function PreRequest.pre_request at 0x7fa24d492ea0>
+  post_request: <function PostRequest.post_request at 0x7fa24d492f28>
+  child_exit: <function ChildExit.child_exit at 0x7fa24d4b00d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fa24d4b01e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fa24d4b02f0>
+  on_exit: <function OnExit.on_exit at 0x7fa24d4b0400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-10 09:36:09 +0530] [1222] [INFO] Starting gunicorn 20.0.4
+[2020-03-10 09:36:09 +0530] [1222] [DEBUG] Arbiter booted
+[2020-03-10 09:36:09 +0530] [1222] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1222)
+[2020-03-10 09:36:09 +0530] [1222] [INFO] Using worker: sync
+[2020-03-10 09:36:09 +0530] [1253] [INFO] Booting worker with pid: 1253
+[2020-03-10 09:36:09 +0530] [1255] [INFO] Booting worker with pid: 1255
+[2020-03-10 09:36:09 +0530] [1258] [INFO] Booting worker with pid: 1258
+[2020-03-10 09:36:09 +0530] [1263] [INFO] Booting worker with pid: 1263
+[2020-03-10 09:36:09 +0530] [1264] [INFO] Booting worker with pid: 1264
+[2020-03-10 09:36:09 +0530] [1222] [DEBUG] 5 workers
+Starting preelectionportal2020 as bhasker
+[2020-03-10 21:31:36 +0530] [1066] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f173a3b9510>
+  on_reload: <function OnReload.on_reload at 0x7f173a3b9620>
+  when_ready: <function WhenReady.when_ready at 0x7f173a3b9730>
+  pre_fork: <function Prefork.pre_fork at 0x7f173a3b9840>
+  post_fork: <function Postfork.post_fork at 0x7f173a3b9950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f173a3b9a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f173a3b9b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f173a3b9c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f173a3b9d90>
+  pre_request: <function PreRequest.pre_request at 0x7f173a3b9ea0>
+  post_request: <function PostRequest.post_request at 0x7f173a3b9f28>
+  child_exit: <function ChildExit.child_exit at 0x7f173a3d70d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f173a3d71e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f173a3d72f0>
+  on_exit: <function OnExit.on_exit at 0x7f173a3d7400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-10 21:31:36 +0530] [1066] [INFO] Starting gunicorn 20.0.4
+[2020-03-10 21:31:36 +0530] [1066] [DEBUG] Arbiter booted
+[2020-03-10 21:31:36 +0530] [1066] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1066)
+[2020-03-10 21:31:36 +0530] [1066] [INFO] Using worker: sync
+[2020-03-10 21:31:36 +0530] [1086] [INFO] Booting worker with pid: 1086
+[2020-03-10 21:31:36 +0530] [1088] [INFO] Booting worker with pid: 1088
+[2020-03-10 21:31:36 +0530] [1091] [INFO] Booting worker with pid: 1091
+[2020-03-10 21:31:36 +0530] [1104] [INFO] Booting worker with pid: 1104
+[2020-03-10 21:31:36 +0530] [1107] [INFO] Booting worker with pid: 1107
+[2020-03-10 21:31:36 +0530] [1066] [DEBUG] 5 workers
+Starting preelectionportal2020 as bhasker
+[2020-03-10 22:49:52 +0530] [1203] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f0d068f9510>
+  on_reload: <function OnReload.on_reload at 0x7f0d068f9620>
+  when_ready: <function WhenReady.when_ready at 0x7f0d068f9730>
+  pre_fork: <function Prefork.pre_fork at 0x7f0d068f9840>
+  post_fork: <function Postfork.post_fork at 0x7f0d068f9950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f0d068f9a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f0d068f9b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f0d068f9c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f0d068f9d90>
+  pre_request: <function PreRequest.pre_request at 0x7f0d068f9ea0>
+  post_request: <function PostRequest.post_request at 0x7f0d068f9f28>
+  child_exit: <function ChildExit.child_exit at 0x7f0d069170d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f0d069171e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f0d069172f0>
+  on_exit: <function OnExit.on_exit at 0x7f0d06917400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-10 22:49:52 +0530] [1203] [INFO] Starting gunicorn 20.0.4
+[2020-03-10 22:49:52 +0530] [1203] [DEBUG] Arbiter booted
+[2020-03-10 22:49:52 +0530] [1203] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1203)
+[2020-03-10 22:49:52 +0530] [1203] [INFO] Using worker: sync
+[2020-03-10 22:49:52 +0530] [1208] [INFO] Booting worker with pid: 1208
+[2020-03-10 22:49:52 +0530] [1209] [INFO] Booting worker with pid: 1209
+[2020-03-10 22:49:52 +0530] [1214] [INFO] Booting worker with pid: 1214
+[2020-03-10 22:49:52 +0530] [1230] [INFO] Booting worker with pid: 1230
+[2020-03-10 22:49:52 +0530] [1234] [INFO] Booting worker with pid: 1234
+[2020-03-10 22:49:52 +0530] [1203] [DEBUG] 5 workers
+[2020-03-11 02:40:20 +0530] [1203] [INFO] Handling signal: term
+[2020-03-10 21:10:20 +0000] [1214] [INFO] Worker exiting (pid: 1214)
+[2020-03-10 21:10:20 +0000] [1208] [INFO] Worker exiting (pid: 1208)
+[2020-03-10 21:10:20 +0000] [1230] [INFO] Worker exiting (pid: 1230)
+[2020-03-10 21:10:20 +0000] [1209] [INFO] Worker exiting (pid: 1209)
+[2020-03-10 21:10:20 +0000] [1234] [INFO] Worker exiting (pid: 1234)
+[2020-03-11 02:40:21 +0530] [1203] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-11 13:55:50 +0530] [1267] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f1290f22510>
+  on_reload: <function OnReload.on_reload at 0x7f1290f22620>
+  when_ready: <function WhenReady.when_ready at 0x7f1290f22730>
+  pre_fork: <function Prefork.pre_fork at 0x7f1290f22840>
+  post_fork: <function Postfork.post_fork at 0x7f1290f22950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f1290f22a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f1290f22b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f1290f22c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f1290f22d90>
+  pre_request: <function PreRequest.pre_request at 0x7f1290f22ea0>
+  post_request: <function PostRequest.post_request at 0x7f1290f22f28>
+  child_exit: <function ChildExit.child_exit at 0x7f1290f400d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f1290f401e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f1290f402f0>
+  on_exit: <function OnExit.on_exit at 0x7f1290f40400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-11 13:55:50 +0530] [1267] [INFO] Starting gunicorn 20.0.4
+[2020-03-11 13:55:50 +0530] [1267] [DEBUG] Arbiter booted
+[2020-03-11 13:55:50 +0530] [1267] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1267)
+[2020-03-11 13:55:50 +0530] [1267] [INFO] Using worker: sync
+[2020-03-11 13:55:50 +0530] [1277] [INFO] Booting worker with pid: 1277
+[2020-03-11 13:55:50 +0530] [1279] [INFO] Booting worker with pid: 1279
+[2020-03-11 13:55:50 +0530] [1295] [INFO] Booting worker with pid: 1295
+[2020-03-11 13:55:50 +0530] [1296] [INFO] Booting worker with pid: 1296
+[2020-03-11 13:55:50 +0530] [1298] [INFO] Booting worker with pid: 1298
+[2020-03-11 13:55:50 +0530] [1267] [DEBUG] 5 workers
+[2020-03-11 15:40:04 +0530] [1267] [INFO] Handling signal: term
+[2020-03-11 10:10:04 +0000] [1296] [INFO] Worker exiting (pid: 1296)
+[2020-03-11 10:10:04 +0000] [1295] [INFO] Worker exiting (pid: 1295)
+[2020-03-11 10:10:04 +0000] [1277] [INFO] Worker exiting (pid: 1277)
+[2020-03-11 10:10:04 +0000] [1298] [INFO] Worker exiting (pid: 1298)
+[2020-03-11 10:10:04 +0000] [1279] [INFO] Worker exiting (pid: 1279)
+[2020-03-11 15:40:04 +0530] [1267] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-11 15:43:47 +0530] [1257] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fdcf5122510>
+  on_reload: <function OnReload.on_reload at 0x7fdcf5122620>
+  when_ready: <function WhenReady.when_ready at 0x7fdcf5122730>
+  pre_fork: <function Prefork.pre_fork at 0x7fdcf5122840>
+  post_fork: <function Postfork.post_fork at 0x7fdcf5122950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fdcf5122a60>
+  worker_int: <function WorkerInt.worker_int at 0x7fdcf5122b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fdcf5122c80>
+  pre_exec: <function PreExec.pre_exec at 0x7fdcf5122d90>
+  pre_request: <function PreRequest.pre_request at 0x7fdcf5122ea0>
+  post_request: <function PostRequest.post_request at 0x7fdcf5122f28>
+  child_exit: <function ChildExit.child_exit at 0x7fdcf51400d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fdcf51401e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fdcf51402f0>
+  on_exit: <function OnExit.on_exit at 0x7fdcf5140400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-11 15:43:47 +0530] [1257] [INFO] Starting gunicorn 20.0.4
+[2020-03-11 15:43:47 +0530] [1257] [DEBUG] Arbiter booted
+[2020-03-11 15:43:47 +0530] [1257] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1257)
+[2020-03-11 15:43:47 +0530] [1257] [INFO] Using worker: sync
+[2020-03-11 15:43:47 +0530] [1270] [INFO] Booting worker with pid: 1270
+[2020-03-11 15:43:47 +0530] [1285] [INFO] Booting worker with pid: 1285
+[2020-03-11 15:43:47 +0530] [1286] [INFO] Booting worker with pid: 1286
+[2020-03-11 15:43:47 +0530] [1290] [INFO] Booting worker with pid: 1290
+[2020-03-11 15:43:47 +0530] [1291] [INFO] Booting worker with pid: 1291
+[2020-03-11 15:43:47 +0530] [1257] [DEBUG] 5 workers
+[2020-03-11 20:38:34 +0530] [1257] [CRITICAL] WORKER TIMEOUT (pid:1270)
+[2020-03-11 20:38:34 +0530] [1257] [CRITICAL] WORKER TIMEOUT (pid:1285)
+[2020-03-11 20:38:34 +0530] [1257] [CRITICAL] WORKER TIMEOUT (pid:1286)
+[2020-03-11 20:38:34 +0530] [1257] [CRITICAL] WORKER TIMEOUT (pid:1290)
+[2020-03-11 20:38:34 +0530] [1257] [CRITICAL] WORKER TIMEOUT (pid:1291)
+[2020-03-11 15:08:34 +0000] [1270] [INFO] Worker exiting (pid: 1270)
+[2020-03-11 15:08:34 +0000] [1285] [INFO] Worker exiting (pid: 1285)
+[2020-03-11 15:08:34 +0000] [1291] [INFO] Worker exiting (pid: 1291)
+[2020-03-11 15:08:34 +0000] [1290] [INFO] Worker exiting (pid: 1290)
+[2020-03-11 15:08:34 +0000] [1286] [INFO] Worker exiting (pid: 1286)
+[2020-03-11 20:38:35 +0530] [21031] [INFO] Booting worker with pid: 21031
+[2020-03-11 20:38:35 +0530] [1257] [DEBUG] 1 workers
+[2020-03-11 20:38:35 +0530] [21053] [INFO] Booting worker with pid: 21053
+[2020-03-11 20:38:35 +0530] [21054] [INFO] Booting worker with pid: 21054
+[2020-03-11 20:38:35 +0530] [21055] [INFO] Booting worker with pid: 21055
+[2020-03-11 20:38:35 +0530] [21068] [INFO] Booting worker with pid: 21068
+[2020-03-11 20:38:35 +0530] [1257] [DEBUG] 5 workers
+[2020-03-11 15:26:23 +0000] [21068] [DEBUG] GET /
+[2020-03-11 15:26:39 +0000] [21031] [DEBUG] GET /
+[2020-03-11 15:26:41 +0000] [21054] [DEBUG] GET /
+[2020-03-11 15:41:37 +0000] [21055] [DEBUG] GET /authentication/callback
+[2020-03-11 15:41:40 +0000] [21055] [DEBUG] GET /
+[2020-03-12 01:05:18 +0530] [1257] [INFO] Handling signal: term
+[2020-03-11 19:35:18 +0000] [21068] [INFO] Worker exiting (pid: 21068)
+[2020-03-11 19:35:18 +0000] [21055] [INFO] Worker exiting (pid: 21055)
+[2020-03-11 19:35:18 +0000] [21053] [INFO] Worker exiting (pid: 21053)
+[2020-03-11 19:35:18 +0000] [21054] [INFO] Worker exiting (pid: 21054)
+<QuerySet [<Question: Can you help me?>, <Question: Can you help me?>, <Question: loda hai tu>]>
+[2020-03-11 19:35:18 +0000] [21031] [INFO] Worker exiting (pid: 21031)
+[2020-03-12 01:05:18 +0530] [1257] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-12 21:04:25 +0530] [1140] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7ff405c1c510>
+  on_reload: <function OnReload.on_reload at 0x7ff405c1c620>
+  when_ready: <function WhenReady.when_ready at 0x7ff405c1c730>
+  pre_fork: <function Prefork.pre_fork at 0x7ff405c1c840>
+  post_fork: <function Postfork.post_fork at 0x7ff405c1c950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7ff405c1ca60>
+  worker_int: <function WorkerInt.worker_int at 0x7ff405c1cb70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7ff405c1cc80>
+  pre_exec: <function PreExec.pre_exec at 0x7ff405c1cd90>
+  pre_request: <function PreRequest.pre_request at 0x7ff405c1cea0>
+  post_request: <function PostRequest.post_request at 0x7ff405c1cf28>
+  child_exit: <function ChildExit.child_exit at 0x7ff405c3a0d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7ff405c3a1e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7ff405c3a2f0>
+  on_exit: <function OnExit.on_exit at 0x7ff405c3a400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-12 21:04:25 +0530] [1140] [INFO] Starting gunicorn 20.0.4
+[2020-03-12 21:04:25 +0530] [1140] [DEBUG] Arbiter booted
+[2020-03-12 21:04:25 +0530] [1140] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1140)
+[2020-03-12 21:04:25 +0530] [1140] [INFO] Using worker: sync
+[2020-03-12 21:04:25 +0530] [1170] [INFO] Booting worker with pid: 1170
+[2020-03-12 21:04:25 +0530] [1177] [INFO] Booting worker with pid: 1177
+[2020-03-12 21:04:25 +0530] [1179] [INFO] Booting worker with pid: 1179
+[2020-03-12 21:04:25 +0530] [1180] [INFO] Booting worker with pid: 1180
+[2020-03-12 21:04:25 +0530] [1185] [INFO] Booting worker with pid: 1185
+[2020-03-12 21:04:25 +0530] [1140] [DEBUG] 5 workers
+[2020-03-12 23:46:05 +0530] [1140] [INFO] Handling signal: term
+[2020-03-12 18:16:05 +0000] [1170] [INFO] Worker exiting (pid: 1170)
+[2020-03-12 18:16:05 +0000] [1180] [INFO] Worker exiting (pid: 1180)
+[2020-03-12 18:16:05 +0000] [1179] [INFO] Worker exiting (pid: 1179)
+[2020-03-12 18:16:05 +0000] [1177] [INFO] Worker exiting (pid: 1177)
+[2020-03-12 18:16:05 +0000] [1185] [INFO] Worker exiting (pid: 1185)
+[2020-03-12 23:46:05 +0530] [1140] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-13 08:47:52 +0530] [1126] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f6ee77fb510>
+  on_reload: <function OnReload.on_reload at 0x7f6ee77fb620>
+  when_ready: <function WhenReady.when_ready at 0x7f6ee77fb730>
+  pre_fork: <function Prefork.pre_fork at 0x7f6ee77fb840>
+  post_fork: <function Postfork.post_fork at 0x7f6ee77fb950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f6ee77fba60>
+  worker_int: <function WorkerInt.worker_int at 0x7f6ee77fbb70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f6ee77fbc80>
+  pre_exec: <function PreExec.pre_exec at 0x7f6ee77fbd90>
+  pre_request: <function PreRequest.pre_request at 0x7f6ee77fbea0>
+  post_request: <function PostRequest.post_request at 0x7f6ee77fbf28>
+  child_exit: <function ChildExit.child_exit at 0x7f6ee78190d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f6ee78191e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f6ee78192f0>
+  on_exit: <function OnExit.on_exit at 0x7f6ee7819400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-13 08:47:52 +0530] [1126] [INFO] Starting gunicorn 20.0.4
+[2020-03-13 08:47:52 +0530] [1126] [DEBUG] Arbiter booted
+[2020-03-13 08:47:52 +0530] [1126] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1126)
+[2020-03-13 08:47:52 +0530] [1126] [INFO] Using worker: sync
+[2020-03-13 08:47:52 +0530] [1152] [INFO] Booting worker with pid: 1152
+[2020-03-13 08:47:52 +0530] [1153] [INFO] Booting worker with pid: 1153
+[2020-03-13 08:47:52 +0530] [1154] [INFO] Booting worker with pid: 1154
+[2020-03-13 08:47:52 +0530] [1155] [INFO] Booting worker with pid: 1155
+[2020-03-13 08:47:52 +0530] [1170] [INFO] Booting worker with pid: 1170
+[2020-03-13 08:47:52 +0530] [1126] [DEBUG] 5 workers
+[2020-03-13 04:13:31 +0000] [1152] [DEBUG] GET /authentication/callback
+[2020-03-13 04:13:34 +0000] [1152] [DEBUG] GET /
+[2020-03-13 04:15:01 +0000] [1153] [DEBUG] GET /authentication/callback
+[2020-03-13 04:15:04 +0000] [1155] [DEBUG] GET /
+[2020-03-13 04:17:40 +0000] [1153] [DEBUG] GET /authentication/callback
+[2020-03-13 04:17:42 +0000] [1154] [DEBUG] GET /
+[2020-03-13 04:18:00 +0000] [1153] [DEBUG] GET /authentication/signout
+[2020-03-13 04:18:00 +0000] [1153] [DEBUG] GET /
+[2020-03-13 04:24:27 +0000] [1153] [DEBUG] GET /
+[2020-03-13 11:48:24 +0530] [1126] [INFO] Handling signal: term
+[2020-03-13 06:18:24 +0000] [1154] [INFO] Worker exiting (pid: 1154)
+[2020-03-13 06:18:24 +0000] [1170] [INFO] Worker exiting (pid: 1170)
+[2020-03-13 06:18:24 +0000] [1155] [INFO] Worker exiting (pid: 1155)
+<QuerySet [<Question: Can you help me?>, <Question: Can you help me?>, <Question: loda hai tu>]>
+[2020-03-13 06:18:24 +0000] [1152] [INFO] Worker exiting (pid: 1152)
+[2020-03-13 06:18:24 +0000] [1153] [INFO] Worker exiting (pid: 1153)
+<QuerySet [<Question: Can you help me?>, <Question: Can you help me?>, <Question: loda hai tu>]>
+<QuerySet [<Question: Can you help me?>, <Question: Can you help me?>, <Question: loda hai tu>]>
+[2020-03-13 11:48:25 +0530] [1126] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-13 13:25:46 +0530] [1233] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f77760af510>
+  on_reload: <function OnReload.on_reload at 0x7f77760af620>
+  when_ready: <function WhenReady.when_ready at 0x7f77760af730>
+  pre_fork: <function Prefork.pre_fork at 0x7f77760af840>
+  post_fork: <function Postfork.post_fork at 0x7f77760af950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f77760afa60>
+  worker_int: <function WorkerInt.worker_int at 0x7f77760afb70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f77760afc80>
+  pre_exec: <function PreExec.pre_exec at 0x7f77760afd90>
+  pre_request: <function PreRequest.pre_request at 0x7f77760afea0>
+  post_request: <function PostRequest.post_request at 0x7f77760aff28>
+  child_exit: <function ChildExit.child_exit at 0x7f77760cd0d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f77760cd1e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f77760cd2f0>
+  on_exit: <function OnExit.on_exit at 0x7f77760cd400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-13 13:25:46 +0530] [1233] [INFO] Starting gunicorn 20.0.4
+[2020-03-13 13:25:46 +0530] [1233] [DEBUG] Arbiter booted
+[2020-03-13 13:25:46 +0530] [1233] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1233)
+[2020-03-13 13:25:46 +0530] [1233] [INFO] Using worker: sync
+[2020-03-13 13:25:46 +0530] [1242] [INFO] Booting worker with pid: 1242
+[2020-03-13 13:25:46 +0530] [1243] [INFO] Booting worker with pid: 1243
+[2020-03-13 13:25:46 +0530] [1248] [INFO] Booting worker with pid: 1248
+[2020-03-13 13:25:46 +0530] [1250] [INFO] Booting worker with pid: 1250
+[2020-03-13 13:25:46 +0530] [1264] [INFO] Booting worker with pid: 1264
+[2020-03-13 13:25:46 +0530] [1233] [DEBUG] 5 workers
+[2020-03-13 15:02:21 +0530] [1233] [INFO] Handling signal: term
+[2020-03-13 09:32:21 +0000] [1248] [INFO] Worker exiting (pid: 1248)
+[2020-03-13 09:32:21 +0000] [1250] [INFO] Worker exiting (pid: 1250)
+[2020-03-13 09:32:21 +0000] [1242] [INFO] Worker exiting (pid: 1242)
+[2020-03-13 09:32:21 +0000] [1243] [INFO] Worker exiting (pid: 1243)
+[2020-03-13 09:32:21 +0000] [1264] [INFO] Worker exiting (pid: 1264)
+[2020-03-13 15:02:21 +0530] [1233] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-13 17:11:48 +0530] [1273] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fe8b1d7b510>
+  on_reload: <function OnReload.on_reload at 0x7fe8b1d7b620>
+  when_ready: <function WhenReady.when_ready at 0x7fe8b1d7b730>
+  pre_fork: <function Prefork.pre_fork at 0x7fe8b1d7b840>
+  post_fork: <function Postfork.post_fork at 0x7fe8b1d7b950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fe8b1d7ba60>
+  worker_int: <function WorkerInt.worker_int at 0x7fe8b1d7bb70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fe8b1d7bc80>
+  pre_exec: <function PreExec.pre_exec at 0x7fe8b1d7bd90>
+  pre_request: <function PreRequest.pre_request at 0x7fe8b1d7bea0>
+  post_request: <function PostRequest.post_request at 0x7fe8b1d7bf28>
+  child_exit: <function ChildExit.child_exit at 0x7fe8b1d990d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fe8b1d991e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fe8b1d992f0>
+  on_exit: <function OnExit.on_exit at 0x7fe8b1d99400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-13 17:11:48 +0530] [1273] [INFO] Starting gunicorn 20.0.4
+[2020-03-13 17:11:48 +0530] [1273] [DEBUG] Arbiter booted
+[2020-03-13 17:11:48 +0530] [1273] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1273)
+[2020-03-13 17:11:48 +0530] [1273] [INFO] Using worker: sync
+[2020-03-13 17:11:48 +0530] [1283] [INFO] Booting worker with pid: 1283
+[2020-03-13 17:11:48 +0530] [1286] [INFO] Booting worker with pid: 1286
+[2020-03-13 17:11:48 +0530] [1301] [INFO] Booting worker with pid: 1301
+[2020-03-13 17:11:49 +0530] [1304] [INFO] Booting worker with pid: 1304
+[2020-03-13 17:11:49 +0530] [1306] [INFO] Booting worker with pid: 1306
+[2020-03-13 17:11:49 +0530] [1273] [DEBUG] 5 workers
+[2020-03-13 12:14:22 +0000] [1286] [DEBUG] GET /
+[2020-03-13 12:23:40 +0000] [1286] [DEBUG] GET /
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/portal/views.py", line 356, in index
+    return render(request, 'home.html', {'nbar': 'home'})
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/template/base.py", line 477, in parse
+    raise self.error(token, e)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/template/base.py", line 475, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/template/defaulttags.py", line 952, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/template/base.py", line 482, in parse
+    self.unclosed_block_tag(parse_until)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/template/base.py", line 543, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 66: 'if'. Looking for one of: elif, else, endif.
+[2020-03-13 12:23:41 +0000] [1286] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2020-03-13 12:23:53 +0000] [1283] [DEBUG] GET /
+[2020-03-13 12:24:55 +0000] [1283] [DEBUG] GET /
+[2020-03-13 12:25:14 +0000] [1304] [DEBUG] GET /
+[2020-03-13 12:25:38 +0000] [1301] [DEBUG] GET /
+[2020-03-13 12:25:44 +0000] [1286] [DEBUG] GET /
+[2020-03-13 12:28:08 +0000] [1283] [DEBUG] GET /
+[2020-03-13 12:28:54 +0000] [1301] [DEBUG] GET /
+[2020-03-13 12:33:03 +0000] [1283] [DEBUG] GET /
+[2020-03-13 12:35:30 +0000] [1306] [DEBUG] GET /
+[2020-03-13 12:35:39 +0000] [1306] [DEBUG] GET /
+[2020-03-13 12:36:56 +0000] [1304] [DEBUG] GET /
+[2020-03-13 12:37:10 +0000] [1283] [DEBUG] GET /
+[2020-03-13 12:37:19 +0000] [1286] [DEBUG] GET /
+[2020-03-13 13:50:51 +0000] [1304] [DEBUG] GET /
+[2020-03-13 13:50:56 +0000] [1283] [DEBUG] GET /candidate/
+[2020-03-13 13:50:59 +0000] [1286] [DEBUG] GET /
+[2020-03-13 16:17:09 +0000] [1283] [DEBUG] GET /
+[2020-03-13 16:17:11 +0000] [1304] [DEBUG] GET /
+[2020-03-13 16:17:13 +0000] [1304] [DEBUG] GET /candidate/
+[2020-03-14 00:17:47 +0530] [1273] [INFO] Handling signal: term
+[2020-03-13 18:47:47 +0000] [1306] [INFO] Worker exiting (pid: 1306)
+[2020-03-13 18:47:47 +0000] [1301] [INFO] Worker exiting (pid: 1301)
+[2020-03-13 18:47:47 +0000] [1286] [INFO] Worker exiting (pid: 1286)
+[2020-03-13 18:47:47 +0000] [1283] [INFO] Worker exiting (pid: 1283)
+[2020-03-13 18:47:47 +0000] [1304] [INFO] Worker exiting (pid: 1304)
+[2020-03-14 00:17:47 +0530] [1273] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-14 16:15:52 +0530] [1206] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f0d61dc5510>
+  on_reload: <function OnReload.on_reload at 0x7f0d61dc5620>
+  when_ready: <function WhenReady.when_ready at 0x7f0d61dc5730>
+  pre_fork: <function Prefork.pre_fork at 0x7f0d61dc5840>
+  post_fork: <function Postfork.post_fork at 0x7f0d61dc5950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f0d61dc5a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f0d61dc5b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f0d61dc5c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f0d61dc5d90>
+  pre_request: <function PreRequest.pre_request at 0x7f0d61dc5ea0>
+  post_request: <function PostRequest.post_request at 0x7f0d61dc5f28>
+  child_exit: <function ChildExit.child_exit at 0x7f0d61de30d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f0d61de31e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f0d61de32f0>
+  on_exit: <function OnExit.on_exit at 0x7f0d61de3400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-14 16:15:52 +0530] [1206] [INFO] Starting gunicorn 20.0.4
+[2020-03-14 16:15:52 +0530] [1206] [DEBUG] Arbiter booted
+[2020-03-14 16:15:52 +0530] [1206] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1206)
+[2020-03-14 16:15:52 +0530] [1206] [INFO] Using worker: sync
+[2020-03-14 16:15:52 +0530] [1289] [INFO] Booting worker with pid: 1289
+[2020-03-14 16:15:52 +0530] [1294] [INFO] Booting worker with pid: 1294
+[2020-03-14 16:15:52 +0530] [1297] [INFO] Booting worker with pid: 1297
+[2020-03-14 16:15:52 +0530] [1298] [INFO] Booting worker with pid: 1298
+[2020-03-14 16:15:52 +0530] [1300] [INFO] Booting worker with pid: 1300
+[2020-03-14 16:15:52 +0530] [1206] [DEBUG] 5 workers
+[2020-03-14 17:48:45 +0530] [1206] [INFO] Handling signal: term
+[2020-03-14 12:18:45 +0000] [1294] [INFO] Worker exiting (pid: 1294)
+[2020-03-14 12:18:45 +0000] [1297] [INFO] Worker exiting (pid: 1297)
+[2020-03-14 12:18:45 +0000] [1289] [INFO] Worker exiting (pid: 1289)
+[2020-03-14 12:18:45 +0000] [1298] [INFO] Worker exiting (pid: 1298)
+[2020-03-14 12:18:45 +0000] [1300] [INFO] Worker exiting (pid: 1300)
+[2020-03-14 17:48:46 +0530] [1206] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-14 17:50:15 +0530] [1180] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fda4a30e510>
+  on_reload: <function OnReload.on_reload at 0x7fda4a30e620>
+  when_ready: <function WhenReady.when_ready at 0x7fda4a30e730>
+  pre_fork: <function Prefork.pre_fork at 0x7fda4a30e840>
+  post_fork: <function Postfork.post_fork at 0x7fda4a30e950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fda4a30ea60>
+  worker_int: <function WorkerInt.worker_int at 0x7fda4a30eb70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fda4a30ec80>
+  pre_exec: <function PreExec.pre_exec at 0x7fda4a30ed90>
+  pre_request: <function PreRequest.pre_request at 0x7fda4a30eea0>
+  post_request: <function PostRequest.post_request at 0x7fda4a30ef28>
+  child_exit: <function ChildExit.child_exit at 0x7fda4a32c0d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fda4a32c1e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fda4a32c2f0>
+  on_exit: <function OnExit.on_exit at 0x7fda4a32c400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-14 17:50:15 +0530] [1180] [INFO] Starting gunicorn 20.0.4
+[2020-03-14 17:50:15 +0530] [1180] [DEBUG] Arbiter booted
+[2020-03-14 17:50:15 +0530] [1180] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1180)
+[2020-03-14 17:50:15 +0530] [1180] [INFO] Using worker: sync
+[2020-03-14 17:50:15 +0530] [1189] [INFO] Booting worker with pid: 1189
+[2020-03-14 17:50:15 +0530] [1195] [INFO] Booting worker with pid: 1195
+[2020-03-14 17:50:15 +0530] [1197] [INFO] Booting worker with pid: 1197
+[2020-03-14 17:50:15 +0530] [1200] [INFO] Booting worker with pid: 1200
+[2020-03-14 17:50:15 +0530] [1202] [INFO] Booting worker with pid: 1202
+[2020-03-14 17:50:15 +0530] [1180] [DEBUG] 5 workers
+[2020-03-15 05:27:26 +0530] [1180] [INFO] Handling signal: term
+[2020-03-14 23:57:26 +0000] [1202] [INFO] Worker exiting (pid: 1202)
+[2020-03-14 23:57:26 +0000] [1200] [INFO] Worker exiting (pid: 1200)
+[2020-03-14 23:57:26 +0000] [1195] [INFO] Worker exiting (pid: 1195)
+[2020-03-14 23:57:26 +0000] [1189] [INFO] Worker exiting (pid: 1189)
+[2020-03-14 23:57:26 +0000] [1197] [INFO] Worker exiting (pid: 1197)
+[2020-03-15 05:27:27 +0530] [1180] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-15 13:00:21 +0530] [1256] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f4ce43ab510>
+  on_reload: <function OnReload.on_reload at 0x7f4ce43ab620>
+  when_ready: <function WhenReady.when_ready at 0x7f4ce43ab730>
+  pre_fork: <function Prefork.pre_fork at 0x7f4ce43ab840>
+  post_fork: <function Postfork.post_fork at 0x7f4ce43ab950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f4ce43aba60>
+  worker_int: <function WorkerInt.worker_int at 0x7f4ce43abb70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f4ce43abc80>
+  pre_exec: <function PreExec.pre_exec at 0x7f4ce43abd90>
+  pre_request: <function PreRequest.pre_request at 0x7f4ce43abea0>
+  post_request: <function PostRequest.post_request at 0x7f4ce43abf28>
+  child_exit: <function ChildExit.child_exit at 0x7f4ce43c90d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f4ce43c91e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f4ce43c92f0>
+  on_exit: <function OnExit.on_exit at 0x7f4ce43c9400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-15 13:00:21 +0530] [1256] [INFO] Starting gunicorn 20.0.4
+[2020-03-15 13:00:21 +0530] [1256] [DEBUG] Arbiter booted
+[2020-03-15 13:00:21 +0530] [1256] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1256)
+[2020-03-15 13:00:21 +0530] [1256] [INFO] Using worker: sync
+[2020-03-15 13:00:21 +0530] [1282] [INFO] Booting worker with pid: 1282
+[2020-03-15 13:00:21 +0530] [1284] [INFO] Booting worker with pid: 1284
+[2020-03-15 13:00:21 +0530] [1289] [INFO] Booting worker with pid: 1289
+[2020-03-15 13:00:21 +0530] [1291] [INFO] Booting worker with pid: 1291
+[2020-03-15 13:00:21 +0530] [1319] [INFO] Booting worker with pid: 1319
+[2020-03-15 13:00:21 +0530] [1256] [DEBUG] 5 workers
+[2020-03-15 22:45:00 +0530] [1256] [INFO] Handling signal: term
+[2020-03-15 17:15:00 +0000] [1282] [INFO] Worker exiting (pid: 1282)
+[2020-03-15 17:15:00 +0000] [1319] [INFO] Worker exiting (pid: 1319)
+[2020-03-15 17:15:00 +0000] [1291] [INFO] Worker exiting (pid: 1291)
+[2020-03-15 17:15:00 +0000] [1289] [INFO] Worker exiting (pid: 1289)
+[2020-03-15 17:15:00 +0000] [1284] [INFO] Worker exiting (pid: 1284)
+[2020-03-15 22:45:00 +0530] [1256] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-16 01:07:16 +0530] [1241] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f8f9d963510>
+  on_reload: <function OnReload.on_reload at 0x7f8f9d963620>
+  when_ready: <function WhenReady.when_ready at 0x7f8f9d963730>
+  pre_fork: <function Prefork.pre_fork at 0x7f8f9d963840>
+  post_fork: <function Postfork.post_fork at 0x7f8f9d963950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f8f9d963a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f8f9d963b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f8f9d963c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f8f9d963d90>
+  pre_request: <function PreRequest.pre_request at 0x7f8f9d963ea0>
+  post_request: <function PostRequest.post_request at 0x7f8f9d963f28>
+  child_exit: <function ChildExit.child_exit at 0x7f8f9d9810d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f8f9d9811e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f8f9d9812f0>
+  on_exit: <function OnExit.on_exit at 0x7f8f9d981400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-16 01:07:16 +0530] [1241] [INFO] Starting gunicorn 20.0.4
+[2020-03-16 01:07:16 +0530] [1241] [DEBUG] Arbiter booted
+[2020-03-16 01:07:16 +0530] [1241] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1241)
+[2020-03-16 01:07:16 +0530] [1241] [INFO] Using worker: sync
+[2020-03-16 01:07:16 +0530] [1282] [INFO] Booting worker with pid: 1282
+[2020-03-16 01:07:16 +0530] [1289] [INFO] Booting worker with pid: 1289
+[2020-03-16 01:07:16 +0530] [1291] [INFO] Booting worker with pid: 1291
+[2020-03-16 01:07:16 +0530] [1294] [INFO] Booting worker with pid: 1294
+[2020-03-16 01:07:16 +0530] [1296] [INFO] Booting worker with pid: 1296
+[2020-03-16 01:07:16 +0530] [1241] [DEBUG] 5 workers
+[2020-03-16 02:15:48 +0530] [1241] [INFO] Handling signal: term
+[2020-03-15 20:45:48 +0000] [1289] [INFO] Worker exiting (pid: 1289)
+[2020-03-15 20:45:48 +0000] [1291] [INFO] Worker exiting (pid: 1291)
+[2020-03-15 20:45:48 +0000] [1282] [INFO] Worker exiting (pid: 1282)
+[2020-03-15 20:45:48 +0000] [1294] [INFO] Worker exiting (pid: 1294)
+[2020-03-15 20:45:48 +0000] [1296] [INFO] Worker exiting (pid: 1296)
+[2020-03-16 02:15:48 +0530] [1241] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-17 10:16:44 +0530] [1270] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f1319e85510>
+  on_reload: <function OnReload.on_reload at 0x7f1319e85620>
+  when_ready: <function WhenReady.when_ready at 0x7f1319e85730>
+  pre_fork: <function Prefork.pre_fork at 0x7f1319e85840>
+  post_fork: <function Postfork.post_fork at 0x7f1319e85950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f1319e85a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f1319e85b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f1319e85c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f1319e85d90>
+  pre_request: <function PreRequest.pre_request at 0x7f1319e85ea0>
+  post_request: <function PostRequest.post_request at 0x7f1319e85f28>
+  child_exit: <function ChildExit.child_exit at 0x7f1319ea30d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f1319ea31e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f1319ea32f0>
+  on_exit: <function OnExit.on_exit at 0x7f1319ea3400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-17 10:16:44 +0530] [1270] [INFO] Starting gunicorn 20.0.4
+[2020-03-17 10:16:44 +0530] [1270] [DEBUG] Arbiter booted
+[2020-03-17 10:16:44 +0530] [1270] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1270)
+[2020-03-17 10:16:44 +0530] [1270] [INFO] Using worker: sync
+[2020-03-17 10:16:44 +0530] [1283] [INFO] Booting worker with pid: 1283
+[2020-03-17 10:16:44 +0530] [1288] [INFO] Booting worker with pid: 1288
+[2020-03-17 10:16:45 +0530] [1290] [INFO] Booting worker with pid: 1290
+[2020-03-17 10:16:45 +0530] [1291] [INFO] Booting worker with pid: 1291
+[2020-03-17 10:16:45 +0530] [1293] [INFO] Booting worker with pid: 1293
+[2020-03-17 10:16:45 +0530] [1270] [DEBUG] 5 workers
+[2020-03-18 01:01:30 +0530] [1270] [INFO] Handling signal: term
+[2020-03-17 19:31:32 +0000] [1283] [INFO] Worker exiting (pid: 1283)
+[2020-03-17 19:31:32 +0000] [1290] [INFO] Worker exiting (pid: 1290)
+[2020-03-17 19:31:32 +0000] [1288] [INFO] Worker exiting (pid: 1288)
+[2020-03-17 19:31:32 +0000] [1291] [INFO] Worker exiting (pid: 1291)
+[2020-03-17 19:31:32 +0000] [1293] [INFO] Worker exiting (pid: 1293)
+Starting preelectionportal2020 as bhasker
+[2020-03-18 09:44:20 +0530] [1209] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fec079d5510>
+  on_reload: <function OnReload.on_reload at 0x7fec079d5620>
+  when_ready: <function WhenReady.when_ready at 0x7fec079d5730>
+  pre_fork: <function Prefork.pre_fork at 0x7fec079d5840>
+  post_fork: <function Postfork.post_fork at 0x7fec079d5950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fec079d5a60>
+  worker_int: <function WorkerInt.worker_int at 0x7fec079d5b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fec079d5c80>
+  pre_exec: <function PreExec.pre_exec at 0x7fec079d5d90>
+  pre_request: <function PreRequest.pre_request at 0x7fec079d5ea0>
+  post_request: <function PostRequest.post_request at 0x7fec079d5f28>
+  child_exit: <function ChildExit.child_exit at 0x7fec079f30d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fec079f31e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fec079f32f0>
+  on_exit: <function OnExit.on_exit at 0x7fec079f3400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-18 09:44:20 +0530] [1209] [INFO] Starting gunicorn 20.0.4
+[2020-03-18 09:44:20 +0530] [1209] [DEBUG] Arbiter booted
+[2020-03-18 09:44:20 +0530] [1209] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1209)
+[2020-03-18 09:44:20 +0530] [1209] [INFO] Using worker: sync
+[2020-03-18 09:44:20 +0530] [1245] [INFO] Booting worker with pid: 1245
+[2020-03-18 09:44:20 +0530] [1252] [INFO] Booting worker with pid: 1252
+[2020-03-18 09:44:20 +0530] [1257] [INFO] Booting worker with pid: 1257
+[2020-03-18 09:44:20 +0530] [1260] [INFO] Booting worker with pid: 1260
+[2020-03-18 09:44:20 +0530] [1263] [INFO] Booting worker with pid: 1263
+[2020-03-18 09:44:20 +0530] [1209] [DEBUG] 5 workers
+[2020-03-18 15:35:46 +0530] [1209] [INFO] Handling signal: term
+[2020-03-18 10:05:46 +0000] [1252] [INFO] Worker exiting (pid: 1252)
+[2020-03-18 10:05:46 +0000] [1257] [INFO] Worker exiting (pid: 1257)
+[2020-03-18 10:05:46 +0000] [1245] [INFO] Worker exiting (pid: 1245)
+[2020-03-18 10:05:46 +0000] [1260] [INFO] Worker exiting (pid: 1260)
+[2020-03-18 10:05:46 +0000] [1263] [INFO] Worker exiting (pid: 1263)
+[2020-03-18 15:35:47 +0530] [1209] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-18 16:28:14 +0530] [1269] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fab47ee4510>
+  on_reload: <function OnReload.on_reload at 0x7fab47ee4620>
+  when_ready: <function WhenReady.when_ready at 0x7fab47ee4730>
+  pre_fork: <function Prefork.pre_fork at 0x7fab47ee4840>
+  post_fork: <function Postfork.post_fork at 0x7fab47ee4950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fab47ee4a60>
+  worker_int: <function WorkerInt.worker_int at 0x7fab47ee4b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fab47ee4c80>
+  pre_exec: <function PreExec.pre_exec at 0x7fab47ee4d90>
+  pre_request: <function PreRequest.pre_request at 0x7fab47ee4ea0>
+  post_request: <function PostRequest.post_request at 0x7fab47ee4f28>
+  child_exit: <function ChildExit.child_exit at 0x7fab47f020d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fab47f021e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fab47f022f0>
+  on_exit: <function OnExit.on_exit at 0x7fab47f02400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-18 16:28:14 +0530] [1269] [INFO] Starting gunicorn 20.0.4
+[2020-03-18 16:28:14 +0530] [1269] [DEBUG] Arbiter booted
+[2020-03-18 16:28:14 +0530] [1269] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1269)
+[2020-03-18 16:28:14 +0530] [1269] [INFO] Using worker: sync
+[2020-03-18 16:28:14 +0530] [1278] [INFO] Booting worker with pid: 1278
+[2020-03-18 16:28:14 +0530] [1279] [INFO] Booting worker with pid: 1279
+[2020-03-18 16:28:14 +0530] [1282] [INFO] Booting worker with pid: 1282
+[2020-03-18 16:28:14 +0530] [1288] [INFO] Booting worker with pid: 1288
+[2020-03-18 16:28:14 +0530] [1301] [INFO] Booting worker with pid: 1301
+[2020-03-18 16:28:14 +0530] [1269] [DEBUG] 5 workers
+[2020-03-19 01:08:47 +0530] [1269] [INFO] Handling signal: term
+[2020-03-18 19:38:47 +0000] [1282] [INFO] Worker exiting (pid: 1282)
+[2020-03-18 19:38:47 +0000] [1301] [INFO] Worker exiting (pid: 1301)
+[2020-03-18 19:38:47 +0000] [1288] [INFO] Worker exiting (pid: 1288)
+[2020-03-18 19:38:47 +0000] [1278] [INFO] Worker exiting (pid: 1278)
+[2020-03-18 19:38:47 +0000] [1279] [INFO] Worker exiting (pid: 1279)
+[2020-03-19 01:08:48 +0530] [1269] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-19 14:25:54 +0530] [1261] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fea3d02c510>
+  on_reload: <function OnReload.on_reload at 0x7fea3d02c620>
+  when_ready: <function WhenReady.when_ready at 0x7fea3d02c730>
+  pre_fork: <function Prefork.pre_fork at 0x7fea3d02c840>
+  post_fork: <function Postfork.post_fork at 0x7fea3d02c950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fea3d02ca60>
+  worker_int: <function WorkerInt.worker_int at 0x7fea3d02cb70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fea3d02cc80>
+  pre_exec: <function PreExec.pre_exec at 0x7fea3d02cd90>
+  pre_request: <function PreRequest.pre_request at 0x7fea3d02cea0>
+  post_request: <function PostRequest.post_request at 0x7fea3d02cf28>
+  child_exit: <function ChildExit.child_exit at 0x7fea3d04a0d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fea3d04a1e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fea3d04a2f0>
+  on_exit: <function OnExit.on_exit at 0x7fea3d04a400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-19 14:25:54 +0530] [1261] [INFO] Starting gunicorn 20.0.4
+[2020-03-19 14:25:54 +0530] [1261] [DEBUG] Arbiter booted
+[2020-03-19 14:25:54 +0530] [1261] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1261)
+[2020-03-19 14:25:54 +0530] [1261] [INFO] Using worker: sync
+[2020-03-19 14:25:54 +0530] [1266] [INFO] Booting worker with pid: 1266
+[2020-03-19 14:25:54 +0530] [1272] [INFO] Booting worker with pid: 1272
+[2020-03-19 14:25:54 +0530] [1286] [INFO] Booting worker with pid: 1286
+[2020-03-19 14:25:55 +0530] [1288] [INFO] Booting worker with pid: 1288
+[2020-03-19 14:25:55 +0530] [1289] [INFO] Booting worker with pid: 1289
+[2020-03-19 14:25:55 +0530] [1261] [DEBUG] 5 workers
+[2020-03-19 15:09:15 +0530] [1261] [INFO] Handling signal: term
+[2020-03-19 09:39:15 +0000] [1266] [INFO] Worker exiting (pid: 1266)
+[2020-03-19 09:39:15 +0000] [1286] [INFO] Worker exiting (pid: 1286)
+[2020-03-19 09:39:15 +0000] [1272] [INFO] Worker exiting (pid: 1272)
+[2020-03-19 09:39:15 +0000] [1288] [INFO] Worker exiting (pid: 1288)
+[2020-03-19 09:39:15 +0000] [1289] [INFO] Worker exiting (pid: 1289)
+[2020-03-19 15:09:16 +0530] [1261] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-19 18:11:02 +0530] [1274] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f514374f510>
+  on_reload: <function OnReload.on_reload at 0x7f514374f620>
+  when_ready: <function WhenReady.when_ready at 0x7f514374f730>
+  pre_fork: <function Prefork.pre_fork at 0x7f514374f840>
+  post_fork: <function Postfork.post_fork at 0x7f514374f950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f514374fa60>
+  worker_int: <function WorkerInt.worker_int at 0x7f514374fb70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f514374fc80>
+  pre_exec: <function PreExec.pre_exec at 0x7f514374fd90>
+  pre_request: <function PreRequest.pre_request at 0x7f514374fea0>
+  post_request: <function PostRequest.post_request at 0x7f514374ff28>
+  child_exit: <function ChildExit.child_exit at 0x7f514376d0d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f514376d1e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f514376d2f0>
+  on_exit: <function OnExit.on_exit at 0x7f514376d400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-19 18:11:02 +0530] [1274] [INFO] Starting gunicorn 20.0.4
+[2020-03-19 18:11:02 +0530] [1274] [DEBUG] Arbiter booted
+[2020-03-19 18:11:02 +0530] [1274] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1274)
+[2020-03-19 18:11:02 +0530] [1274] [INFO] Using worker: sync
+[2020-03-19 18:11:02 +0530] [1283] [INFO] Booting worker with pid: 1283
+[2020-03-19 18:11:02 +0530] [1285] [INFO] Booting worker with pid: 1285
+[2020-03-19 18:11:02 +0530] [1302] [INFO] Booting worker with pid: 1302
+[2020-03-19 18:11:02 +0530] [1303] [INFO] Booting worker with pid: 1303
+[2020-03-19 18:11:02 +0530] [1306] [INFO] Booting worker with pid: 1306
+[2020-03-19 18:11:03 +0530] [1274] [DEBUG] 5 workers
+Starting preelectionportal2020 as bhasker
+[2020-03-20 12:01:29 +0530] [1208] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fd37d435510>
+  on_reload: <function OnReload.on_reload at 0x7fd37d435620>
+  when_ready: <function WhenReady.when_ready at 0x7fd37d435730>
+  pre_fork: <function Prefork.pre_fork at 0x7fd37d435840>
+  post_fork: <function Postfork.post_fork at 0x7fd37d435950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fd37d435a60>
+  worker_int: <function WorkerInt.worker_int at 0x7fd37d435b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fd37d435c80>
+  pre_exec: <function PreExec.pre_exec at 0x7fd37d435d90>
+  pre_request: <function PreRequest.pre_request at 0x7fd37d435ea0>
+  post_request: <function PostRequest.post_request at 0x7fd37d435f28>
+  child_exit: <function ChildExit.child_exit at 0x7fd37d4530d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fd37d4531e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fd37d4532f0>
+  on_exit: <function OnExit.on_exit at 0x7fd37d453400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-20 12:01:29 +0530] [1208] [INFO] Starting gunicorn 20.0.4
+[2020-03-20 12:01:29 +0530] [1208] [DEBUG] Arbiter booted
+[2020-03-20 12:01:29 +0530] [1208] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1208)
+[2020-03-20 12:01:29 +0530] [1208] [INFO] Using worker: sync
+[2020-03-20 12:01:29 +0530] [1229] [INFO] Booting worker with pid: 1229
+[2020-03-20 12:01:29 +0530] [1235] [INFO] Booting worker with pid: 1235
+[2020-03-20 12:01:29 +0530] [1237] [INFO] Booting worker with pid: 1237
+[2020-03-20 12:01:29 +0530] [1245] [INFO] Booting worker with pid: 1245
+[2020-03-20 12:01:29 +0530] [1248] [INFO] Booting worker with pid: 1248
+[2020-03-20 12:01:30 +0530] [1208] [DEBUG] 5 workers
+[2020-03-20 22:57:22 +0530] [1208] [INFO] Handling signal: term
+[2020-03-20 17:27:22 +0000] [1248] [INFO] Worker exiting (pid: 1248)
+[2020-03-20 17:27:22 +0000] [1237] [INFO] Worker exiting (pid: 1237)
+[2020-03-20 17:27:22 +0000] [1245] [INFO] Worker exiting (pid: 1245)
+[2020-03-20 17:27:22 +0000] [1235] [INFO] Worker exiting (pid: 1235)
+[2020-03-20 17:27:22 +0000] [1229] [INFO] Worker exiting (pid: 1229)
+[2020-03-20 22:57:22 +0530] [1208] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-21 00:49:21 +0530] [1276] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f8fc04e0510>
+  on_reload: <function OnReload.on_reload at 0x7f8fc04e0620>
+  when_ready: <function WhenReady.when_ready at 0x7f8fc04e0730>
+  pre_fork: <function Prefork.pre_fork at 0x7f8fc04e0840>
+  post_fork: <function Postfork.post_fork at 0x7f8fc04e0950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f8fc04e0a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f8fc04e0b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f8fc04e0c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f8fc04e0d90>
+  pre_request: <function PreRequest.pre_request at 0x7f8fc04e0ea0>
+  post_request: <function PostRequest.post_request at 0x7f8fc04e0f28>
+  child_exit: <function ChildExit.child_exit at 0x7f8fc04fe0d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f8fc04fe1e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f8fc04fe2f0>
+  on_exit: <function OnExit.on_exit at 0x7f8fc04fe400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-21 00:49:21 +0530] [1276] [INFO] Starting gunicorn 20.0.4
+[2020-03-21 00:49:21 +0530] [1276] [DEBUG] Arbiter booted
+[2020-03-21 00:49:21 +0530] [1276] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1276)
+[2020-03-21 00:49:21 +0530] [1276] [INFO] Using worker: sync
+[2020-03-21 00:49:21 +0530] [1306] [INFO] Booting worker with pid: 1306
+[2020-03-21 00:49:21 +0530] [1307] [INFO] Booting worker with pid: 1307
+[2020-03-21 00:49:21 +0530] [1311] [INFO] Booting worker with pid: 1311
+[2020-03-21 00:49:21 +0530] [1315] [INFO] Booting worker with pid: 1315
+[2020-03-21 00:49:21 +0530] [1316] [INFO] Booting worker with pid: 1316
+[2020-03-21 00:49:21 +0530] [1276] [DEBUG] 5 workers
+[2020-03-21 01:40:31 +0530] [1276] [INFO] Handling signal: term
+[2020-03-20 20:10:31 +0000] [1315] [INFO] Worker exiting (pid: 1315)
+[2020-03-20 20:10:31 +0000] [1316] [INFO] Worker exiting (pid: 1316)
+[2020-03-20 20:10:31 +0000] [1307] [INFO] Worker exiting (pid: 1307)
+[2020-03-20 20:10:31 +0000] [1306] [INFO] Worker exiting (pid: 1306)
+[2020-03-20 20:10:31 +0000] [1311] [INFO] Worker exiting (pid: 1311)
+[2020-03-21 01:40:32 +0530] [1276] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-21 09:48:56 +0530] [1302] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f231e7c2510>
+  on_reload: <function OnReload.on_reload at 0x7f231e7c2620>
+  when_ready: <function WhenReady.when_ready at 0x7f231e7c2730>
+  pre_fork: <function Prefork.pre_fork at 0x7f231e7c2840>
+  post_fork: <function Postfork.post_fork at 0x7f231e7c2950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f231e7c2a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f231e7c2b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f231e7c2c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f231e7c2d90>
+  pre_request: <function PreRequest.pre_request at 0x7f231e7c2ea0>
+  post_request: <function PostRequest.post_request at 0x7f231e7c2f28>
+  child_exit: <function ChildExit.child_exit at 0x7f231e7e00d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f231e7e01e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f231e7e02f0>
+  on_exit: <function OnExit.on_exit at 0x7f231e7e0400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-21 09:48:56 +0530] [1302] [INFO] Starting gunicorn 20.0.4
+[2020-03-21 09:48:56 +0530] [1302] [DEBUG] Arbiter booted
+[2020-03-21 09:48:56 +0530] [1302] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1302)
+[2020-03-21 09:48:56 +0530] [1302] [INFO] Using worker: sync
+[2020-03-21 09:48:56 +0530] [1311] [INFO] Booting worker with pid: 1311
+[2020-03-21 09:48:56 +0530] [1313] [INFO] Booting worker with pid: 1313
+[2020-03-21 09:48:56 +0530] [1316] [INFO] Booting worker with pid: 1316
+[2020-03-21 09:48:56 +0530] [1332] [INFO] Booting worker with pid: 1332
+[2020-03-21 09:48:57 +0530] [1334] [INFO] Booting worker with pid: 1334
+[2020-03-21 09:48:57 +0530] [1302] [DEBUG] 5 workers
+[2020-03-21 13:57:43 +0530] [1302] [INFO] Handling signal: term
+[2020-03-21 08:27:43 +0000] [1311] [INFO] Worker exiting (pid: 1311)
+[2020-03-21 08:27:43 +0000] [1316] [INFO] Worker exiting (pid: 1316)
+[2020-03-21 08:27:43 +0000] [1313] [INFO] Worker exiting (pid: 1313)
+[2020-03-21 08:27:43 +0000] [1332] [INFO] Worker exiting (pid: 1332)
+[2020-03-21 08:27:43 +0000] [1334] [INFO] Worker exiting (pid: 1334)
+[2020-03-21 13:57:43 +0530] [1302] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-21 14:00:05 +0530] [1212] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f2d09db4510>
+  on_reload: <function OnReload.on_reload at 0x7f2d09db4620>
+  when_ready: <function WhenReady.when_ready at 0x7f2d09db4730>
+  pre_fork: <function Prefork.pre_fork at 0x7f2d09db4840>
+  post_fork: <function Postfork.post_fork at 0x7f2d09db4950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f2d09db4a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f2d09db4b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f2d09db4c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f2d09db4d90>
+  pre_request: <function PreRequest.pre_request at 0x7f2d09db4ea0>
+  post_request: <function PostRequest.post_request at 0x7f2d09db4f28>
+  child_exit: <function ChildExit.child_exit at 0x7f2d09dd20d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f2d09dd21e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f2d09dd22f0>
+  on_exit: <function OnExit.on_exit at 0x7f2d09dd2400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-21 14:00:05 +0530] [1212] [INFO] Starting gunicorn 20.0.4
+[2020-03-21 14:00:05 +0530] [1212] [DEBUG] Arbiter booted
+[2020-03-21 14:00:05 +0530] [1212] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1212)
+[2020-03-21 14:00:05 +0530] [1212] [INFO] Using worker: sync
+[2020-03-21 14:00:05 +0530] [1217] [INFO] Booting worker with pid: 1217
+[2020-03-21 14:00:05 +0530] [1223] [INFO] Booting worker with pid: 1223
+[2020-03-21 14:00:05 +0530] [1224] [INFO] Booting worker with pid: 1224
+[2020-03-21 14:00:05 +0530] [1227] [INFO] Booting worker with pid: 1227
+[2020-03-21 14:00:05 +0530] [1244] [INFO] Booting worker with pid: 1244
+[2020-03-21 14:00:05 +0530] [1212] [DEBUG] 5 workers
+[2020-03-21 20:15:34 +0530] [1212] [INFO] Handling signal: term
+[2020-03-21 14:45:34 +0000] [1227] [INFO] Worker exiting (pid: 1227)
+[2020-03-21 14:45:34 +0000] [1224] [INFO] Worker exiting (pid: 1224)
+[2020-03-21 14:45:34 +0000] [1217] [INFO] Worker exiting (pid: 1217)
+[2020-03-21 14:45:34 +0000] [1223] [INFO] Worker exiting (pid: 1223)
+[2020-03-21 14:45:34 +0000] [1244] [INFO] Worker exiting (pid: 1244)
+[2020-03-21 20:15:34 +0530] [1212] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-21 21:15:26 +0530] [1282] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f102e2c0510>
+  on_reload: <function OnReload.on_reload at 0x7f102e2c0620>
+  when_ready: <function WhenReady.when_ready at 0x7f102e2c0730>
+  pre_fork: <function Prefork.pre_fork at 0x7f102e2c0840>
+  post_fork: <function Postfork.post_fork at 0x7f102e2c0950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f102e2c0a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f102e2c0b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f102e2c0c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f102e2c0d90>
+  pre_request: <function PreRequest.pre_request at 0x7f102e2c0ea0>
+  post_request: <function PostRequest.post_request at 0x7f102e2c0f28>
+  child_exit: <function ChildExit.child_exit at 0x7f102e2de0d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f102e2de1e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f102e2de2f0>
+  on_exit: <function OnExit.on_exit at 0x7f102e2de400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-21 21:15:26 +0530] [1282] [INFO] Starting gunicorn 20.0.4
+[2020-03-21 21:15:26 +0530] [1282] [DEBUG] Arbiter booted
+[2020-03-21 21:15:26 +0530] [1282] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1282)
+[2020-03-21 21:15:26 +0530] [1282] [INFO] Using worker: sync
+[2020-03-21 21:15:26 +0530] [1291] [INFO] Booting worker with pid: 1291
+[2020-03-21 21:15:26 +0530] [1295] [INFO] Booting worker with pid: 1295
+[2020-03-21 21:15:26 +0530] [1296] [INFO] Booting worker with pid: 1296
+[2020-03-21 21:15:26 +0530] [1298] [INFO] Booting worker with pid: 1298
+[2020-03-21 21:15:26 +0530] [1313] [INFO] Booting worker with pid: 1313
+[2020-03-21 21:15:26 +0530] [1282] [DEBUG] 5 workers
+[2020-03-21 18:21:41 +0000] [1298] [DEBUG] GET /
+[2020-03-22 00:54:06 +0530] [1282] [INFO] Handling signal: term
+[2020-03-21 19:24:06 +0000] [1291] [INFO] Worker exiting (pid: 1291)
+[2020-03-21 19:24:06 +0000] [1295] [INFO] Worker exiting (pid: 1295)
+[2020-03-21 19:24:06 +0000] [1313] [INFO] Worker exiting (pid: 1313)
+[2020-03-21 19:24:06 +0000] [1296] [INFO] Worker exiting (pid: 1296)
+[2020-03-21 19:24:06 +0000] [1298] [INFO] Worker exiting (pid: 1298)
+[2020-03-22 00:54:06 +0530] [1282] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-22 09:25:40 +0530] [1250] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fac7af25510>
+  on_reload: <function OnReload.on_reload at 0x7fac7af25620>
+  when_ready: <function WhenReady.when_ready at 0x7fac7af25730>
+  pre_fork: <function Prefork.pre_fork at 0x7fac7af25840>
+  post_fork: <function Postfork.post_fork at 0x7fac7af25950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fac7af25a60>
+  worker_int: <function WorkerInt.worker_int at 0x7fac7af25b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fac7af25c80>
+  pre_exec: <function PreExec.pre_exec at 0x7fac7af25d90>
+  pre_request: <function PreRequest.pre_request at 0x7fac7af25ea0>
+  post_request: <function PostRequest.post_request at 0x7fac7af25f28>
+  child_exit: <function ChildExit.child_exit at 0x7fac7af430d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fac7af431e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fac7af432f0>
+  on_exit: <function OnExit.on_exit at 0x7fac7af43400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-22 09:25:40 +0530] [1250] [INFO] Starting gunicorn 20.0.4
+[2020-03-22 09:25:40 +0530] [1250] [DEBUG] Arbiter booted
+[2020-03-22 09:25:40 +0530] [1250] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1250)
+[2020-03-22 09:25:40 +0530] [1250] [INFO] Using worker: sync
+[2020-03-22 09:25:40 +0530] [1279] [INFO] Booting worker with pid: 1279
+[2020-03-22 09:25:40 +0530] [1280] [INFO] Booting worker with pid: 1280
+[2020-03-22 09:25:41 +0530] [1292] [INFO] Booting worker with pid: 1292
+[2020-03-22 09:25:41 +0530] [1301] [INFO] Booting worker with pid: 1301
+[2020-03-22 09:25:41 +0530] [1304] [INFO] Booting worker with pid: 1304
+[2020-03-22 09:25:41 +0530] [1250] [DEBUG] 5 workers
+[2020-03-22 21:32:50 +0530] [1250] [INFO] Handling signal: term
+[2020-03-22 16:02:50 +0000] [1279] [INFO] Worker exiting (pid: 1279)
+[2020-03-22 16:02:50 +0000] [1304] [INFO] Worker exiting (pid: 1304)
+[2020-03-22 16:02:50 +0000] [1301] [INFO] Worker exiting (pid: 1301)
+[2020-03-22 16:02:50 +0000] [1280] [INFO] Worker exiting (pid: 1280)
+[2020-03-22 16:02:50 +0000] [1292] [INFO] Worker exiting (pid: 1292)
+[2020-03-22 21:32:50 +0530] [1250] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-22 21:33:25 +0530] [1245] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fde5631b510>
+  on_reload: <function OnReload.on_reload at 0x7fde5631b620>
+  when_ready: <function WhenReady.when_ready at 0x7fde5631b730>
+  pre_fork: <function Prefork.pre_fork at 0x7fde5631b840>
+  post_fork: <function Postfork.post_fork at 0x7fde5631b950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fde5631ba60>
+  worker_int: <function WorkerInt.worker_int at 0x7fde5631bb70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fde5631bc80>
+  pre_exec: <function PreExec.pre_exec at 0x7fde5631bd90>
+  pre_request: <function PreRequest.pre_request at 0x7fde5631bea0>
+  post_request: <function PostRequest.post_request at 0x7fde5631bf28>
+  child_exit: <function ChildExit.child_exit at 0x7fde563390d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fde563391e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fde563392f0>
+  on_exit: <function OnExit.on_exit at 0x7fde56339400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-22 21:33:25 +0530] [1245] [INFO] Starting gunicorn 20.0.4
+[2020-03-22 21:33:25 +0530] [1245] [DEBUG] Arbiter booted
+[2020-03-22 21:33:25 +0530] [1245] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1245)
+[2020-03-22 21:33:25 +0530] [1245] [INFO] Using worker: sync
+[2020-03-22 21:33:25 +0530] [1254] [INFO] Booting worker with pid: 1254
+[2020-03-22 21:33:25 +0530] [1255] [INFO] Booting worker with pid: 1255
+[2020-03-22 21:33:25 +0530] [1256] [INFO] Booting worker with pid: 1256
+[2020-03-22 21:33:26 +0530] [1261] [INFO] Booting worker with pid: 1261
+[2020-03-22 21:33:26 +0530] [1264] [INFO] Booting worker with pid: 1264
+[2020-03-22 21:33:26 +0530] [1245] [DEBUG] 5 workers
+[2020-03-23 00:55:33 +0530] [1245] [INFO] Handling signal: term
+[2020-03-22 19:25:33 +0000] [1261] [INFO] Worker exiting (pid: 1261)
+[2020-03-22 19:25:33 +0000] [1255] [INFO] Worker exiting (pid: 1255)
+[2020-03-22 19:25:33 +0000] [1256] [INFO] Worker exiting (pid: 1256)
+[2020-03-22 19:25:33 +0000] [1254] [INFO] Worker exiting (pid: 1254)
+[2020-03-22 19:25:33 +0000] [1264] [INFO] Worker exiting (pid: 1264)
+[2020-03-23 00:55:33 +0530] [1245] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-23 10:43:34 +0530] [1290] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fc2807f9510>
+  on_reload: <function OnReload.on_reload at 0x7fc2807f9620>
+  when_ready: <function WhenReady.when_ready at 0x7fc2807f9730>
+  pre_fork: <function Prefork.pre_fork at 0x7fc2807f9840>
+  post_fork: <function Postfork.post_fork at 0x7fc2807f9950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fc2807f9a60>
+  worker_int: <function WorkerInt.worker_int at 0x7fc2807f9b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fc2807f9c80>
+  pre_exec: <function PreExec.pre_exec at 0x7fc2807f9d90>
+  pre_request: <function PreRequest.pre_request at 0x7fc2807f9ea0>
+  post_request: <function PostRequest.post_request at 0x7fc2807f9f28>
+  child_exit: <function ChildExit.child_exit at 0x7fc2808170d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fc2808171e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fc2808172f0>
+  on_exit: <function OnExit.on_exit at 0x7fc280817400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-23 10:43:34 +0530] [1290] [INFO] Starting gunicorn 20.0.4
+[2020-03-23 10:43:34 +0530] [1290] [DEBUG] Arbiter booted
+[2020-03-23 10:43:34 +0530] [1290] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1290)
+[2020-03-23 10:43:34 +0530] [1290] [INFO] Using worker: sync
+[2020-03-23 10:43:34 +0530] [1296] [INFO] Booting worker with pid: 1296
+[2020-03-23 10:43:34 +0530] [1298] [INFO] Booting worker with pid: 1298
+[2020-03-23 10:43:34 +0530] [1299] [INFO] Booting worker with pid: 1299
+[2020-03-23 10:43:34 +0530] [1300] [INFO] Booting worker with pid: 1300
+[2020-03-23 10:43:34 +0530] [1290] [DEBUG] 5 workers
+[2020-03-23 10:43:34 +0530] [1319] [INFO] Booting worker with pid: 1319
+[2020-03-23 14:13:46 +0530] [1290] [INFO] Handling signal: term
+[2020-03-23 08:43:46 +0000] [1319] [INFO] Worker exiting (pid: 1319)
+[2020-03-23 08:43:46 +0000] [1300] [INFO] Worker exiting (pid: 1300)
+[2020-03-23 08:43:46 +0000] [1299] [INFO] Worker exiting (pid: 1299)
+[2020-03-23 08:43:46 +0000] [1298] [INFO] Worker exiting (pid: 1298)
+[2020-03-23 08:43:46 +0000] [1296] [INFO] Worker exiting (pid: 1296)
+[2020-03-23 14:13:46 +0530] [1290] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-23 14:49:00 +0530] [1248] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fe76a237510>
+  on_reload: <function OnReload.on_reload at 0x7fe76a237620>
+  when_ready: <function WhenReady.when_ready at 0x7fe76a237730>
+  pre_fork: <function Prefork.pre_fork at 0x7fe76a237840>
+  post_fork: <function Postfork.post_fork at 0x7fe76a237950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fe76a237a60>
+  worker_int: <function WorkerInt.worker_int at 0x7fe76a237b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fe76a237c80>
+  pre_exec: <function PreExec.pre_exec at 0x7fe76a237d90>
+  pre_request: <function PreRequest.pre_request at 0x7fe76a237ea0>
+  post_request: <function PostRequest.post_request at 0x7fe76a237f28>
+  child_exit: <function ChildExit.child_exit at 0x7fe76a2550d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fe76a2551e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fe76a2552f0>
+  on_exit: <function OnExit.on_exit at 0x7fe76a255400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-23 14:49:00 +0530] [1248] [INFO] Starting gunicorn 20.0.4
+[2020-03-23 14:49:00 +0530] [1248] [DEBUG] Arbiter booted
+[2020-03-23 14:49:00 +0530] [1248] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1248)
+[2020-03-23 14:49:00 +0530] [1248] [INFO] Using worker: sync
+[2020-03-23 14:49:00 +0530] [1260] [INFO] Booting worker with pid: 1260
+[2020-03-23 14:49:00 +0530] [1262] [INFO] Booting worker with pid: 1262
+[2020-03-23 14:49:01 +0530] [1266] [INFO] Booting worker with pid: 1266
+[2020-03-23 14:49:01 +0530] [1281] [INFO] Booting worker with pid: 1281
+[2020-03-23 14:49:01 +0530] [1283] [INFO] Booting worker with pid: 1283
+[2020-03-23 14:49:01 +0530] [1248] [DEBUG] 5 workers
+Starting preelectionportal2020 as bhasker
+[2020-03-23 19:32:06 +0530] [1231] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f53c7cc4510>
+  on_reload: <function OnReload.on_reload at 0x7f53c7cc4620>
+  when_ready: <function WhenReady.when_ready at 0x7f53c7cc4730>
+  pre_fork: <function Prefork.pre_fork at 0x7f53c7cc4840>
+  post_fork: <function Postfork.post_fork at 0x7f53c7cc4950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f53c7cc4a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f53c7cc4b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f53c7cc4c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f53c7cc4d90>
+  pre_request: <function PreRequest.pre_request at 0x7f53c7cc4ea0>
+  post_request: <function PostRequest.post_request at 0x7f53c7cc4f28>
+  child_exit: <function ChildExit.child_exit at 0x7f53c7ce20d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f53c7ce21e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f53c7ce22f0>
+  on_exit: <function OnExit.on_exit at 0x7f53c7ce2400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-23 19:32:06 +0530] [1231] [INFO] Starting gunicorn 20.0.4
+[2020-03-23 19:32:06 +0530] [1231] [DEBUG] Arbiter booted
+[2020-03-23 19:32:06 +0530] [1231] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1231)
+[2020-03-23 19:32:06 +0530] [1231] [INFO] Using worker: sync
+[2020-03-23 19:32:06 +0530] [1238] [INFO] Booting worker with pid: 1238
+[2020-03-23 19:32:07 +0530] [1240] [INFO] Booting worker with pid: 1240
+[2020-03-23 19:32:07 +0530] [1241] [INFO] Booting worker with pid: 1241
+[2020-03-23 19:32:07 +0530] [1245] [INFO] Booting worker with pid: 1245
+[2020-03-23 19:32:07 +0530] [1248] [INFO] Booting worker with pid: 1248
+[2020-03-23 19:32:07 +0530] [1231] [DEBUG] 5 workers
+[2020-03-24 01:13:29 +0530] [1231] [INFO] Handling signal: term
+[2020-03-23 19:43:29 +0000] [1241] [INFO] Worker exiting (pid: 1241)
+[2020-03-23 19:43:29 +0000] [1240] [INFO] Worker exiting (pid: 1240)
+[2020-03-23 19:43:29 +0000] [1248] [INFO] Worker exiting (pid: 1248)
+[2020-03-23 19:43:29 +0000] [1245] [INFO] Worker exiting (pid: 1245)
+[2020-03-23 19:43:29 +0000] [1238] [INFO] Worker exiting (pid: 1238)
+[2020-03-24 01:13:29 +0530] [1231] [INFO] Shutting down: Master
+Starting preelectionportal2020 as bhasker
+[2020-03-24 11:02:36 +0530] [1281] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock']
+  backlog: 2048
+  workers: 5
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/bhasker/PycharmProjects/PreElectionPortal
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: preelectionportal2020
+  default_proc_name: PreElectionPortal.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f0c324c3510>
+  on_reload: <function OnReload.on_reload at 0x7f0c324c3620>
+  when_ready: <function WhenReady.when_ready at 0x7f0c324c3730>
+  pre_fork: <function Prefork.pre_fork at 0x7f0c324c3840>
+  post_fork: <function Postfork.post_fork at 0x7f0c324c3950>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f0c324c3a60>
+  worker_int: <function WorkerInt.worker_int at 0x7f0c324c3b70>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f0c324c3c80>
+  pre_exec: <function PreExec.pre_exec at 0x7f0c324c3d90>
+  pre_request: <function PreRequest.pre_request at 0x7f0c324c3ea0>
+  post_request: <function PostRequest.post_request at 0x7f0c324c3f28>
+  child_exit: <function ChildExit.child_exit at 0x7f0c324e10d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f0c324e11e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f0c324e12f0>
+  on_exit: <function OnExit.on_exit at 0x7f0c324e1400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2020-03-24 11:02:36 +0530] [1281] [INFO] Starting gunicorn 20.0.4
+[2020-03-24 11:02:36 +0530] [1281] [DEBUG] Arbiter booted
+[2020-03-24 11:02:36 +0530] [1281] [INFO] Listening at: unix:/home/bhasker/PycharmProjects/PreElectionPortal/run/gunicorn.sock (1281)
+[2020-03-24 11:02:36 +0530] [1281] [INFO] Using worker: sync
+[2020-03-24 11:02:36 +0530] [1290] [INFO] Booting worker with pid: 1290
+[2020-03-24 11:02:36 +0530] [1292] [INFO] Booting worker with pid: 1292
+[2020-03-24 11:02:36 +0530] [1296] [INFO] Booting worker with pid: 1296
+[2020-03-24 11:02:36 +0530] [1311] [INFO] Booting worker with pid: 1311
+[2020-03-24 11:02:36 +0530] [1315] [INFO] Booting worker with pid: 1315
+[2020-03-24 11:02:36 +0530] [1281] [DEBUG] 5 workers
+[2020-03-24 14:29:10 +0000] [1292] [DEBUG] GET /
+[2020-03-24 14:30:37 +0000] [1292] [DEBUG] GET /candidate/
+[2020-03-24 14:30:39 +0000] [1315] [DEBUG] GET /candidate/3/
+[2020-03-24 14:31:24 +0000] [1311] [DEBUG] GET /7/answer/
+Forbidden (Permission denied): /7/answer/
+Traceback (most recent call last):
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/portal/views.py", line 403, in answer_view
+    return func(request, pk)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/portal/decorators.py", line 32, in wrap
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+[2020-03-24 14:31:24 +0000] [1290] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2020-03-24 14:31:35 +0000] [1311] [DEBUG] GET /admin/
+[2020-03-24 14:31:46 +0000] [1296] [DEBUG] GET /admin/portal/junta/2/change/
+[2020-03-24 14:31:47 +0000] [1292] [DEBUG] GET /admin/jsi18n/
+[2020-03-24 14:31:51 +0000] [1292] [DEBUG] POST /admin/portal/junta/2/change/
+[2020-03-24 14:31:51 +0000] [1292] [DEBUG] GET /admin/portal/junta/
+[2020-03-24 14:31:51 +0000] [1315] [DEBUG] GET /admin/jsi18n/
+[2020-03-24 14:31:56 +0000] [1315] [DEBUG] GET /
+[2020-03-24 14:31:58 +0000] [1315] [DEBUG] GET /candidate/
+[2020-03-24 14:32:01 +0000] [1315] [DEBUG] GET /candidate/3/
+[2020-03-24 14:32:05 +0000] [1311] [DEBUG] GET /7/answer/
+Internal Server Error: /7/answer/
+Traceback (most recent call last):
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/portal/views.py", line 403, in answer_view
+    return func(request, pk)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/portal/decorators.py", line 23, in wrap
+    if user.junta.candidate.all()[0] == Candidate.objects.get(pk=pk):
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/db/models/query.py", line 417, in get
+    self.model._meta.object_name
+portal.models.Candidate.DoesNotExist: Candidate matching query does not exist.
+[2020-03-24 14:32:25 +0000] [1292] [DEBUG] GET /admin/
+[2020-03-24 14:32:31 +0000] [1315] [DEBUG] GET /admin/portal/candidate/
+[2020-03-24 14:32:32 +0000] [1315] [DEBUG] GET /admin/jsi18n/
+[2020-03-24 14:32:34 +0000] [1315] [DEBUG] GET /admin/portal/candidate/3/change/
+[2020-03-24 14:32:34 +0000] [1290] [DEBUG] GET /admin/jsi18n/
+[2020-03-24 14:32:34 +0000] [1315] [DEBUG] GET /summernote/editor/id_bio/
+[2020-03-24 14:32:34 +0000] [1290] [DEBUG] GET /summernote/editor/id_key_points/
+[2020-03-24 14:32:41 +0000] [1311] [DEBUG] GET /admin/portal/candidate/
+[2020-03-24 14:32:43 +0000] [1292] [DEBUG] GET /admin/
+[2020-03-24 14:32:48 +0000] [1292] [DEBUG] GET /admin/portal/junta/2/change/
+[2020-03-24 14:32:48 +0000] [1315] [DEBUG] GET /admin/jsi18n/
+[2020-03-24 14:32:52 +0000] [1296] [DEBUG] POST /admin/portal/junta/2/change/
+[2020-03-24 14:32:52 +0000] [1315] [DEBUG] GET /admin/portal/junta/
+[2020-03-24 14:32:52 +0000] [1315] [DEBUG] GET /admin/jsi18n/
+[2020-03-24 14:32:56 +0000] [1311] [DEBUG] GET /admin/portal/junta/2/change/
+[2020-03-24 14:32:56 +0000] [1311] [DEBUG] GET /admin/jsi18n/
+[2020-03-24 14:33:00 +0000] [1315] [DEBUG] GET /admin/portal/
+[2020-03-24 14:33:02 +0000] [1290] [DEBUG] GET /admin/portal/candidate/
+[2020-03-24 14:33:02 +0000] [1290] [DEBUG] GET /admin/jsi18n/
+[2020-03-24 14:33:04 +0000] [1296] [DEBUG] GET /admin/portal/candidate/3/change/
+[2020-03-24 14:33:04 +0000] [1290] [DEBUG] GET /admin/jsi18n/
+[2020-03-24 14:33:04 +0000] [1311] [DEBUG] GET /summernote/editor/id_bio/
+[2020-03-24 14:33:04 +0000] [1290] [DEBUG] GET /summernote/editor/id_key_points/
+[2020-03-24 14:33:08 +0000] [1311] [DEBUG] GET /
+[2020-03-24 14:33:11 +0000] [1290] [DEBUG] GET /candidate/
+[2020-03-24 14:33:13 +0000] [1290] [DEBUG] GET /candidate/3/
+[2020-03-24 14:33:19 +0000] [1315] [DEBUG] GET /6/answer/
+Internal Server Error: /6/answer/
+Traceback (most recent call last):
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/portal/views.py", line 403, in answer_view
+    return func(request, pk)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/portal/decorators.py", line 23, in wrap
+    if user.junta.candidate.all()[0] == Candidate.objects.get(pk=pk):
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/db/models/query.py", line 417, in get
+    self.model._meta.object_name
+portal.models.Candidate.DoesNotExist: Candidate matching query does not exist.
+[2020-03-24 14:35:21 +0000] [1311] [DEBUG] GET /candidate/3/
+[2020-03-24 14:35:24 +0000] [1290] [DEBUG] GET /7/answer/
+Internal Server Error: /7/answer/
+Traceback (most recent call last):
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/portal/views.py", line 403, in answer_view
+    return func(request, pk)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/portal/decorators.py", line 23, in wrap
+    if user.junta.candidate.all()[0] == Candidate.objects.get(pk=pk):
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/db/models/query.py", line 417, in get
+    self.model._meta.object_name
+portal.models.Candidate.DoesNotExist: Candidate matching query does not exist.
+[2020-03-24 14:39:24 +0000] [1311] [DEBUG] GET /7/answer/
+Internal Server Error: /7/answer/
+Traceback (most recent call last):
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/portal/views.py", line 403, in answer_view
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/portal/decorators.py", line 23, in wrap
+    if user.junta.candidate.all()[0] == Candidate.objects.get(pk=pk):
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/bhasker/PycharmProjects/PreElectionPortal/venv/lib/python3.6/site-packages/django/db/models/query.py", line 417, in get
+    self.model._meta.object_name
+portal.models.Candidate.DoesNotExist: Candidate matching query does not exist.
+[2020-03-24 14:39:29 +0000] [1311] [DEBUG] GET /candidate/3/

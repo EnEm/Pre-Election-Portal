@@ -53,10 +53,12 @@
 
     {% if my_questions %}
         <div class="container-questions-static">
-            <span id="my-questions-sort-tray" class="sort-tray ml-3">
-                <a class="btn btn-sort-recent btn-skin btn-rounded text-white active" type="button" data-sort-on="my-questions" data-user="{{ user.junta.pk }}">Recent</a>
-                <a class="btn btn-sort-upvotes btn-skin btn-rounded text-white" type="button" data-sort-on="my-questions" data-user="{{ user.junta.pk }}">Upvotes</a>
-            </span>
+            <div class="row">
+                <span id="my-questions-sort-tray" class="sort-tray col-lg-6 col-md-12">
+                    <a class="col-lg-3 col-md-3 mb-1 btn btn-sort-recent btn-skin btn-rounded text-white active" type="button" data-sort-on="my-questions" data-user="{{ user.junta.pk }}">Recent</a>
+                    <a class="col-lg-3 col-md-3 mb-1 btn btn-sort-upvotes btn-skin btn-rounded text-white" type="button" data-sort-on="my-questions" data-user="{{ user.junta.pk }}">Upvotes</a>
+                </span>
+            </div>
 
             <div class="container-questions">
                 {% for question in my_questions  %}
@@ -137,10 +139,12 @@
 
     {% if approved_questions %}
         <div class="container-questions-static">
-            <span id="approved-sort-tray" class="sort-tray ml-3">
-                <a class="btn btn-sort-recent btn-skin btn-rounded text-white active" type="button" data-sort-on="approved" data-user="{{ user.junta.pk }}">Recent</a>
-                <a class="btn btn-sort-upvotes btn-skin btn-rounded text-white" type="button" data-sort-on="approved" data-user="{{ user.junta.pk }}">Upvotes</a>
-            </span>
+            <div class="row">
+                <span id="approved-sort-tray" class="sort-tray col-lg-6 col-md-12">
+                    <a class="col-lg-3 col-md-3 mb-1 btn btn-sort-recent btn-skin btn-rounded text-white active" type="button" data-sort-on="approved" data-user="{{ user.junta.pk }}">Recent</a>
+                    <a class="col-lg-3 col-md-3 mb-1 btn btn-sort-upvotes btn-skin btn-rounded text-white" type="button" data-sort-on="approved" data-user="{{ user.junta.pk }}">Upvotes</a>
+                </span>
+            </div>
 
             <div class="container-questions">
                 {% for question in approved_questions %}
@@ -224,7 +228,7 @@
         <div class="card-header border-dark">
             <strong>Ask Me Anything</strong>
         </div>
-        <form id="question-form" class="form-group" action="{% url 'portal:index' %}" method="post" data-href="{% url 'portal:ajax-load-candidates' %}">
+        <form id="question-form" class="form-group" action="{% url 'portal:admin' %}" method="post" data-href="{% url 'portal:ajax-load-candidates' %}">
             <div class="card-body">
                 {% if question_form %}
                     {% csrf_token %}

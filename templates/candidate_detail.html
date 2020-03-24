@@ -29,12 +29,12 @@
             <div id="colorlib-about">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-5 animate-box" align="center">
+                        <div class="col-md-5" align="center">
                             <div id="ig" style="width: 80%">
                                 <div class="img-fluid" style="background-image: url('{% if candidate.user.profile_pic %}{{ candidate.user.profile_pic.url }}{% else %}{% static 'images/profile.jpg' %}{% endif %}');"></div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-md-push-1 animate-box">
+                        <div class="col-md-6 col-md-push-1">
                             <div class="about-desc">
                                 <div class="desc">
                                     <div class="rotate">
@@ -60,10 +60,10 @@
                 </div>
                 <hr>
                 <div class="container">
-                    <div class="row animate-box">
+                    <div class="row">
                         <h2 align="center" >Here's What I Plan to DO!</h2>
                     </div>
-                    <div class="col-md-15 animate-box ">
+                    <div class="col-md-15">
                         <div class="about-desc">
                             <div class="desc">
                                 <div class="col-md-15">
@@ -76,7 +76,7 @@
             </div>
 
             <div class="container">
-                <div class="row animate-box">
+                <div class="row">
                     <div class="desc">
                         <div class="rotate">
                             <h2 class="heading">Ask Me Anything!</h2>
@@ -84,7 +84,7 @@
                     </div>
                 </div>
 
-                <div class="card border-dark m-3 animate-box">
+                <div class="card border-dark m-3">
                     <div class="card-header border-dark">
                         <strong>Ask Me Anything</strong>
                     </div>
@@ -105,14 +105,16 @@
             <div class="container">
                 <div class="col-md-15">
                     {% if questions %}
-                        <span id="my-questions-sort-tray" class="sort-tray ml-3 animate-box">
-                            <a class="btn btn-sort-recent btn-skin btn-rounded text-white active" type="button" data-sort-on="my-questions" data-user="{{ candidate.user.pk }}">Recent</a>
-                            <a class="btn btn-sort-upvotes btn-skin btn-rounded text-white" type="button" data-sort-on="my-questions" data-user="{{ candidate.user.pk }}">Upvotes</a>
-                        </span>
+                        <div class="row">
+                            <span id="my-questions-sort-tray" class="sort-tray col-lg-6 col-md-12">
+                                <button class="col-lg-3 col-md-3 btn btn-sort-recent btn-skin btn-rounded text-white active mb-1" type="button" data-sort-on="my-questions" data-user="{{ candidate.user.pk }}">Recent</button>
+                                <button class="col-lg-3 col-md-3 btn btn-sort-upvotes btn-skin btn-rounded text-white mb-1" type="button" data-sort-on="my-questions" data-user="{{ candidate.user.pk }}">Upvotes</button>
+                            </span>
+                        </div>
                     {% endif %}
                     <div class="container-questions">
                         {% for question in questions %}
-                            <div class="card border-dark m-3 animate-box">
+                            <div class="card border-dark m-3">
                                 <div class="card-header">
                                     <strong>{{ question.question }}</strong>
                                 </div>
@@ -139,20 +141,20 @@
 
                                     <span class="vote-tray">
                                         {% if user.junta in question.upvotes.all %}
-                                            <span><a class="btn-upvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_upvote_api_url }}" ><i style="color: blue" class="far fa-thumbs-up"></i></a></span>
+                                            <span><a class="btn-upvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_upvote_api_url }}" ><i style="color: blue" class="far fa-thumbs-up clickable"></i></a></span>
                                         {% else %}
-                                            <span><a class="btn-upvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_upvote_api_url }}" ><i class="far fa-thumbs-up"></i></a></span>
+                                            <span><a class="btn-upvote" data-upvote="{{ question.upvotes.count }}" data-downvote="{{ question.downvotes.count }}" data-href="{{ question.get_upvote_api_url }}" ><i class="far fa-thumbs-up clickable"></i></a></span>
                                         {% endif %}
                                         <span class="text-vote">{{ question.upvotes.count }}</span>
                                     </span>
-                                    <span class="toggle-comment"><i class="fa fa-comments"></i></span> <span>{{ question.comments.count }}</span>
+                                    <span class="toggle-comment"><i class="fa fa-comments clickable"></i></span> <span>{{ question.comments.count }}</span>
 
                                     <div class="comments" style="display: none">
                                         {% if comment_form %}
                                             <form method="post" action="{% url 'portal:comment' question.pk %}">
                                                 {% csrf_token %}
                                                 {{ comment_form }}
-                                                <span><i class="fas fa-send"></i></span>
+                                                <span><i class="fas fa-send clickable"></i></span>
                                             </form>
                                         {% endif %}
                                         {% if question.comments.count != 0%}
@@ -170,15 +172,15 @@
 
                                                         <span class="vote-tray">
                                                             {% if user.junta in comment.upvotes.all %}
-                                                                <span><a class="btn-upvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_upvote_api_url }}" ><i style="color: blue" class="far fa-thumbs-up"></i></a></span>
+                                                                <span><a class="btn-upvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_upvote_api_url }}" ><i style="color: blue" class="far fa-thumbs-up clickable"></i></a></span>
                                                             {% else %}
-                                                                <span><a class="btn-upvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_upvote_api_url }}" ><i class="far fa-thumbs-up"></i></a></span>
+                                                                <span><a class="btn-upvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_upvote_api_url }}" ><i class="far fa-thumbs-up clickable"></i></a></span>
                                                             {% endif %}
                                                             <span class="text-vote">{{ comment.upvotes.count|subtract:comment.downvotes.count }}</span>
                                                             {% if user.junta in comment.downvotes.all %}
-                                                                <span><a class="btn-downvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_downvote_api_url }}"><i style="color: red" class="far fa-thumbs-down"></i></a></span>
+                                                                <span><a class="btn-downvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_downvote_api_url }}"><i style="color: red" class="far fa-thumbs-down clickable"></i></a></span>
                                                             {% else %}
-                                                                <span><a class="btn-downvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_downvote_api_url }}"><i class="far fa-thumbs-down"></i></a></span>
+                                                                <span><a class="btn-downvote" data-upvote="{{ comment.upvotes.count }}" data-downvote="{{ comment.downvotes.count }}" data-href="{{ comment.get_downvote_api_url }}"><i class="far fa-thumbs-down clickable"></i></a></span>
                                                             {% endif %}
                                                         </span>
                                                     {% endif %}

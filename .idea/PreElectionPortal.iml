@@ -31,6 +31,7 @@
     <orderEntry type="library" name="canvasjs" level="application" />
     <orderEntry type="library" name="jquery-3.3.1" level="application" />
     <orderEntry type="library" name="animate" level="application" />
+    <orderEntry type="library" name="popper" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
