@@ -9,37 +9,41 @@
 <div id="chartContainer" style="height: 350px; width: 90%;margin: auto auto;"></div>
 <br><br><br>
 {% if admin %}
-        <div class="col text-center">
-            <a class="btn btn-primary mt-3 mb-3 ml-90" href="{% url 'stats:createhostel' %}" role="button">Create</a>
+    <div class="col text-center">
+        <a class="btn btn-primary mt-3 mb-3 ml-90" href="{% url 'stats:createhostel' %}" role="button">Create</a>
+    </div>
+{% endif %}
+<div class='container'>
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <table class="table table-responsive ">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Hostel</th>
+                        <th scope="col">Total Residents</th>
+                        <th scope="col">Voted</th>
+                        {% if admin %}
+                            <th scope="col">Delete entry</th>
+                            <th scope="col">Update entry</th>
+                        {% endif %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for hh in output %}
+                <tr>
+                        <th scope="row">{{ hh.label }}</th>
+                        <td>{{ hh.residents}}</td>
+                        <td>{{ hh.count }}</td>
+                        {% if admin %}
+                            <td><a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'stats:deletehostel' hh.id %}" role="button">Delete</a></td>
+                            <td><a class="btn btn-success btn-sm mt-1 mb-1" href="{% url 'stats:updatehostel' hh.id %}" role="button">Update</a></td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
-        {% endif %}
-<div class='container' style="width: 60%; margin: auto auto; background-color:azure;">
-    <table class="table table-striped">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">Hostel</th>
-                <th scope="col">Total Residents</th>
-                <th scope="col">Voted</th>
-                {% if admin %}
-                <th scope="col">Delete entry</th>
-                <th scope="col">Update entry</th>
-                {% endif %}
-            </tr>
-        </thead>
-        <tbody>
-            {% for hh in output %}
-        <tr>
-                <th scope="row">{{ hh.label }}</th>
-                <td>{{ hh.residents}}</td>
-                <td>{{ hh.count }}</td>
-                {% if admin %}
-                <td><a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'stats:deletehostel' hh.id %}" role="button">Delete</a></td>
-                <td><a class="btn btn-success btn-sm mt-1 mb-1" href="{% url 'stats:updatehostel' hh.id %}" role="button">Update</a></td>
-                {% endif %}
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    </div>
 </div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 

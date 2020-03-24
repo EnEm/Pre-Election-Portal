@@ -221,10 +221,10 @@
                 <li class="nav-item {% if nbar == 'home' %}active{% endif %}"><a class="nav-link" href="{% url 'portal:index' %}">Home</a></li>
                 <li class="nav-item {% if nbar == 'rules' %}active{% endif %}"><a class="nav-link" href="#">Rules</a></li>
                 <li class="nav-item {% if nbar == 'candidates' %}active{% endif %}"><a class="nav-link" href="{% url 'portal:candidates' %}">Candidates</a></li>
-                <li class="nav-item {% if nbar == 'stats' %}active{% endif %}"><a class="nav-link" class="nav-link" href="{% url 'stats:chart' %}">Statistics</a></li>
+                <li class="nav-item {% if nbar == 'stats' %}active{% endif %}"><a class="nav-link" href="{% url 'stats:chart' %}">Statistics</a></li>
                 {% if admin %}
-                    <li class="nav-item {% if nbar == 'admin' %}active{% endif %}"><a class="nav-link" class="nav-link" href="{% url 'portal:admin' %}">Admin</a></li>
-                {% endif %}`
+                    <li class="nav-item {% if nbar == 'admin' %}active{% endif %}"><a class="nav-link" href="{% url 'portal:admin' %}">Admin</a></li>
+                {% endif %}
                 <li class="nav-item"><a class="nav-link" href="{% if request.session.user %}{% url 'authentication:signout' %}{% else %}{% url 'authentication:signin' %}{% endif %}">{% if request.session.user %}Logout{% else %}Login{% endif %}</a></li>
             </ul>
         </nav>
@@ -249,6 +249,7 @@
         <!-- Core JavaScript Files -->
 
         <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
         <script src="{% static 'js/jquery.sticky.js' %}"></script>
         <script src="{% static 'js/jquery.easing.min.js' %}"></script>

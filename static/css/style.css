@@ -970,17 +970,6 @@ a.btn:focus{
   background-image: none;
 }
 
-
-.btn-skin:hover,
-.btn-skin:focus,
-.btn-skin:active,
-.btn-skin.active {
-  color: #fff;
-  background-color: #666;
-  border-color: #666;
-}
-
-
 .btn-default:hover,
 .btn-default:focus {
     border: 1px solid #28c3ab;
@@ -1356,4 +1345,26 @@ section {
 
 nav {
 	z-index: 9999;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+table th {
+   text-align: center;
+}
+
+.table {
+	background-color: azure;
+	margin: auto;
+	width: auto;
+}
+
+th:first-child, td:first-child
+{
+    position:sticky;
+    left:0;
+	z-index: 2;
+	background-color: azure;
 }

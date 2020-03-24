@@ -527,4 +527,4 @@ def admin_view(request):
             return HttpResponseRedirect(reverse('portal:admin'))
         else:
             return HttpResponseRedirect(reverse('portal:login'))
-    return render(request, 'index.html', d)
+    return render(request, 'admin.html', d)

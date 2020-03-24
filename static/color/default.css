@@ -75,9 +75,12 @@ footer a.totop:hover {
   color: #fff;
   background-color: #3dc9b3;
   border-color: #3dc9b3;
-
 }
 
-.clickable {
-	cursor: pointer;
+.btn-skin:hover,
+.btn-skin:active,
+.btn-skin.active {
+	color: #fff;
+	background-color: #666666;
+	border-color: #666666;
 }
