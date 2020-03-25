@@ -114,7 +114,7 @@
                     {% endif %}
                     <div class="container-questions">
                         {% for question in questions %}
-                            <div class="card border-dark m-3">
+                            <div class="card border-dark m-3" data-question-upvote="{{ question.upvotes.count }}" data-question-recent="{{ question.asked_on | secondssince }}" data-question-asked-to-designation="{{ question.asked_to.position }}">
                                 <div class="card-header">
                                     <strong>{{ question.question }}</strong>
                                 </div>

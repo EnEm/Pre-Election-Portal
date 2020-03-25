@@ -477,7 +477,7 @@ def admin_view(request):
     request.session['redirect_callback'] = reverse('portal:index')
     question_form = AskForm()
     comment_form = CommentForm()
-    d = {'question_form': question_form, 'comment_form': comment_form, 'nbar': 'admin'}
+    d = {'question_form': question_form, 'comment_form': comment_form, 'nbar': 'admin', 'designations': choices.DESIGNATIONS}
 
     try:
         if request.session['user']['is_authenticated']:

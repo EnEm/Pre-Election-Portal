@@ -288,158 +288,153 @@
         {% block jqueryBlock %}
         {% endblock %}
         function updateVoteCount(span, upvotes, downvotes, upvoteColor, downvoteColor) {
-        console.log(span.children());
-        span.children().children().attr("data-upvote", upvotes);
-        span.children().children().attr("data-downvote", downvotes);
-        span.children(".text-vote").text(upvotes-downvotes);
-        span.children("span:nth-child(1)").children().children().css("color", upvoteColor);
-        span.children("span:nth-child(3)").children().children().css("color", downvoteColor);
-        console.log(upvoteColor, downvoteColor)
+            console.log(span.children());
+            span.children().children().attr("data-upvote", upvotes);
+            span.children().children().attr("data-downvote", downvotes);
+            span.children(".text-vote").text(upvotes-downvotes);
+            span.children("span:nth-child(1)").children().children().css("color", upvoteColor);
+            span.children("span:nth-child(3)").children().children().css("color", downvoteColor);
+            console.log(upvoteColor, downvoteColor)
         }
 
         $("body").on('click', '.btn-upvote', function (e) {
-        e.preventDefault();
-        const this_ = $(this);
-        const upvoteUrl = this_.attr("data-href");
-        const upvoteCount = parseInt(this_.attr("data-upvote"));
-        const downvoteCount = parseInt(this_.attr("data-downvote"));
-        $.ajax({
-        url: upvoteUrl,
-        method: "GET",
-        data: {},
-        success: function (data) {
-        console.log(data);
-        const newUpvotes = upvoteCount + data.upvote;
-        const newDownvotes = downvoteCount + data.downvote;
-        updateVoteCount(this_.parent().parent(), newUpvotes, newDownvotes, data.upvoteColor, data.downvoteColor);
-        },
-        error: function (error) {
-        console.log("error");
-        console.log(error);
-        }
-        });
+            e.preventDefault();
+            const this_ = $(this);
+            const upvoteUrl = this_.attr("data-href");
+            const upvoteCount = parseInt(this_.attr("data-upvote"));
+            const downvoteCount = parseInt(this_.attr("data-downvote"));
+            $.ajax({
+                url: upvoteUrl,
+                method: "GET",
+                data: {},
+                success: function (data) {
+                    console.log(data);
+                    const newUpvotes = upvoteCount + data.upvote;
+                    const newDownvotes = downvoteCount + data.downvote;
+                    updateVoteCount(this_.parent().parent(), newUpvotes, newDownvotes, data.upvoteColor, data.downvoteColor);
+                },
+                error: function (error) {
+                    console.log("error");
+                    console.log(error);
+                }
+            });
         });
 
         $("body").on('click', '.btn-downvote', function (e) {
-        const this_ = $(this);
-        const downvoteUrl = this_.attr("data-href");
-        const upvoteCount = parseInt(this_.attr("data-upvote"));
-        const downvoteCount = parseInt(this_.attr("data-downvote"));
-        $.ajax({
-        url: downvoteUrl,
-        method: "GET",
-        data: {},
-        success: function (data) {
-        console.log(data);
-        const newUpvotes = upvoteCount + data.upvote;
-        const newDownvotes = downvoteCount + data.downvote;
-        updateVoteCount(this_.parent().parent(), newUpvotes, newDownvotes, data.upvoteColor, data.downvoteColor);
-        },
-        error: function (error) {
-        console.log("error");
-        console.log(error);
-        }
-        });
+            const this_ = $(this);
+            const downvoteUrl = this_.attr("data-href");
+            const upvoteCount = parseInt(this_.attr("data-upvote"));
+            const downvoteCount = parseInt(this_.attr("data-downvote"));
+            $.ajax({
+                url: downvoteUrl,
+                method: "GET",
+                data: {},
+                success: function (data) {
+                    console.log(data);
+                    const newUpvotes = upvoteCount + data.upvote;
+                    const newDownvotes = downvoteCount + data.downvote;
+                    updateVoteCount(this_.parent().parent(), newUpvotes, newDownvotes, data.upvoteColor, data.downvoteColor);
+                },
+                error: function (error) {
+                    console.log("error");
+                    console.log(error);
+                }
+            });
         });
 
         $("#id_position").change(function (e) {
-        const url = $("#question-form").attr("data-href");
-        const position = $(this).val();
-
-        $.ajax({
-        url: url,
-        data: {
-        'position': position
-        },
-        success: function (data) {
-        $("#id_asked_to").html(data);
-        }
-        });
+            const url = $("#question-form").attr("data-href");
+            const position = $(this).val();
+            $.ajax({
+                url: url,
+                data: {
+                    'position': position
+                },
+                success: function (data) {
+                    $("#id_asked_to").html(data);
+                }
+            });
         });
 
         $(".btn-approve").click(function (e) {
-        e.preventDefault();
-        const this_ = $(this);
-        const approveUrl = this_.attr("data-href");
-        $.ajax({
-        url: approveUrl,
-        method: "GET",
-        data: {},
-        success: function (data) {
-        this_.text("Approved");
-        },
-        error: function (error) {
-        console.log("error");
-        console.log(error);
-        alert("Error in approving");
-        }
-        });
+            e.preventDefault();
+            const this_ = $(this);
+            const approveUrl = this_.attr("data-href");
+            $.ajax({
+                url: approveUrl,
+                method: "GET",
+                data: {},
+                success: function (data) {
+                    this_.text("Approved");
+                },
+                error: function (error) {
+                    console.log("error");
+                    console.log(error);
+                    alert("Error in approving");
+                }
+            });
         });
 
         $(".btn-delete").click(function (e) {
-        e.preventDefault();
-        const this_ = $(this);
-        const deleteUrl = this_.attr("data-href");
-        $.ajax({
-        url: deleteUrl,
-        method: "GET",
-        data: {},
-        success: function (data) {
-        this_.text("Deleted");
-        },
-        error: function (error) {
-        console.log("error");
-        console.log(error);
-        alert("Error in Deleting");
-        }
-        });
-        });
-
-        $(".btn-sort-recent").click(function (e) {
-        e.preventDefault();
-        const this_ = $(this);
-        const sort_by = "-asked_on";
-        const sort_on = this_.attr("data-sort-on");
-        const user = this_.attr("data-user");
-        $.ajax({
-        type: "GET",
-        url: "{% url 'portal:api-sort' %}",
-        data: {
-        'sort_by': sort_by,
-        'sort_on': sort_on,
-        'junta_pk': user,
-        }
-        }).done(function (data) {
-        this_.parent().parent().parent().children(".container-questions").html(data.html_questions);
-        this_.addClass('active');
-        this_.parent().children(".btn-sort-upvotes").removeClass('active');
-        });
+            e.preventDefault();
+            const this_ = $(this);
+            const deleteUrl = this_.attr("data-href");
+            $.ajax({
+                url: deleteUrl,
+                method: "GET",
+                data: {},
+                success: function (data) {
+                    this_.text("Deleted");
+                },
+                error: function (error) {
+                    console.log("error");
+                    console.log(error);
+                    alert("Error in Deleting");
+                }
+            });
         });
 
         $(".btn-sort-upvotes").click(function (e) {
-        e.preventDefault();
-        const this_ = $(this);
-        const sort_by = "upvotes";
-        const sort_on = this_.attr("data-sort-on");
-        const user = this_.attr("data-user");
-        $.ajax({
-        type: "GET",
-        url: "{% url 'portal:api-sort' %}",
-        data: {
-        'sort_by': sort_by,
-        'sort_on': sort_on,
-        'junta_pk': user,
-        }
-        }).done(function (data) {
-        this_.parent().parent().parent().children(".container-questions").html(data.html_questions);
-        this_.addClass('active');
-        this_.parent().children(".btn-sort-recent").removeClass('active');
+            if(!$(this).hasClass('active')) {
+                var x = Array.from(document.querySelectorAll('[question]'));
+                x.sort((a, b) => (a.getAttribute('data-question-upvote') < b.getAttribute('data-question-upvote') ? 1 : (a.getAttribute('data-question-upvote') > b.getAttribute('data-question-upvote')) ? -1 : 0));
+                x.forEach((item) => item.parentNode.appendChild(item));
+                $(this).addClass('active');
+                $(this).parent().children(".btn-sort-recent").removeClass('active');
+            }
         });
+
+        $(".btn-sort-recent").click(function (e) {
+            if(!$(this).hasClass('active')) {
+                var x = Array.from(document.querySelectorAll('[question]'));
+                x.sort((a, b) => (a.getAttribute('data-question-recent') > b.getAttribute('data-question-recent') ? 1 : (a.getAttribute('data-question-recent') < b.getAttribute('data-question-recent')) ? -1 : 0));
+                x.forEach((item) => item.parentNode.appendChild(item));
+                $(this).addClass('active');
+                $(this).parent().children(".btn-sort-upvotes").removeClass('active');
+            }
+        });
+
+        $('#filter-designation').on('input', function (e) {
+            var x = $('[question]');
+            var designation = $(this).val().toUpperCase();
+            if('All Designations'.toUpperCase().includes(designation) || designation === '') {
+                x.show();
+            } else {
+                x.each(function () {
+                    if($(this).text().toUpperCase().includes(designation)) {
+                        $(this).show();
+                    } else if($(this).attr('data-question-asked-to-designation').toUpperCase().includes(designation)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            }
         });
 
         $("body").on('click', '.toggle-comment', function (e) {
-        e.preventDefault();
-        $(this).parent().children(".comments").toggle("1000");
+            e.preventDefault();
+            $(this).parent().children(".comments").toggle("1000");
         });
         })
         </script>

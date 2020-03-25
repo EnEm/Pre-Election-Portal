@@ -58,26 +58,30 @@
         {% if approved_questions %}
             <div class="container-questions-static">
                 <div class="row">
-                    <span id="approved-sort-tray" class="sort-tray btn-group ml-4">
+                    <span id="approved-sort-tray" class="sort-tray btn-group ml-4 mb-2">
                             <a class="btn btn-sort-recent btn-skin btn-rounded text-white mr-1 active" type="button" data-sort-on="approved" data-user="{{ user.junta.pk }}">Recent</a>
                             <a class="btn btn-sort-upvotes btn-skin btn-rounded text-white mr-1" type="button" data-sort-on="approved" data-user="{{ user.junta.pk }}">Upvotes</a>
                             <div style="clear: left"></div>
                     </span>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button class="dropdown-item" type="button">Action</button>
-                            <button class="dropdown-item" type="button">Another action</button>
-                            <button class="dropdown-item" type="button">Something else here</button>
+
+                    <div class="input-group mx-4 mb-2" style="width: auto !important;">
+                        <input id="filter-designation" type="text" list="designations" placeholder="Search for... / Filter by ..." class="form-control"/>
+                        <datalist id="designations">
+                          <option>All Designations</option>
+                            {% for designation in designations %}
+                                <option>{{ designation }}</option>
+                            {% endfor %}
+                        </datalist>
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-search"></i> </span>
                         </div>
                     </div>
+
                 </div>
 
                 <div class="container-questions">
                     {% for question in approved_questions %}
-                        <div class="card border-dark m-3">
+                        <div class="card border-dark m-3" question data-question-upvote="{{ question.upvotes.count }}" data-question-recent="{{ question.asked_on | secondssince }}" data-question-asked-to-designation="{{ question.asked_to.position }}">
                             <div class="card-header">
                                 <strong>{{ question.question }}</strong>
                             </div>

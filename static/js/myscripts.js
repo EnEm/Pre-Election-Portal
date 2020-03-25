@@ -13,11 +13,11 @@ $('#return-to-top').click(function() {      // When arrow is clicked
 });
 
 
-filterSelection("all")
+filterSelection("all");
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("column");
-  if (c == "all") c = "";
+  if (c === "all") c = "";
   for (i = 0; i < x.length; i++) {
     w3RemoveClass(x[i], "show");
     if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
@@ -29,7 +29,7 @@ function w3AddClass(element, name) {
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
   for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+    if (arr1.indexOf(arr2[i]) === -1) {element.className += " " + arr2[i];}
   }
 }
 
